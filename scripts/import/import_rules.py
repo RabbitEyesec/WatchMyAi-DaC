@@ -360,9 +360,12 @@ def main() -> int:
                 "rule validation failed before import: " + (validate.stdout + validate.stderr)[-3000:]
             )
         content = _ndjson(rules)
-        with tempfile.NamedTemporaryFile(suffix=".ndjson") as handle:
+        # Close before the subprocess opens the path by name; Windows denies a
+        # second open while a NamedTemporaryFile is still held open.
+        handle = tempfile.NamedTemporaryFile(suffix=".ndjson", delete=False)
+        try:
             handle.write(content)
-            handle.flush()
+            handle.close()
             ndjson_check = subprocess.run(
                 [
                     sys.executable,
@@ -373,6 +376,9 @@ def main() -> int:
                 text=True,
                 check=False,
             )
+        finally:
+            handle.close()
+            os.unlink(handle.name)
         if ndjson_check.returncode:
             raise ImportFailure(ndjson_check.stdout + ndjson_check.stderr)
         if args.dry_run:
