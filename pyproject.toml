@@ -50,7 +50,7 @@ dev = [
   "pip-audit>=2.9",
   "psutil>=5.9",
   "pytest>=9.0.3,<10",
-  "ruff==0.15.21",
+  "ruff==0.15.22",
   "setuptools>=77",
   "types-PyYAML",
   "wheel>=0.45",
