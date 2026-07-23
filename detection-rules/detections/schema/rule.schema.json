@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://watchmyai.invalid/schemas/rule.schema.json",
+  "title": "WatchMyAI canonical detection rule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rule_id",
+    "name",
+    "description",
+    "category",
+    "maturity",
+    "version",
+    "author",
+    "severity",
+    "risk_score",
+    "confidence",
+    "test_tier",
+    "guarantee",
+    "threat_scenario",
+    "target_agents",
+    "required_telemetry",
+    "required_fields",
+    "data_sources",
+    "custom_telemetry",
+    "endpoint_only",
+    "correlation",
+    "detection_logic",
+    "elastic",
+    "sigma",
+    "false_positives",
+    "tuning_guidance",
+    "investigation_steps",
+    "response_playbook",
+    "limitations",
+    "validation_scenario",
+    "expected_alert",
+    "fixtures",
+    "test_artifacts",
+    "traceability",
+    "related_rules",
+    "references",
+    "threat_mappings",
+    "deployment",
+    "blocked_reason",
+    "history"
+  ],
+  "properties": {
+    "rule_id": {"type": "string", "pattern": "^WMAI-[0-9]{3}$"},
+    "name": {"type": "string", "minLength": 5},
+    "description": {"type": "string", "minLength": 20},
+    "category": {"type": "string", "minLength": 2},
+    "maturity": {"enum": ["draft", "testable", "validated", "production_candidate", "blocked"]},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "author": {"type": "string", "minLength": 2},
+    "severity": {"enum": ["low", "medium", "high", "critical"]},
+    "risk_score": {"type": "integer", "minimum": 0, "maximum": 100},
+    "confidence": {"enum": ["low", "medium", "high"]},
+    "test_tier": {"enum": ["T1", "T2", "T3"]},
+    "guarantee": {"type": "string", "minLength": 20},
+    "threat_scenario": {"type": "string", "minLength": 20},
+    "target_agents": {"$ref": "#/$defs/nonemptyStrings"},
+    "required_telemetry": {"$ref": "#/$defs/nonemptyStrings"},
+    "required_fields": {"$ref": "#/$defs/nonemptyStrings"},
+    "data_sources": {"$ref": "#/$defs/nonemptyStrings"},
+    "custom_telemetry": {"type": "boolean"},
+    "endpoint_only": {"type": "boolean"},
+    "correlation": {"type": "boolean"},
+    "detection_logic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "query"],
+      "properties": {
+        "kind": {"enum": ["query", "threshold", "eql", "esql", "new_terms"]},
+        "query": {"type": "string", "minLength": 5},
+        "threshold": {"$ref": "#/$defs/threshold"},
+        "sequence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["join_by", "maxspan_seconds", "stages"],
+          "properties": {
+            "join_by": {"type": "string", "minLength": 2},
+            "maxspan_seconds": {"type": "integer", "minimum": 1},
+            "stages": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 5}}
+          }
+        }
+      }
+    },
+    "elastic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "language", "query", "index_patterns", "interval", "from", "enabled", "target_stack_versions", "lab_tested_versions"],
+      "properties": {
+        "type": {"enum": ["query", "threshold", "eql", "esql", "new_terms"]},
+        "language": {"enum": ["kuery", "eql", "esql"]},
+        "query": {"type": "string", "minLength": 5},
+        "index_patterns": {"$ref": "#/$defs/nonemptyStrings"},
+        "interval": {"type": "string", "pattern": "^[1-9][0-9]*[smhd]$"},
+        "from": {"type": "string", "pattern": "^now-[1-9][0-9]*[smhd]$"},
+        "enabled": {"const": false},
+        "target_stack_versions": {"$ref": "#/$defs/nonemptyStrings"},
+        "lab_tested_versions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 2}},
+        "threshold": {"$ref": "#/$defs/threshold"}
+      }
+    },
+    "sigma": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "path", "reason"],
+      "properties": {
+        "status": {"enum": ["implemented", "not_applicable"]},
+        "path": {"type": ["string", "null"]},
+        "reason": {"type": ["string", "null"]}
+      }
+    },
+    "false_positives": {"$ref": "#/$defs/nonemptyStrings"},
+    "tuning_guidance": {"type": "string", "minLength": 10},
+    "investigation_steps": {"$ref": "#/$defs/nonemptyStrings"},
+    "response_playbook": {"type": "string", "pattern": "^playbooks/WMAI-[0-9]{3}\\.md$"},
+    "limitations": {"$ref": "#/$defs/nonemptyStrings"},
+    "validation_scenario": {"type": "string", "minLength": 10},
+    "expected_alert": {"type": "string", "minLength": 10},
+    "fixtures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["malicious", "benign"],
+      "properties": {
+        "malicious": {"type": "string", "pattern": "^tests/fixtures/malicious/WMAI-[0-9]{3}\\.json$"},
+        "benign": {"type": "string", "pattern": "^tests/fixtures/benign/WMAI-[0-9]{3}\\.json$"}
+      }
+    },
+    "test_artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atomic", "evasion", "producer_conformance"],
+      "properties": {
+        "atomic": {"type": "string", "pattern": "^tests/corpus/atomic/WMAI-[0-9]{3}\\.json$"},
+        "evasion": {"type": "string", "pattern": "^tests/corpus/evasion/WMAI-[0-9]{3}\\.json$"},
+        "producer_conformance": {"type": "string", "pattern": "^tests/corpus/conformance/WMAI-[0-9]{3}\\.json$"}
+      }
+    },
+    "traceability": {"$ref": "#/$defs/nonemptyStrings"},
+    "related_rules": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^WMAI-[0-9]{3}$"}},
+    "references": {"$ref": "#/$defs/nonemptyStrings"},
+    "threat_mappings": {"type": "array", "items": {"type": "object"}},
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packageable", "status"],
+      "properties": {
+        "packageable": {"type": "boolean"},
+        "status": {"enum": ["lab_candidate", "excluded_blocked", "production", "production_validated"]}
+      }
+    },
+    "blocked_reason": {"type": ["string", "null"]},
+    "history": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["version", "date", "author", "change"],
+        "properties": {
+          "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+          "date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+          "author": {"type": "string", "minLength": 2},
+          "change": {"type": "string", "minLength": 10}
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"maturity": {"const": "blocked"}}},
+      "then": {
+        "properties": {
+          "blocked_reason": {"type": "string", "minLength": 20},
+          "deployment": {"properties": {"packageable": {"const": false}, "status": {"const": "excluded_blocked"}}}
+        }
+      },
+      "else": {"properties": {"blocked_reason": {"type": "null"}}}
+    },
+    {
+      "if": {"properties": {"sigma": {"properties": {"status": {"const": "implemented"}}}}},
+      "then": {"properties": {"sigma": {"properties": {"path": {"type": "string"}, "reason": {"type": "null"}}}}},
+      "else": {"properties": {"sigma": {"properties": {"path": {"type": "null"}, "reason": {"type": "string", "minLength": 20}}}}}
+    }
+  ],
+  "$defs": {
+    "nonemptyStrings": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 2}},
+    "threshold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field", "value"],
+      "properties": {
+        "field": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "string", "minLength": 2}},
+        "value": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

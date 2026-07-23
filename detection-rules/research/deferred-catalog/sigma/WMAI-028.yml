@@ -1,0 +1,32 @@
+title: Windows Service Creation
+id: a184d7d2-75fb-5b63-9233-4be2ab22a884
+status: experimental
+description: Detects command-line creation of a Windows service.
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-028
+- https://www.elastic.co/docs/reference/ecs
+author: WatchMyAI contributors
+date: '2026-07-16'
+modified: '2026-07-16'
+license: Apache-2.0
+logsource:
+  category: process_creation
+detection:
+  selection_sc:
+    Image|endswith:
+    - \sc.exe
+    CommandLine|contains:
+    - ' create '
+    - ' create= '
+  selection_powershell:
+    Image|endswith:
+    - \powershell.exe
+    - \pwsh.exe
+    CommandLine|contains:
+    - New-Service
+  condition: selection_sc or selection_powershell
+falsepositives:
+- Approved maintenance or controlled laboratory activity can resemble windows service
+  creation.
+level: medium
+x_watchmyai_rule_id: WMAI-028

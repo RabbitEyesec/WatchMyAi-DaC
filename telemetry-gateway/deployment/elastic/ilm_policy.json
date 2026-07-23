@@ -1,0 +1,10 @@
+{
+  "policy": {
+    "_meta": {"managed_by": "watchmyai"},
+    "phases": {
+      "hot": {"actions": {"rollover": {"max_primary_shard_size": "50gb", "max_age": "7d"}}},
+      "warm": {"min_age": "7d", "actions": {"forcemerge": {"max_num_segments": 1}}},
+      "delete": {"min_age": "90d", "actions": {"delete": {"delete_searchable_snapshot": true}}}
+    }
+  }
+}

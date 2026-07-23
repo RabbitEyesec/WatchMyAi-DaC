@@ -1,0 +1,43 @@
+{
+  "author": [
+    "WatchMyAI contributors"
+  ],
+  "description": "Detects changes to selected persistent AI-agent configuration files.",
+  "enabled": false,
+  "false_positives": [
+    "Approved maintenance or controlled laboratory activity can resemble persistent configuration modification."
+  ],
+  "from": "now-6m",
+  "index": [
+    "logs-endpoint.events.file-*",
+    "logs-windows.sysmon_operational-*"
+  ],
+  "interval": "5m",
+  "language": "kuery",
+  "license": "Apache-2.0",
+  "max_signals": 100,
+  "name": "Persistent configuration modification",
+  "note": "## Expected alert\n\nOne medium-severity alert for Persistent configuration modification, preserving the fields declared by this rule.\n\n## Investigation\n\n1. Confirm the originating AI task, human owner and relevant policy version.\n2. Inspect the source event, process ancestry and affected resource evidence.\n3. Validate approvals and determine whether the observed action was authorized.\n4. Preserve timestamps and stable correlation identifiers before containment.\n\n## Limitations\n\n- Configuration paths vary by agent version and operating system and require lab confirmation.\n- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.\n- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.",
+  "query": "event.category:file and event.type:(change or creation) and file.path:(\"*/.claude/settings.json\" or \"*/.codex/config.toml\" or \"*/.gemini/settings.json\" or \"*/.aider.conf.yml\" or \"*/.cursor/mcp.json\")",
+  "references": [
+    "docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-072",
+    "https://www.elastic.co/docs/reference/ecs"
+  ],
+  "risk_score": 47,
+  "rule_id": "WMAI-072",
+  "rule_source": {
+    "type": "internal"
+  },
+  "severity": "medium",
+  "tags": [
+    "WatchMyAI",
+    "AI Agent",
+    "CLI Agent",
+    "Maturity: validated",
+    "Custom telemetry: false",
+    "Endpoint building block"
+  ],
+  "to": "now",
+  "type": "query",
+  "version": 1
+}

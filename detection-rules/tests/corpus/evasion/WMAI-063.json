@@ -1,0 +1,53 @@
+{
+  "rule_id": "WMAI-063",
+  "variants": [
+    {
+      "variant_id": "EVASION-063-01",
+      "class": "rm-rf",
+      "description": "Use rm -rf inside a disposable tree",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-063-02",
+      "class": "find-delete",
+      "description": "Use find -delete inside a disposable tree",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-063-03",
+      "class": "xargs-rm",
+      "description": "Use xargs rm inside a disposable tree",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-063-04",
+      "class": "python-shutil",
+      "description": "Use Python shutil against a disposable tree",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-063-05",
+      "class": "node-fs-rm",
+      "description": "Use Node fs.rm against a disposable tree",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-063-06",
+      "class": "script-wrapper",
+      "description": "Wrap deletion in a script",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-063-07",
+      "class": "relative-symlink",
+      "description": "Use a relative or symlinked disposable target",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-063-08",
+      "class": "option-reordering",
+      "description": "Reorder equivalent delete options",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

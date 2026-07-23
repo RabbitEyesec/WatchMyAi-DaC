@@ -1,0 +1,46 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "action": "policy_violation",
+    "category": [
+      "configuration"
+    ],
+    "dataset": "watchmyai.events",
+    "id": "evt-wmai-036-malicious-000",
+    "kind": "alert",
+    "provider": "watchmyai",
+    "type": [
+      "change"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "user": {
+    "name": "lab-user"
+  },
+  "watchmyai": {
+    "agent": {
+      "id": "agent-lab",
+      "type": "known_ai_agent"
+    },
+    "attribution": {
+      "level": "confirmed"
+    },
+    "policy": {
+      "violation": {
+        "detected": true,
+        "type": "task_objective_drift"
+      }
+    },
+    "schema": {
+      "version": "1.1.0"
+    },
+    "session": {
+      "observed_objective_hash": "sha256:c0e024cf582011a48c4c928fdd4c2f2a9c9360773f4b374daab5b5640fa16d2b"
+    },
+    "task": {
+      "objective_hash": "sha256:0053f69f105dab50dc385932e48802135e274a27c858c2f0211c24e0aad204b7"
+    }
+  }
+}

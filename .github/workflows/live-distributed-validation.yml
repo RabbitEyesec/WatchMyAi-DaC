@@ -1,0 +1,48 @@
+name: Live distributed detection validation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: watchmyai-live-validation
+  cancel-in-progress: false
+
+jobs:
+  supported_rules:
+    runs-on: [self-hosted, watchmyai-lab]
+    environment: validation-lab
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+      - name: Install through the documented command
+        run: ./scripts/install/install.sh
+      - name: Setup, verify, and correlate current alerts through public commands
+        env:
+          WATCHMYAI_MACHINE_ROLE: ubuntu-server
+          ELASTICSEARCH_URL: ${{ secrets.ELASTICSEARCH_URL }}
+          KIBANA_URL: ${{ secrets.KIBANA_URL }}
+          KIBANA_SPACE: ${{ secrets.KIBANA_SPACE }}
+          FLEET_SERVER_URL: ${{ secrets.FLEET_SERVER_URL }}
+          FLEET_AGENT_POLICY_ID: ${{ vars.FLEET_AGENT_POLICY_ID }}
+          ELASTIC_AUTH_METHOD: api_key
+          ELASTIC_API_KEY: ${{ secrets.ELASTIC_API_KEY }}
+          ELASTIC_CA_CERT: ${{ secrets.ELASTIC_CA_CERT }}
+          FLEET_CA_CERT: ${{ secrets.FLEET_CA_CERT }}
+          ELASTIC_AGENT_PATH: ${{ vars.ELASTIC_AGENT_PATH }}
+          WATCHMYAI_DATASET: watchmyai.events
+        run: |
+          .venv/bin/watchmyai setup --development --non-interactive --hooks none
+          .venv/bin/watchmyai verify
+          .venv/bin/watchmyai validate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: supported-rule-validation-results
+          path: runtime/validation-results.json
+          if-no-files-found: error

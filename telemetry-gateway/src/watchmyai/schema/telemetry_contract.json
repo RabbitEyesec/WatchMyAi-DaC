@@ -1,0 +1,14 @@
+{
+  "contract_version": "1.1.0",
+  "schema_version": "1.1.0",
+  "schema_resource": "watchmyai_event.schema.json",
+  "canonical_dataset_field": "event.dataset",
+  "canonical_dataset_value": "watchmyai.events",
+  "deprecated_fields": [
+    "event.dataset_name",
+    "event.data_set",
+    "dataset"
+  ],
+  "elastic_mapping": "deployment/elastic/component_template.json",
+  "unknown_field_policy": "reject"
+}

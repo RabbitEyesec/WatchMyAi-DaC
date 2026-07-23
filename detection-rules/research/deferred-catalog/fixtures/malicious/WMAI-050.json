@@ -1,0 +1,41 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "action": "incident_opened",
+    "category": [
+      "configuration"
+    ],
+    "dataset": "watchmyai.events",
+    "id": "evt-wmai-050-malicious-000",
+    "kind": "alert",
+    "provider": "watchmyai",
+    "type": [
+      "change"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "user": {
+    "name": "lab-user"
+  },
+  "watchmyai": {
+    "agent": {
+      "id": "agent-lab",
+      "type": "known_ai_agent"
+    },
+    "attribution": {
+      "level": "confirmed"
+    },
+    "incident": {
+      "status": "open"
+    },
+    "schema": {
+      "version": "1.1.0"
+    },
+    "session": {
+      "id": "session-wmai-050",
+      "risk_score": 100
+    }
+  }
+}

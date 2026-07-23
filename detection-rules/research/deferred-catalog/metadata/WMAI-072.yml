@@ -1,0 +1,94 @@
+rule_id: WMAI-072
+name: Persistent configuration modification
+description: Detects changes to selected persistent AI-agent configuration files.
+category: CLI Agent
+maturity: validated
+version: 1.0.0
+author: WatchMyAI contributors
+severity: medium
+risk_score: 47
+confidence: medium
+threat_scenario: During an AI-assisted task, endpoint telemetry records persistent configuration modification,
+  creating potential risk to the affected host or resource.
+target_agents:
+- Claude Code
+- Codex CLI
+- Gemini CLI
+- Cursor Agent
+- Cline
+- Roo Code
+- Aider
+- GitHub Copilot CLI
+- Other CLI agents (telemetry dependent)
+required_telemetry:
+- Elastic Agent, Sysmon, Windows Security logs, shell history where available, process creation, network
+  events, Git events, approval logs and AI session metadata
+required_fields:
+- event.category
+- event.type
+- file.path
+- process.entity_id
+data_sources:
+- Elastic Defend file events
+- File integrity monitoring
+custom_telemetry: false
+endpoint_only: true
+correlation: false
+detection_logic:
+  kind: query
+  query: event.category:file and event.type:(change or creation) and file.path:("*/.claude/settings.json"
+    or "*/.codex/config.toml" or "*/.gemini/settings.json" or "*/.aider.conf.yml" or "*/.cursor/mcp.json")
+elastic:
+  type: query
+  language: kuery
+  query: event.category:file and event.type:(change or creation) and file.path:("*/.claude/settings.json"
+    or "*/.codex/config.toml" or "*/.gemini/settings.json" or "*/.aider.conf.yml" or "*/.cursor/mcp.json")
+  index_patterns:
+  - logs-endpoint.events.file-*
+  - logs-windows.sysmon_operational-*
+  interval: 5m
+  from: now-6m
+  enabled: false
+  target_stack_versions:
+  - 8.17+
+  - 9.x
+  lab_tested_versions: []
+sigma:
+  status: implemented
+  path: detections/sigma/WMAI-072.yml
+  reason: null
+false_positives:
+- Approved maintenance or controlled laboratory activity can resemble persistent configuration modification.
+tuning_guidance: Baseline persistent configuration modification in the isolated lab, then tune only the
+  documented paths, executables, thresholds, join fields, or approved workflows without removing evidence
+  fields.
+investigation_steps:
+- Confirm the originating AI task, human owner and relevant policy version.
+- Inspect the source event, process ancestry and affected resource evidence.
+- Validate approvals and determine whether the observed action was authorized.
+- Preserve timestamps and stable correlation identifiers before containment.
+limitations:
+- Configuration paths vary by agent version and operating system and require lab confirmation.
+- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.
+- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+validation_scenario: Replay a synthetic persistent configuration modification event and a challenging
+  benign event; then repeat with the target agent in the controlled lab.
+expected_alert: One medium-severity alert for Persistent configuration modification, preserving the fields
+  declared by this rule.
+fixtures:
+  malicious: tests/fixtures/malicious/WMAI-072.json
+  benign: tests/fixtures/benign/WMAI-072.json
+related_rules: []
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-072
+- https://www.elastic.co/docs/reference/ecs
+threat_mappings: []
+deployment:
+  packageable: true
+  status: lab_candidate
+blocked_reason: null
+history:
+- version: 1.0.0
+  date: '2026-07-16'
+  author: WatchMyAI contributors
+  change: Initial accountable definition for controlled laboratory validation.

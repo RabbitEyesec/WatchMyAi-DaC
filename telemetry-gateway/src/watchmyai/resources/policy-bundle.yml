@@ -1,0 +1,143 @@
+# Synthetic development example only. Production activation must use signed distribution.
+schema_version: "1.2"
+policy_bundle_id: polb-watchmyai-development
+policy_bundle_version: 1.0.0
+policy_sequence: 1
+organization_id: example-org
+mode: strict
+default_effect: DENY
+required_capabilities:
+  - supports_pre_execution
+metadata:
+  approved_workspace_roots:
+    - /workspace
+    - /srv/watchmyai-lab/workspace
+    - C:/workspace
+  restricted_paths:
+    - /etc
+    - /srv/watchmyai-lab/restricted
+    - C:/Windows/System32
+  allowed_destinations:
+    - github.com
+    - api.anthropic.com
+    - api.openai.com
+  allowed_repositories:
+    - github.com/example/*
+  allowed_mcp_servers:
+    - approved-filesystem
+policies:
+  - policy_id: deny-restricted-path
+    policy_version: "1"
+    priority: 1000
+    effect: DENY
+    reason_code: RESTRICTED_PATH
+    match:
+      path_restricted: true
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH, EMIT_HIGH_SEVERITY_ALERT]
+  - policy_id: deny-outside-workspace
+    policy_version: "1"
+    priority: 900
+    effect: DENY
+    reason_code: OUTSIDE_APPROVED_WORKSPACE
+    match:
+      path_outside_approved_workspace: true
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH]
+  - policy_id: deny-privilege-escalation
+    policy_version: "1"
+    priority: 900
+    effect: DENY
+    reason_code: PRIVILEGE_ESCALATION
+    match:
+      command_class: privilege_escalation
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH, EMIT_HIGH_SEVERITY_ALERT]
+  - policy_id: deny-recursive-delete
+    policy_version: "1"
+    priority: 900
+    effect: DENY
+    reason_code: RECURSIVE_DELETE
+    match:
+      command_class: recursive_delete
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH, EMIT_HIGH_SEVERITY_ALERT]
+  - policy_id: deny-security-control-tampering
+    policy_version: "1"
+    priority: 1000
+    effect: DENY
+    reason_code: SECURITY_CONTROL_TAMPERING
+    match:
+      command_class: security_control_tamper
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH, EMIT_HIGH_SEVERITY_ALERT]
+  - policy_id: deny-sensitive-path-read
+    policy_version: "1"
+    priority: 850
+    effect: DENY
+    reason_code: SENSITIVE_PATH
+    match:
+      path_classes: [ssh_private_key, env_secret, cloud_credential]
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH]
+  - policy_id: deny-unapproved-destination
+    policy_version: "1"
+    priority: 800
+    effect: DENY
+    reason_code: UNAPPROVED_DESTINATION
+    match:
+      destination_approved: false
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH]
+  - policy_id: deny-unapproved-repository
+    policy_version: "1"
+    priority: 800
+    effect: DENY
+    reason_code: UNAPPROVED_REPOSITORY
+    match:
+      repository_approved: false
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH]
+  - policy_id: deny-unapproved-mcp
+    policy_version: "1"
+    priority: 800
+    effect: DENY
+    reason_code: UNAPPROVED_MCP_SERVER
+    match:
+      mcp_approved: false
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH]
+  - policy_id: approve-high-risk-tools
+    policy_version: "1"
+    priority: 500
+    effect: REQUIRE_APPROVAL
+    reason_code: HIGH_RISK_COMMAND_APPROVAL
+    match:
+      command_class: [ssh_session, cloud_credential, container, kubernetes]
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH, REQUIRE_APPROVAL_RECEIPT]
+  - policy_id: allow-approved-file-operations
+    policy_version: "1"
+    priority: 100
+    effect: ALLOW
+    reason_code: APPROVED_FILE_OPERATION
+    match:
+      tool_class: [file_read, file_write]
+      path_outside_approved_workspace: false
+      path_restricted: false
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH, REQUIRE_EXECUTION_RECEIPT]
+  - policy_id: allow-approved-mcp
+    policy_version: "1"
+    priority: 100
+    effect: ALLOW
+    reason_code: APPROVED_MCP
+    match:
+      tool_class: mcp
+      mcp_approved: true
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH, REQUIRE_EXECUTION_RECEIPT]
+  - policy_id: allow-reviewed-shell
+    policy_version: "1"
+    priority: 50
+    effect: REQUIRE_APPROVAL
+    reason_code: SHELL_REQUIRES_APPROVAL
+    match:
+      tool_class: shell
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH, REQUIRE_APPROVAL_RECEIPT, REQUIRE_EXECUTION_RECEIPT]
+  - policy_id: allow-local-functions
+    policy_version: "1"
+    priority: 10
+    effect: ALLOW
+    reason_code: LOCAL_FUNCTION_ALLOWED
+    match:
+      tool_class: local_function
+    obligations: [AUDIT_METADATA_ONLY, CAPTURE_ARGUMENT_HASH]

@@ -1,0 +1,47 @@
+{
+  "rule_id": "WMAI-053",
+  "variants": [
+    {
+      "variant_id": "EVASION-053-01",
+      "class": "ssh-family",
+      "description": "Use ssh, scp, or sftp against the disposable host",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-053-02",
+      "class": "absolute-binary",
+      "description": "Use an absolute client path",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-053-03",
+      "class": "config-host",
+      "description": "Resolve the host through test SSH configuration",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-053-04",
+      "class": "proxy-command",
+      "description": "Use a disposable ProxyCommand",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-053-05",
+      "class": "script-wrapper",
+      "description": "Wrap the client in a script",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-053-06",
+      "class": "alternate-client",
+      "description": "Use an alternate lab SSH client",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-053-07",
+      "class": "port-forward",
+      "description": "Request a port forward in the isolated network",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

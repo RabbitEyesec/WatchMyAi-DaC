@@ -1,0 +1,21 @@
+{
+  "signatures": [
+    {
+      "keyid": "b61d5ad6e6cb9efd1a9a2f9048518f5e9006fb9ae34a591658c3969863736371",
+      "signature": "rEHhiSpqyhf9JR8Vlutc7JUoe3v18vJlI0H5Qa3xv922bZReG0mki0PMrVi8hKl3aR4ktaUEX36wxl8AVwb4Dg"
+    }
+  ],
+  "signed": {
+    "_type": "timestamp",
+    "expires_at": "2030-01-01T00:00:00Z",
+    "organization_id": "org-test",
+    "snapshot": {
+      "hashes": {
+        "sha256": "3700290bc47db5079787601a1c7e59ff3f1f577f66176d0e8bddc8c905e6eb6d"
+      },
+      "length": 561,
+      "metadata_version": 1
+    },
+    "timestamp_version": 1
+  }
+}

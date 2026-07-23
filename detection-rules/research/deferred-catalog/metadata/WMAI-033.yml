@@ -1,0 +1,103 @@
+rule_id: WMAI-033
+name: Data Exfiltration Pattern
+description: Defines the deterministic Elastic match contract for data exfiltration pattern using WatchMyAI
+  custom telemetry.
+category: Network
+maturity: validated
+version: 1.1.0
+author: WatchMyAI contributors
+severity: high
+risk_score: 73
+confidence: medium
+threat_scenario: A WatchMyAI runtime or deterministic policy producer records data exfiltration pattern
+  during an AI-agent task, requiring correlation with the declared approval, task, session, and endpoint
+  evidence.
+target_agents:
+- Claude Code
+- Codex CLI
+- Gemini CLI
+- Cursor
+- Cline
+- Roo Code
+- Aider
+- GitHub Copilot CLI
+- Desktop AI agents (telemetry dependent)
+required_telemetry:
+- WatchMyAI Telemetry Gateway 1.1.0 observations, policy decisions, stable session/task/action identifiers,
+  and ECS endpoint context
+required_fields:
+- '@timestamp'
+- event.action
+- event.dataset
+- watchmyai.action.sensitive_data_ids
+- watchmyai.agent.id
+- watchmyai.network.transfer_id
+- watchmyai.policy.violation.detected
+- watchmyai.policy.violation.type
+data_sources:
+- WatchMyAI Telemetry Gateway (`logs-watchmyai.events-*`)
+custom_telemetry: true
+endpoint_only: false
+correlation: false
+detection_logic:
+  kind: query
+  query: event.dataset:watchmyai.events and event.action:policy_violation and watchmyai.policy.violation.detected:true
+    and watchmyai.policy.violation.type:data_exfiltration_pattern
+elastic:
+  type: query
+  language: kuery
+  query: event.dataset:watchmyai.events and event.action:policy_violation and watchmyai.policy.violation.detected:true
+    and watchmyai.policy.violation.type:data_exfiltration_pattern
+  index_patterns:
+  - logs-watchmyai.events-*
+  interval: 5m
+  from: now-6m
+  enabled: false
+  target_stack_versions:
+  - 8.17+
+  - 9.x
+  lab_tested_versions: []
+sigma:
+  status: not_applicable
+  path: null
+  reason: Custom WatchMyAI policy/runtime semantics are not portable to a meaningful Sigma logsource.
+false_positives:
+- A producer classification or policy-version error could emit the violating state for an authorized action.
+tuning_guidance: Tune only in a controlled Elastic lab, scoping exceptions to explicit policy IDs and
+  approved workflows while preserving the underlying evidence predicates.
+investigation_steps:
+- Confirm the originating AI task, human owner and relevant policy version.
+- Inspect the source event, process ancestry and affected resource evidence.
+- Validate approvals and determine whether the observed action was authorized.
+- Preserve timestamps and stable correlation identifiers before containment.
+limitations:
+- The rule requires WatchMyAI Telemetry Gateway 1.1.0; standard endpoint integrations do not emit the
+  AI-specific fields.
+- Synthetic fixture validation does not claim live-production validation; controlled Elastic replay is
+  still required.
+validation_scenario: Replay a synthetic data exfiltration pattern event and a challenging benign event;
+  then repeat with the target agent in the controlled lab.
+expected_alert: One high-severity alert for Data Exfiltration Pattern, preserving the fields declared
+  by this rule.
+fixtures:
+  malicious: tests/fixtures/malicious/WMAI-033.json
+  benign: tests/fixtures/benign/WMAI-033.json
+related_rules:
+- WMAI-065
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-033
+- ../telemetry-gateway/docs/TELEMETRY_SCHEMA.md
+threat_mappings: []
+deployment:
+  packageable: true
+  status: lab_candidate
+blocked_reason: null
+history:
+- version: 1.0.0
+  date: '2026-07-16'
+  author: WatchMyAI contributors
+  change: Initial accountable definition for controlled laboratory validation.
+- version: 1.1.0
+  date: '2026-07-16'
+  author: WatchMyAI contributors
+  change: Connected the rule to the versioned gateway producer and controlled Elastic test package.

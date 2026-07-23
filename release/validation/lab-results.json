@@ -1,0 +1,23 @@
+{
+  "validation_window": {
+    "gte": "2026-07-10T21:00:00Z",
+    "lt": "2026-07-20T06:00:00Z"
+  },
+  "elastic_stack_version": "9.4.3",
+  "alert_index": ".alerts-security.alerts-default",
+  "all_alerts": 1136,
+  "unique_detection_rules": 48,
+  "watchmyai_rule_count": 20,
+  "watchmyai_alert_count": 779,
+  "earliest_alert": "2026-07-14T16:53:12.900Z",
+  "latest_alert": "2026-07-20T05:59:20.301Z",
+  "pagination_count_check": "PASS",
+  "source_evidence_sha256": {
+    "all_security_alerts_csv": "7ecd86e28d2049b32464fda4837f03fe07663980ef4ae01e8e796ab74124c2d7",
+    "all_security_alerts_json": "6f558092328fc89f00128f611db73d0d7afdb2975f4e85a46a77b99b84da2bfa",
+    "security_rule_summary_csv": "005a2488222974df4787171e19311d0038e7317fc80d2826e97d0a1e2ca76ecd",
+    "watchmyai_rule_summary_csv": "e67dd5a3ff12b625c9361f7ec42f86e94ec34266e51c7c5840ef58d82e6b1e84",
+    "watchmyai_export_summary_txt": "9768914cc77eb684476524e262169dc12895a96ad4e27a8b0b265e01e800d5c5"
+  },
+  "raw_export_committed": false
+}

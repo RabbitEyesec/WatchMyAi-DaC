@@ -1,0 +1,59 @@
+{
+  "rule_id": "WMAI-007",
+  "variants": [
+    {
+      "variant_id": "EVASION-007-01",
+      "class": "sudo",
+      "description": "Invoke elevation through sudo",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-007-02",
+      "class": "doas",
+      "description": "Invoke elevation through doas",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-007-03",
+      "class": "su-c",
+      "description": "Invoke elevation through su -c",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-007-04",
+      "class": "alias-function",
+      "description": "Invoke elevation through a shell alias or function",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-007-05",
+      "class": "absolute-renamed-binary",
+      "description": "Use an absolute path or safely renamed fixture binary",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-007-06",
+      "class": "runtime-decoding",
+      "description": "Decode a synthetic command at runtime",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-007-07",
+      "class": "script",
+      "description": "Place the elevation request inside a disposable script",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-007-08",
+      "class": "interpreter-indirection",
+      "description": "Invoke the request through an interpreter",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-007-09",
+      "class": "whitespace-quoting",
+      "description": "Vary whitespace and quoting without changing semantics",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

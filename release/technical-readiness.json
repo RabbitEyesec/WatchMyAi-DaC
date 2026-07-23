@@ -1,0 +1,55 @@
+{
+  "release": "v1.0.0",
+  "supported_rule_count": 20,
+  "supported_rules": [
+    "WMAI-001", "WMAI-002", "WMAI-007", "WMAI-009", "WMAI-022",
+    "WMAI-023", "WMAI-024", "WMAI-025", "WMAI-030", "WMAI-048",
+    "WMAI-051", "WMAI-053", "WMAI-054", "WMAI-055", "WMAI-057",
+    "WMAI-058", "WMAI-059", "WMAI-060", "WMAI-061", "WMAI-063"
+  ],
+  "excluded_rules": [
+    "WMAI-003", "WMAI-006", "WMAI-010", "WMAI-011", "WMAI-012",
+    "WMAI-013", "WMAI-014", "WMAI-034", "WMAI-067", "WMAI-070"
+  ],
+  "deferred_rule_count": 45,
+  "deferred_rules": [
+    "WMAI-004", "WMAI-005", "WMAI-008", "WMAI-015", "WMAI-016",
+    "WMAI-017", "WMAI-018", "WMAI-019", "WMAI-020", "WMAI-021",
+    "WMAI-026", "WMAI-027", "WMAI-028", "WMAI-029", "WMAI-031",
+    "WMAI-032", "WMAI-033", "WMAI-035", "WMAI-036", "WMAI-037",
+    "WMAI-038", "WMAI-039", "WMAI-040", "WMAI-041", "WMAI-042",
+    "WMAI-043", "WMAI-044", "WMAI-045", "WMAI-046", "WMAI-047",
+    "WMAI-049", "WMAI-050", "WMAI-052", "WMAI-056", "WMAI-062",
+    "WMAI-064", "WMAI-065", "WMAI-066", "WMAI-068", "WMAI-069",
+    "WMAI-071", "WMAI-072", "WMAI-073", "WMAI-074", "WMAI-075"
+  ],
+  "repository_static_checks": "PASS",
+  "configuration_validation": "PASS",
+  "schema_validation": "PASS",
+  "ndjson_validation": "PASS",
+  "preflight": "PASS",
+  "clean_source_test": "PASS",
+  "clean_clone_test": "PASS",
+  "rule_import": "DRY_RUN_PASS",
+  "fixture_validation": "PASS",
+  "live_end_to_end_validation": "SKIPPED",
+  "retained_live_evidence": "HISTORICAL_EXTERNAL_ONLY",
+  "connected_infrastructure_validation": "REQUIRED_BEFORE_DEPLOYMENT",
+  "repository_controlled_blockers": [],
+  "external_prerequisites": [
+    "Elasticsearch and Kibana 9.4.3 endpoints with scoped credentials and trusted CA certificates",
+    "Healthy Fleet Server 9.4.3 and an enrolled Elastic Agent 9.4.3",
+    "Reachable WatchMyAI runtime and telemetry gateway",
+    "Disposable Ubuntu and Windows lab roles for platform-specific scenarios",
+    "Protected staging and production environments for any connected rule import"
+  ],
+  "commands": {
+    "install_linux": "./scripts/install/install.sh",
+    "install_windows": ".\\scripts\\install\\install.ps1",
+    "validate_config": ".venv/bin/python scripts/validate/validate_config.py --config .env",
+    "preflight_linux": "./scripts/validate/preflight.sh",
+    "preflight_windows": ".\\scripts\\validate\\preflight.ps1",
+    "import_rules": ".venv/bin/python scripts/import/import_rules.py --dry-run",
+    "validate_supported_rules": ".venv/bin/python scripts/validate/run_supported_rules.py"
+  }
+}

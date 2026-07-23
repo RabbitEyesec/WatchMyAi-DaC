@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://watchmyai.invalid/schemas/elastic_rule.schema.json",
+  "title": "Elastic Security Detection Engine import object subset used by WatchMyAI",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "author",
+    "description",
+    "enabled",
+    "false_positives",
+    "from",
+    "index",
+    "interval",
+    "language",
+    "license",
+    "max_signals",
+    "name",
+    "note",
+    "query",
+    "references",
+    "risk_score",
+    "rule_id",
+    "rule_source",
+    "severity",
+    "tags",
+    "to",
+    "type",
+    "version"
+  ],
+  "properties": {
+    "author": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "description": {"type": "string", "minLength": 1},
+    "enabled": {"const": false},
+    "false_positives": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "from": {"type": "string", "pattern": "^now-[1-9][0-9]*[smhd]$"},
+    "index": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "interval": {"type": "string", "pattern": "^[1-9][0-9]*[smhd]$"},
+    "language": {"enum": ["kuery", "eql", "esql"]},
+    "license": {"const": "Apache-2.0"},
+    "max_signals": {"type": "integer", "minimum": 1},
+    "name": {"type": "string", "minLength": 1},
+    "note": {"type": "string", "minLength": 1},
+    "query": {"type": "string", "minLength": 1},
+    "references": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "risk_score": {"type": "integer", "minimum": 0, "maximum": 100},
+    "rule_id": {"type": "string", "pattern": "^WMAI-[0-9]{3}$"},
+    "rule_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {"type": {"const": "internal"}}
+    },
+    "severity": {"enum": ["low", "medium", "high", "critical"]},
+    "tags": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "threshold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field", "value"],
+      "properties": {
+        "field": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"type": "string"}},
+        "value": {"type": "integer", "minimum": 1}
+      }
+    },
+    "to": {"const": "now"},
+    "type": {"enum": ["query", "threshold", "eql", "esql", "new_terms"]},
+    "version": {"type": "integer", "minimum": 1}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"type": {"const": "threshold"}}},
+      "then": {"required": ["threshold"], "properties": {"language": {"const": "kuery"}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "query"}}},
+      "then": {"properties": {"language": {"const": "kuery"}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "eql"}}},
+      "then": {"properties": {"language": {"const": "eql"}}}
+    },
+    {
+      "if": {"properties": {"type": {"const": "esql"}}},
+      "then": {"properties": {"language": {"const": "esql"}}}
+    }
+  ]
+}

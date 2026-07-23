@@ -1,0 +1,82 @@
+{
+  "events": [
+    {
+      "@timestamp": "2026-07-16T00:00:01Z",
+      "event": {
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ]
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "command_line": "whoami",
+        "entity_id": "process-1",
+        "name": "whoami",
+        "parent": {
+          "entity_id": "agent-parent-1",
+          "name": "codex"
+        }
+      },
+      "user": {
+        "name": "lab-user"
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:02Z",
+      "event": {
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ]
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "command_line": "curl https://lab.example.invalid/tool",
+        "entity_id": "process-2",
+        "name": "curl",
+        "parent": {
+          "entity_id": "other-parent",
+          "name": "codex"
+        }
+      },
+      "user": {
+        "name": "lab-user"
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:03Z",
+      "event": {
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ]
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "command_line": "sh /tmp/tool",
+        "entity_id": "process-3",
+        "name": "sh",
+        "parent": {
+          "entity_id": "agent-parent-1",
+          "name": "codex"
+        }
+      },
+      "user": {
+        "name": "lab-user"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{"direction":"client","message":{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","clientInfo":{"name":"claude_code","version":"2.0.1"},"capabilities":{}}}}
+{"direction":"server","message":{"jsonrpc":"2.0","id":1,"result":{"protocolVersion":"2025-03-26","serverInfo":{"name":"github-mcp","version":"1.4.2"},"capabilities":{"tools":{}}}}}
+{"direction":"client","message":{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}}
+{"direction":"server","message":{"jsonrpc":"2.0","id":2,"result":{"tools":[{"name":"create_issue","description":"Create a GitHub issue"},{"name":"list_repos","description":"List repositories"}]}}}
+{"direction":"client","message":{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"create_issue","arguments":{"repo":"acme/demo","title":"Flaky login test"}}}}
+{"direction":"server","message":{"jsonrpc":"2.0","id":3,"result":{"content":[{"type":"text","text":"created issue #42"}],"isError":false}}}
+{"direction":"client","message":{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"create_issue","arguments":{"repo":"forbidden/repo","title":"x"}}}}
+{"direction":"server","message":{"jsonrpc":"2.0","id":4,"error":{"code":-32001,"message":"repository not accessible"}}}

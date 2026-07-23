@@ -1,0 +1,56 @@
+{
+  "case_id": "negative-WMAI-022",
+  "case_type": "deterministic_unit_fixture_not_measured_efficacy",
+  "rule_id": "WMAI-022",
+  "expected_match": false,
+  "events": [
+    {
+      "@timestamp": "2026-07-20T04:00:00.000Z",
+      "event": {
+        "id": "fixture-WMAI-022-000",
+        "kind": "event",
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ],
+        "action": "tool_request",
+        "dataset": "watchmyai.events",
+        "provider": "watchmyai"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-022",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "watchmyai": {
+        "schema": {
+          "version": "1.1.0"
+        },
+        "agent": {
+          "id": "fixture-agent",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "session": {
+          "id": "fixture-session-WMAI-022"
+        },
+        "action": {
+          "id": "fixture-action-WMAI-022-000"
+        },
+        "tool": {
+          "name": "Bash",
+          "category": "shell",
+          "arguments": {
+            "command": "echo safe"
+          }
+        }
+      }
+    }
+  ]
+}

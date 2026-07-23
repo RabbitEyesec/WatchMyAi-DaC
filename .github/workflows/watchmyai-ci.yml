@@ -1,0 +1,173 @@
+name: WatchMyAI CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: watchmyai-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  repository_gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-dev.lock
+      - name: Install the contributor/security environment
+        run: |
+          python -m pip install --require-hashes -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps .
+          python -m pip check
+      - name: Repository release gate
+        run: |
+          python scripts/validate/validate_project.py
+          python scripts/validate/validate_docs.py
+          python scripts/rules/reconcile_rules.py --check
+          (cd detection-rules && python scripts/validate.py)
+          python scripts/validate/validate_config.py --config .env.example --template
+          python scripts/validate/validate_telemetry_schema.py
+          python scripts/validate/validate_ndjson.py \
+            --telemetry-schema fixtures/telemetry/canonical.ndjson
+          python scripts/import/import_rules.py --dry-run
+          pytest
+      - name: Formatting, lint, typing, and security
+        run: |
+          ruff format --check telemetry-gateway/src telemetry-gateway/tests \
+            detection-rules/scripts detection-rules/tests scripts scenarios tests
+          ruff check telemetry-gateway/src telemetry-gateway/tests \
+            detection-rules/scripts detection-rules/tests scripts scenarios tests
+          mypy
+          bandit -q -r telemetry-gateway/src -ll
+          pip-audit --strict --requirement requirements-release.lock
+      - name: Validate executable entry points
+        run: |
+          bash -n scripts/install/install.sh scripts/validate/preflight.sh \
+            detection-rules/deployment/export_rules.sh \
+            telemetry-gateway/deployment/elastic/load-assets.sh
+          python -m compileall -q scripts scenarios tests telemetry-gateway/src detection-rules/scripts
+      - name: Validate reproducible release outputs
+        run: python scripts/preflight.py --repository-only
+      - name: Reject generated drift and whitespace errors
+        run: |
+          git diff --exit-code
+          git diff --check
+
+  cross_platform_tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: requirements-release.lock
+      - run: python -m pip install --require-hashes -r requirements-release.lock
+      - run: python -m pip install --no-build-isolation --no-deps .
+      - run: pytest
+      - name: Gateway packaged-resource self-validation
+        env:
+          WATCHMYAI_ALLOW_UNSIGNED_POLICY: "1"
+        run: |
+          python -m watchmyai.cli.main --home ./.ci-wmai init
+          python -m watchmyai.cli.main --home ./.ci-wmai self-check
+
+  documented_user_journey:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-release.lock
+      - name: Install exactly as QUICKSTART documents
+        run: ./scripts/install/install.sh
+      - name: Exercise setup, verify, validate, uninstall, and reinstall
+        run: |
+          .venv/bin/watchmyai --home "${RUNNER_TEMP}/watchmyai-home" setup \
+            --repository-only --non-interactive
+          .venv/bin/watchmyai --home "${RUNNER_TEMP}/watchmyai-home" verify \
+            --repository-only
+          .venv/bin/watchmyai validate --static-only \
+            --output "${RUNNER_TEMP}/validation-results.json"
+          .venv/bin/watchmyai --home "${RUNNER_TEMP}/watchmyai-home" uninstall --yes
+          .venv/bin/watchmyai --home "${RUNNER_TEMP}/watchmyai-home" setup \
+            --repository-only --non-interactive
+          .venv/bin/watchmyai --home "${RUNNER_TEMP}/watchmyai-home" verify \
+            --repository-only
+
+  powershell_syntax:
+    runs-on: windows-2022
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Parse PowerShell entry points
+        shell: pwsh
+        run: |
+          $Failures = @()
+          Get-ChildItem -Path . -Recurse -Filter *.ps1 | ForEach-Object {
+            $Tokens = $null
+            $Errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile(
+              $_.FullName, [ref]$Tokens, [ref]$Errors
+            )
+            if ($Errors.Count -gt 0) {
+              $Failures += $Errors | ForEach-Object { "$($_.Extent.File): $($_.Message)" }
+            }
+          }
+          if ($Failures.Count -gt 0) { $Failures | Write-Error; exit 1 }
+
+  build_release:
+    needs: [repository_gate, cross_platform_tests, powershell_syntax]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-release.lock
+      - run: |
+          python -m pip install --require-hashes -r requirements-release.lock
+          python -m pip install --no-build-isolation --no-deps .
+      - name: Build and verify the complete deterministic release set
+        run: |
+          export SOURCE_DATE_EPOCH="$(git log -1 --format=%ct)"
+          python scripts/utilities/build_release.py
+          (cd dist && sha256sum --check SHA256SUMS.txt)
+      - name: Verify wheel runtime resources
+        run: |
+          python -m venv .wheel-smoke
+          .wheel-smoke/bin/pip install --no-deps dist/*.whl
+          .wheel-smoke/bin/watchmyai --home ./.wheel-smoke-home init
+          .wheel-smoke/bin/watchmyai --home ./.wheel-smoke-home self-check
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: watchmyai-release
+          path: dist/*
+          if-no-files-found: error

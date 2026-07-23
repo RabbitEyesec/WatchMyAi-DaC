@@ -1,0 +1,38 @@
+{
+  "atomic_id": "ATOMIC-024-BASE",
+  "rule_id": "WMAI-024",
+  "tier": "T3",
+  "execution": "real_adapter_required",
+  "safety": "isolated_lab_only; destructive effects must be redirected to disposable resources",
+  "input": {
+    "@timestamp": "2026-07-20T04:00:00.000Z",
+    "event": {
+      "id": "fixture-WMAI-024-000",
+      "kind": "event",
+      "category": [
+        "file"
+      ],
+      "type": [
+        "deletion"
+      ],
+      "action": "file_deletion",
+      "dataset": "endpoint.events.file",
+      "provider": "elastic_endpoint"
+    },
+    "host": {
+      "name": "watchmyai-validation-host"
+    },
+    "process": {
+      "entity_id": "fixture-process-WMAI-024",
+      "working_directory": "/tmp/watchmyai-validation"
+    },
+    "file": {
+      "path": "/tmp/watchmyai-validation/file-000"
+    }
+  },
+  "event_count": 20,
+  "expected": {
+    "runtime": "schema_1.1.0_event_emitted",
+    "elastic_alerts": 1
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "author": [
+    "WatchMyAI contributors"
+  ],
+  "description": "Detects recursive, world-writable, set-ID or root ownership changes launched directly by a supported CLI AI agent.",
+  "enabled": false,
+  "false_positives": [
+    "Approved maintenance or controlled laboratory activity can resemble dangerous chmod/chown."
+  ],
+  "from": "now-6m",
+  "index": [
+    "logs-endpoint.events.process-*",
+    "logs-windows.sysmon_operational-*",
+    "winlogbeat-*"
+  ],
+  "interval": "5m",
+  "language": "kuery",
+  "license": "Apache-2.0",
+  "max_signals": 100,
+  "name": "Dangerous chmod/chown",
+  "note": "## Expected alert\n\nOne high-severity alert for Dangerous chmod/chown, preserving the fields declared by this rule.\n\n## Investigation\n\n1. Confirm the originating AI task, human owner and relevant policy version.\n2. Inspect the source event, process ancestry and affected resource evidence.\n3. Validate approvals and determine whether the observed action was authorized.\n4. Preserve timestamps and stable correlation identifiers before containment.\n\n## Limitations\n\n- Immediate-parent attribution can miss shell grandchildren and must be confirmed for each agent version.\n- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.\n- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.",
+  "query": "event.category:process and event.type:start and process.parent.name:(aider or aider.exe or claude or claude.exe or codex or codex.exe or copilot or copilot.exe or gemini or gemini.exe) and ((process.name:(chmod or chmod.exe) and process.command_line:(\"* -R *\" or \"* 777 *\" or \"*a+rwx*\" or \"*g+s*\" or \"*u+s*\")) or (process.name:(chown or chown.exe) and process.command_line:(\"* -R *\" or \"* root*\" or \"* root:*\" or \"* :root *\")))",
+  "references": [
+    "docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-064",
+    "https://www.elastic.co/docs/reference/ecs"
+  ],
+  "risk_score": 73,
+  "rule_id": "WMAI-064",
+  "rule_source": {
+    "type": "internal"
+  },
+  "severity": "high",
+  "tags": [
+    "WatchMyAI",
+    "AI Agent",
+    "CLI Agent",
+    "Maturity: validated",
+    "Custom telemetry: false",
+    "Endpoint building block"
+  ],
+  "to": "now",
+  "type": "query",
+  "version": 1
+}

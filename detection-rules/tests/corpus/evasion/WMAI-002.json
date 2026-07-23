@@ -1,0 +1,35 @@
+{
+  "rule_id": "WMAI-002",
+  "variants": [
+    {
+      "variant_id": "EVASION-002-01",
+      "class": "alternate-form",
+      "description": "Use an equivalent alternate request form",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-002-02",
+      "class": "boundary-value",
+      "description": "Exercise the configured policy boundary",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-002-03",
+      "class": "adapter-path",
+      "description": "Exercise another supported adapter path",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-002-04",
+      "class": "correlation-order",
+      "description": "Vary safe evidence timing and ordering",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-002-05",
+      "class": "platform-form",
+      "description": "Use the supported platform-specific form",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

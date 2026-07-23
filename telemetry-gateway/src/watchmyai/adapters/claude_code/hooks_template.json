@@ -1,0 +1,14 @@
+{
+  "_comment": "Template merged by `watchmyai install claude`. PreToolUse returns a policy decision before execution; lifecycle hooks emit secondary evidence.",
+  "hooks": {
+    "SessionStart": [{ "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }],
+    "SessionEnd": [{ "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }],
+    "UserPromptSubmit": [{ "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }],
+    "PreToolUse": [{ "matcher": "*", "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }],
+    "PostToolUse": [{ "matcher": "*", "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }],
+    "Notification": [{ "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }],
+    "Stop": [{ "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }],
+    "SubagentStop": [{ "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }],
+    "PreCompact": [{ "hooks": [{ "type": "command", "command": "watchmyai hook claude", "timeout": 10 }] }]
+  }
+}

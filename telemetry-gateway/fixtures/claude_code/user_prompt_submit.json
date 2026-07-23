@@ -1,0 +1,7 @@
+{
+  "session_id": "cc-sess-0001",
+  "transcript_path": "/Users/dev/.claude/projects/demo/transcript-0001.jsonl",
+  "cwd": "/Users/dev/projects/demo",
+  "hook_event_name": "UserPromptSubmit",
+  "prompt": "Fix the failing login test and use api_key=SYNTHETIC_REDACTION_VALUE to call the staging API"
+}

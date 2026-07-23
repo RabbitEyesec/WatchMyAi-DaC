@@ -1,0 +1,118 @@
+rule_id: WMAI-056
+name: Mass repository modification
+description: Detects at least 100 file changes for one repository and process entity in one rule window.
+category: CLI Agent
+maturity: validated
+version: 1.1.0
+author: WatchMyAI contributors
+severity: medium
+risk_score: 47
+confidence: medium
+threat_scenario: A WatchMyAI runtime or deterministic policy producer records mass repository modification
+  during an AI-agent task, requiring correlation with the declared approval, task, session, and endpoint
+  evidence.
+target_agents:
+- Claude Code
+- Codex CLI
+- Gemini CLI
+- Cursor Agent
+- Cline
+- Roo Code
+- Aider
+- GitHub Copilot CLI
+- Other CLI agents (telemetry dependent)
+required_telemetry:
+- WatchMyAI Telemetry Gateway 1.1.0 observations, policy decisions, stable session/task/action identifiers,
+  and ECS endpoint context
+required_fields:
+- event.action
+- event.category
+- event.dataset
+- event.type
+- file.path
+- process.entity_id
+- watchmyai.repository.id
+data_sources:
+- WatchMyAI Telemetry Gateway (`logs-watchmyai.events-*`)
+custom_telemetry: true
+endpoint_only: false
+correlation: true
+detection_logic:
+  kind: threshold
+  query: event.dataset:watchmyai.events and event.action:ai_file_access and event.category:file and event.type:(change
+    or creation or deletion) and watchmyai.repository.id:*
+  threshold:
+    field:
+    - watchmyai.repository.id
+    - process.entity_id
+    value: 100
+elastic:
+  type: threshold
+  language: kuery
+  query: event.dataset:watchmyai.events and event.action:ai_file_access and event.category:file and event.type:(change
+    or creation or deletion) and watchmyai.repository.id:*
+  index_patterns:
+  - logs-watchmyai.events-*
+  interval: 5m
+  from: now-6m
+  enabled: false
+  threshold:
+    field:
+    - watchmyai.repository.id
+    - process.entity_id
+    value: 100
+  target_stack_versions:
+  - 8.17+
+  - 9.x
+  lab_tested_versions: []
+sigma:
+  status: not_applicable
+  path: null
+  reason: The detection requires a threshold or ordered multi-event correlation that a portable event-level
+    Sigma rule would not preserve.
+false_positives:
+- Approved maintenance or controlled laboratory activity can resemble mass repository modification.
+tuning_guidance: Tune only in a controlled Elastic lab, scoping exceptions to explicit policy IDs and
+  approved workflows while preserving the underlying evidence predicates.
+investigation_steps:
+- Confirm the originating AI task, human owner and relevant policy version.
+- Inspect the source event, process ancestry and affected resource evidence.
+- Validate approvals and determine whether the observed action was authorized.
+- Preserve timestamps and stable correlation identifiers before containment.
+limitations:
+- The rule requires WatchMyAI Telemetry Gateway 1.1.0; standard endpoint integrations do not emit the
+  AI-specific fields.
+- Synthetic fixture validation does not claim live-production validation; controlled Elastic replay is
+  still required.
+validation_scenario: Replay a synthetic mass repository modification event and a challenging benign event;
+  then repeat with the target agent in the controlled lab.
+expected_alert: One medium-severity alert for Mass repository modification, preserving the fields declared
+  by this rule.
+fixtures:
+  malicious: tests/fixtures/malicious/WMAI-056.json
+  benign: tests/fixtures/benign/WMAI-056.json
+related_rules:
+- WMAI-023
+- WMAI-055
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-056
+- https://www.elastic.co/docs/reference/ecs
+- ../telemetry-gateway/docs/TELEMETRY_SCHEMA.md
+threat_mappings: []
+deployment:
+  packageable: true
+  status: lab_candidate
+blocked_reason: null
+history:
+- version: 1.0.0
+  date: '2026-07-16'
+  author: WatchMyAI contributors
+  change: Initial accountable definition for controlled laboratory validation.
+- version: 1.0.0
+  date: '2026-07-16'
+  author: Independent expert review remediation
+  change: Blocked deployment until repository identity is present in real file-event telemetry.
+- version: 1.1.0
+  date: '2026-07-16'
+  author: WatchMyAI contributors
+  change: Connected the rule to the versioned gateway producer and controlled Elastic test package.

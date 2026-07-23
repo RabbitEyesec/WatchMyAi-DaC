@@ -1,0 +1,33 @@
+{
+  "description": "Desktop discovery snapshot: Cursor with a child helper and a shell spawned beneath it (ancestry correlation).",
+  "processes": [
+    { "pid": 1, "name": "launchd", "executable": "/sbin/launchd", "command_line": "/sbin/launchd", "ppid": 0, "username": "root" },
+    {
+      "pid": 610,
+      "name": "Cursor",
+      "executable": "/Applications/Cursor.app/Contents/MacOS/Cursor",
+      "command_line": "/Applications/Cursor.app/Contents/MacOS/Cursor",
+      "ppid": 1,
+      "parent_name": "launchd",
+      "username": "dev"
+    },
+    {
+      "pid": 611,
+      "name": "Cursor Helper",
+      "executable": "/Applications/Cursor.app/Contents/Frameworks/Cursor Helper.app/Contents/MacOS/Cursor Helper",
+      "command_line": "/Applications/Cursor.app/Contents/Frameworks/Cursor Helper.app/Contents/MacOS/Cursor Helper --type=utility",
+      "ppid": 610,
+      "parent_name": "Cursor",
+      "username": "dev"
+    },
+    {
+      "pid": 612,
+      "name": "bash",
+      "executable": "/bin/bash",
+      "command_line": "bash -c 'git status'",
+      "ppid": 611,
+      "parent_name": "Cursor Helper",
+      "username": "dev"
+    }
+  ]
+}

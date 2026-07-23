@@ -1,0 +1,47 @@
+{
+  "rule_id": "WMAI-060",
+  "variants": [
+    {
+      "variant_id": "EVASION-060-01",
+      "class": "docker-podman",
+      "description": "Use Docker or Podman against the disposable runtime",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-060-02",
+      "class": "compose",
+      "description": "Use a disposable Compose definition",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-060-03",
+      "class": "remote-context",
+      "description": "Select an isolated remote context",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-060-04",
+      "class": "privileged-flag",
+      "description": "Vary the privileged flag syntax",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-060-05",
+      "class": "socket-access",
+      "description": "Request access to a disposable runtime socket",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-060-06",
+      "class": "script-wrapper",
+      "description": "Wrap the runtime client in a script",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-060-07",
+      "class": "api-client",
+      "description": "Use an API client where observable",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

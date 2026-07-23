@@ -1,0 +1,23 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "category": [
+      "registry"
+    ],
+    "type": [
+      "change"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "process": {
+    "entity_id": "process-1"
+  },
+  "registry": {
+    "path": "HKCU\\Software\\WatchMyAI\\Theme"
+  },
+  "user": {
+    "name": "lab-user"
+  }
+}

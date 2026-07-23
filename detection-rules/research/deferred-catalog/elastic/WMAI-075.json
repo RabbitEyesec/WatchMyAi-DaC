@@ -1,0 +1,44 @@
+{
+  "author": [
+    "WatchMyAI contributors"
+  ],
+  "description": "Correlates secret discovery, archive creation and transfer tooling under one parent process within ten minutes.",
+  "enabled": false,
+  "false_positives": [
+    "Approved maintenance or controlled laboratory activity can resemble high-risk multi-stage execution chain."
+  ],
+  "from": "now-6m",
+  "index": [
+    "logs-endpoint.events.process-*",
+    "logs-windows.sysmon_operational-*",
+    "winlogbeat-*"
+  ],
+  "interval": "5m",
+  "language": "eql",
+  "license": "Apache-2.0",
+  "max_signals": 100,
+  "name": "High-risk multi-stage execution chain",
+  "note": "## Expected alert\n\nOne critical-severity alert for High-risk multi-stage execution chain, preserving the fields declared by this rule.\n\n## Investigation\n\n1. Confirm the originating AI task, human owner and relevant policy version.\n2. Inspect the source event, process ancestry and affected resource evidence.\n3. Validate approvals and determine whether the observed action was authorized.\n4. Preserve timestamps and stable correlation identifiers before containment.\n\n## Limitations\n\n- This endpoint sequence is a high-risk heuristic and does not prove data content or authorization.\n- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.\n- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.",
+  "query": "sequence by process.parent.entity_id with maxspan=10m\n  [process where event.type == \"start\" and process.name in (\"grep\", \"rg\", \"cat\")]\n  [process where event.type == \"start\" and process.name in (\"tar\", \"zip\", \"7z\")]\n  [process where event.type == \"start\" and process.name in (\"curl\", \"scp\", \"sftp\")]",
+  "references": [
+    "docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-075",
+    "https://www.elastic.co/docs/reference/ecs"
+  ],
+  "risk_score": 91,
+  "rule_id": "WMAI-075",
+  "rule_source": {
+    "type": "internal"
+  },
+  "severity": "critical",
+  "tags": [
+    "WatchMyAI",
+    "AI Agent",
+    "CLI Agent",
+    "Maturity: validated",
+    "Custom telemetry: false",
+    "Endpoint building block"
+  ],
+  "to": "now",
+  "type": "eql",
+  "version": 1
+}

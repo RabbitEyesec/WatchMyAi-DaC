@@ -1,0 +1,47 @@
+{
+  "rule_id": "WMAI-059",
+  "variants": [
+    {
+      "variant_id": "EVASION-059-01",
+      "class": "cloud-cli-family",
+      "description": "Use aws, gcloud, az, or oci against test configuration",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-059-02",
+      "class": "profile-flag",
+      "description": "Select a synthetic profile flag",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-059-03",
+      "class": "environment-credentials",
+      "description": "Reference synthetic environment credentials",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-059-04",
+      "class": "config-file",
+      "description": "Reference a synthetic cloud configuration file",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-059-05",
+      "class": "credential-helper",
+      "description": "Invoke a synthetic credential process or helper",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-059-06",
+      "class": "script-wrapper",
+      "description": "Wrap the cloud client in a script",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-059-07",
+      "class": "alternate-binary",
+      "description": "Use an alternate binary path",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

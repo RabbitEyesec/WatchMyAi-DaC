@@ -1,0 +1,53 @@
+{
+  "rule_id": "WMAI-030",
+  "variants": [
+    {
+      "variant_id": "EVASION-030-01",
+      "class": "curl-wget",
+      "description": "Use curl or wget against the disposable endpoint",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-030-02",
+      "class": "language-socket",
+      "description": "Use a Python or Node socket client",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-030-03",
+      "class": "ip-literal",
+      "description": "Address the disposable endpoint by IP literal",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-030-04",
+      "class": "dns-name",
+      "description": "Address the disposable endpoint by DNS name",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-030-05",
+      "class": "alternate-port",
+      "description": "Use an unapproved alternate lab port",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-030-06",
+      "class": "proxy-variable",
+      "description": "Route through a lab proxy variable",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-030-07",
+      "class": "redirect",
+      "description": "Follow a redirect within the disposable lab",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-030-08",
+      "class": "script",
+      "description": "Place the network operation inside a script",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

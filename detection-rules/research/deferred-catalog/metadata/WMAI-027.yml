@@ -1,0 +1,97 @@
+rule_id: WMAI-027
+name: Scheduled Task Creation
+description: Detects command-line creation of a Windows scheduled task.
+category: Persistence
+maturity: validated
+version: 1.0.0
+author: WatchMyAI contributors
+severity: medium
+risk_score: 47
+confidence: medium
+threat_scenario: During an AI-assisted task, endpoint telemetry records scheduled task creation, creating
+  potential risk to the affected host or resource.
+target_agents:
+- Claude Code
+- Codex CLI
+- Gemini CLI
+- Cursor
+- Cline
+- Roo Code
+- Aider
+- GitHub Copilot CLI
+- Desktop AI agents (telemetry dependent)
+required_telemetry:
+- Elastic Agent, Sysmon, Windows Event Logs, DNS logs, firewall or proxy logs, file integrity monitoring,
+  process creation and AI session metadata
+required_fields:
+- event.category
+- event.type
+- process.name
+- process.command_line
+data_sources:
+- Elastic Defend
+- Sysmon
+- ECS process events
+custom_telemetry: false
+endpoint_only: true
+correlation: false
+detection_logic:
+  kind: query
+  query: event.category:process and event.type:start and (process.name:(schtasks.exe or schtasks) and
+    process.command_line:("* /create *" or "*/create *") or process.name:(powershell.exe or pwsh.exe)
+    and process.command_line:"*Register-ScheduledTask*")
+elastic:
+  type: query
+  language: kuery
+  query: event.category:process and event.type:start and (process.name:(schtasks.exe or schtasks) and
+    process.command_line:("* /create *" or "*/create *") or process.name:(powershell.exe or pwsh.exe)
+    and process.command_line:"*Register-ScheduledTask*")
+  index_patterns:
+  - logs-endpoint.events.process-*
+  - logs-windows.sysmon_operational-*
+  - winlogbeat-*
+  interval: 5m
+  from: now-6m
+  enabled: false
+  target_stack_versions:
+  - 8.17+
+  - 9.x
+  lab_tested_versions: []
+sigma:
+  status: implemented
+  path: detections/sigma/WMAI-027.yml
+  reason: null
+false_positives:
+- Approved maintenance or controlled laboratory activity can resemble scheduled task creation.
+tuning_guidance: Baseline scheduled task creation in the isolated lab, then tune only the documented paths,
+  executables, thresholds, join fields, or approved workflows without removing evidence fields.
+investigation_steps:
+- Confirm the originating AI task, human owner and relevant policy version.
+- Inspect the source event, process ancestry and affected resource evidence.
+- Validate approvals and determine whether the observed action was authorized.
+- Preserve timestamps and stable correlation identifiers before containment.
+limitations:
+- Task Scheduler API activity without the covered command lines needs Windows task telemetry.
+- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.
+- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+validation_scenario: Replay a synthetic scheduled task creation event and a challenging benign event;
+  then repeat with the target agent in the controlled lab.
+expected_alert: One medium-severity alert for Scheduled Task Creation, preserving the fields declared
+  by this rule.
+fixtures:
+  malicious: tests/fixtures/malicious/WMAI-027.json
+  benign: tests/fixtures/benign/WMAI-027.json
+related_rules: []
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-027
+- https://www.elastic.co/docs/reference/ecs
+threat_mappings: []
+deployment:
+  packageable: true
+  status: lab_candidate
+blocked_reason: null
+history:
+- version: 1.0.0
+  date: '2026-07-16'
+  author: WatchMyAI contributors
+  change: Initial accountable definition for controlled laboratory validation.

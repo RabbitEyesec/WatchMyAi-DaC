@@ -1,0 +1,19 @@
+{
+  "rule_id": "WMAI-009",
+  "schema_version": "1.1.0",
+  "required_fields": [
+    "event.action",
+    "event.dataset",
+    "watchmyai.policy.violation.type"
+  ],
+  "required_correlations": [
+    "watchmyai.session.id",
+    "watchmyai.action.id"
+  ],
+  "prohibited_fields": [
+    "watchmyai.approval.id",
+    "watchmyai.prompt.text",
+    "secret.value"
+  ],
+  "status": "REQUIRES_LIVE_PRODUCER"
+}

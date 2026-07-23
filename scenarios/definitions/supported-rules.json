@@ -1,0 +1,205 @@
+{
+  "version": "1.0.0",
+  "scenarios": [
+    {
+      "scenario_id": "SCN-WMAI-001",
+      "rule_id": "WMAI-001",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-001.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-002",
+      "rule_id": "WMAI-002",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-002.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-007",
+      "rule_id": "WMAI-007",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-007.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-009",
+      "rule_id": "WMAI-009",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-009.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-022",
+      "rule_id": "WMAI-022",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-022.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-023",
+      "rule_id": "WMAI-023",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-023.json",
+      "destructive": true,
+      "ingest_mode": "endpoint_native"
+    },
+    {
+      "scenario_id": "SCN-WMAI-024",
+      "rule_id": "WMAI-024",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-024.json",
+      "destructive": true,
+      "ingest_mode": "endpoint_native"
+    },
+    {
+      "scenario_id": "SCN-WMAI-025",
+      "rule_id": "WMAI-025",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-025.json",
+      "destructive": true,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-030",
+      "rule_id": "WMAI-030",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-030.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-048",
+      "rule_id": "WMAI-048",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-048.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-051",
+      "rule_id": "WMAI-051",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-051.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-053",
+      "rule_id": "WMAI-053",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-053.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-054",
+      "rule_id": "WMAI-054",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-054.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-055",
+      "rule_id": "WMAI-055",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-055.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-057",
+      "rule_id": "WMAI-057",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-057.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-058",
+      "rule_id": "WMAI-058",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-058.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-059",
+      "rule_id": "WMAI-059",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-059.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-060",
+      "rule_id": "WMAI-060",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-060.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-061",
+      "rule_id": "WMAI-061",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-061.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    },
+    {
+      "scenario_id": "SCN-WMAI-063",
+      "rule_id": "WMAI-063",
+      "platforms": [
+        "neutral"
+      ],
+      "fixture": "detection-rules/tests/fixtures/malicious/WMAI-063.json",
+      "destructive": false,
+      "ingest_mode": "watchmyai_fixture"
+    }
+  ]
+}

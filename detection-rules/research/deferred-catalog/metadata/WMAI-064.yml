@@ -1,0 +1,103 @@
+rule_id: WMAI-064
+name: Dangerous chmod/chown
+description: Detects recursive, world-writable, set-ID or root ownership changes launched directly by
+  a supported CLI AI agent.
+category: CLI Agent
+maturity: validated
+version: 1.0.0
+author: WatchMyAI contributors
+severity: high
+risk_score: 73
+confidence: medium
+threat_scenario: During an AI-assisted task, endpoint telemetry records dangerous chmod/chown, creating
+  potential risk to the affected host or resource.
+target_agents:
+- Claude Code
+- Codex CLI
+- Gemini CLI
+- Cursor Agent
+- Cline
+- Roo Code
+- Aider
+- GitHub Copilot CLI
+- Other CLI agents (telemetry dependent)
+required_telemetry:
+- Elastic Agent, Sysmon, Windows Security logs, shell history where available, process creation, network
+  events, Git events, approval logs and AI session metadata
+required_fields:
+- event.category
+- event.type
+- process.command_line
+- process.name
+- process.parent.name
+data_sources:
+- Elastic Defend
+- Sysmon
+- ECS process events
+custom_telemetry: false
+endpoint_only: true
+correlation: false
+detection_logic:
+  kind: query
+  query: event.category:process and event.type:start and process.parent.name:(aider or aider.exe or claude
+    or claude.exe or codex or codex.exe or copilot or copilot.exe or gemini or gemini.exe) and ((process.name:(chmod
+    or chmod.exe) and process.command_line:("* -R *" or "* 777 *" or "*a+rwx*" or "*g+s*" or "*u+s*"))
+    or (process.name:(chown or chown.exe) and process.command_line:("* -R *" or "* root*" or "* root:*"
+    or "* :root *")))
+elastic:
+  type: query
+  language: kuery
+  query: event.category:process and event.type:start and process.parent.name:(aider or aider.exe or claude
+    or claude.exe or codex or codex.exe or copilot or copilot.exe or gemini or gemini.exe) and ((process.name:(chmod
+    or chmod.exe) and process.command_line:("* -R *" or "* 777 *" or "*a+rwx*" or "*g+s*" or "*u+s*"))
+    or (process.name:(chown or chown.exe) and process.command_line:("* -R *" or "* root*" or "* root:*"
+    or "* :root *")))
+  index_patterns:
+  - logs-endpoint.events.process-*
+  - logs-windows.sysmon_operational-*
+  - winlogbeat-*
+  interval: 5m
+  from: now-6m
+  enabled: false
+  target_stack_versions:
+  - 8.17+
+  - 9.x
+  lab_tested_versions: []
+sigma:
+  status: implemented
+  path: detections/sigma/WMAI-064.yml
+  reason: null
+false_positives:
+- Approved maintenance or controlled laboratory activity can resemble dangerous chmod/chown.
+tuning_guidance: Baseline dangerous chmod/chown in the isolated lab, then tune only the documented paths,
+  executables, thresholds, join fields, or approved workflows without removing evidence fields.
+investigation_steps:
+- Confirm the originating AI task, human owner and relevant policy version.
+- Inspect the source event, process ancestry and affected resource evidence.
+- Validate approvals and determine whether the observed action was authorized.
+- Preserve timestamps and stable correlation identifiers before containment.
+limitations:
+- Immediate-parent attribution can miss shell grandchildren and must be confirmed for each agent version.
+- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.
+- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+validation_scenario: Replay a synthetic dangerous chmod/chown event and a challenging benign event; then
+  repeat with the target agent in the controlled lab.
+expected_alert: One high-severity alert for Dangerous chmod/chown, preserving the fields declared by this
+  rule.
+fixtures:
+  malicious: tests/fixtures/malicious/WMAI-064.json
+  benign: tests/fixtures/benign/WMAI-064.json
+related_rules: []
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-064
+- https://www.elastic.co/docs/reference/ecs
+threat_mappings: []
+deployment:
+  packageable: true
+  status: lab_candidate
+blocked_reason: null
+history:
+- version: 1.0.0
+  date: '2026-07-16'
+  author: WatchMyAI contributors
+  change: Initial accountable definition for controlled laboratory validation.

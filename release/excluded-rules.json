@@ -1,0 +1,75 @@
+{
+  "release": "v1.0.0",
+  "rules": [
+    {
+      "rule_id": "WMAI-003",
+      "rule_name": "Access to Unapproved Repository",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-006",
+      "rule_name": "Access to Restricted Directories",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-010",
+      "rule_name": "Approval Replay",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-011",
+      "rule_name": "Approval Used for Different Payload",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-012",
+      "rule_name": "Resolved Path Mismatch",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-013",
+      "rule_name": "Rejected Action Executed",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-014",
+      "rule_name": "Expired Approval Used",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-034",
+      "rule_name": "Security Control Tampering",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-067",
+      "rule_name": "Unauthorized MCP Server Connection",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    },
+    {
+      "rule_id": "WMAI-070",
+      "rule_name": "Policy Bypass Attempt",
+      "reason": "not validated in v1.0.0",
+      "status": "excluded",
+      "future_telemetry_work_required": true
+    }
+  ]
+}

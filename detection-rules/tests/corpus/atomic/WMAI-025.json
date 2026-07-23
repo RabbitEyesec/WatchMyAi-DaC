@@ -1,0 +1,62 @@
+{
+  "atomic_id": "ATOMIC-025-BASE",
+  "rule_id": "WMAI-025",
+  "tier": "T1",
+  "execution": "real_adapter_required",
+  "safety": "isolated_lab_only; destructive effects must be redirected to disposable resources",
+  "input": {
+    "@timestamp": "2026-07-20T04:00:00.000Z",
+    "event": {
+      "id": "fixture-WMAI-025-000",
+      "kind": "event",
+      "category": [
+        "process"
+      ],
+      "type": [
+        "start"
+      ],
+      "action": "tool_request",
+      "dataset": "watchmyai.events",
+      "provider": "watchmyai"
+    },
+    "host": {
+      "name": "watchmyai-validation-host"
+    },
+    "process": {
+      "entity_id": "fixture-process-WMAI-025",
+      "working_directory": "/tmp/watchmyai-validation",
+      "command_line": "cat /tmp/watchmyai-validation/tool.exe"
+    },
+    "watchmyai": {
+      "schema": {
+        "version": "1.1.0"
+      },
+      "agent": {
+        "id": "fixture-agent",
+        "type": "known_ai_agent"
+      },
+      "attribution": {
+        "level": "confirmed"
+      },
+      "session": {
+        "id": "fixture-session-WMAI-025"
+      },
+      "action": {
+        "id": "fixture-action-WMAI-025-000"
+      },
+      "tool": {
+        "name": "Bash",
+        "category": "shell",
+        "arguments": {
+          "file_path": "/tmp/watchmyai-validation/tool.exe",
+          "command": "cat /tmp/watchmyai-validation/tool.exe"
+        }
+      }
+    }
+  },
+  "event_count": 1,
+  "expected": {
+    "runtime": "schema_1.1.0_event_emitted",
+    "elastic_alerts": 1
+  }
+}

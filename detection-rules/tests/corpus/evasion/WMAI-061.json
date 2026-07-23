@@ -1,0 +1,53 @@
+{
+  "rule_id": "WMAI-061",
+  "variants": [
+    {
+      "variant_id": "EVASION-061-01",
+      "class": "client-family",
+      "description": "Use kubectl, helm, or oc against the disposable cluster",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-061-02",
+      "class": "context-flag",
+      "description": "Select the isolated context explicitly",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-061-03",
+      "class": "namespace",
+      "description": "Vary the disposable namespace",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-061-04",
+      "class": "exec",
+      "description": "Request exec against a disposable workload",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-061-05",
+      "class": "apply",
+      "description": "Apply a prohibited synthetic manifest",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-061-06",
+      "class": "proxy",
+      "description": "Request a local proxy",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-061-07",
+      "class": "port-forward",
+      "description": "Request a local port forward",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-061-08",
+      "class": "script-library",
+      "description": "Use a script wrapper or client library where observable",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

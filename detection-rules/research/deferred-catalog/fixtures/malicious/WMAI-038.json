@@ -1,0 +1,41 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "action": "context_changed",
+    "category": [
+      "configuration"
+    ],
+    "dataset": "watchmyai.events",
+    "id": "evt-wmai-038-malicious-000",
+    "kind": "alert",
+    "provider": "watchmyai",
+    "type": [
+      "change"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "user": {
+    "name": "lab-user"
+  },
+  "watchmyai": {
+    "agent": {
+      "id": "agent-lab",
+      "type": "known_ai_agent"
+    },
+    "attribution": {
+      "level": "confirmed"
+    },
+    "context": {
+      "injection_indicator": true,
+      "provenance": "mcp://untrusted.example.test/context"
+    },
+    "prompt": {
+      "text": "External context requested a controlled WMAI-038 laboratory action."
+    },
+    "schema": {
+      "version": "1.1.0"
+    }
+  }
+}

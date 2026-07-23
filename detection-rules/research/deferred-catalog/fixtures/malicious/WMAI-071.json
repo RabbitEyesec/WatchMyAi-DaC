@@ -1,0 +1,45 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "action": "policy_violation",
+    "category": [
+      "configuration"
+    ],
+    "dataset": "watchmyai.events",
+    "id": "evt-wmai-071-malicious-000",
+    "kind": "alert",
+    "provider": "watchmyai",
+    "type": [
+      "change"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "user": {
+    "name": "lab-user"
+  },
+  "watchmyai": {
+    "agent": {
+      "id": "agent-lab",
+      "type": "known_ai_agent"
+    },
+    "approval": {
+      "id": "approval-wmai-071",
+      "max_uses": 2,
+      "use_count": 2
+    },
+    "attribution": {
+      "level": "confirmed"
+    },
+    "policy": {
+      "violation": {
+        "detected": true,
+        "type": "approval_replay_via_cli"
+      }
+    },
+    "schema": {
+      "version": "1.1.0"
+    }
+  }
+}

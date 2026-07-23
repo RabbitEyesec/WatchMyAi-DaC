@@ -1,0 +1,41 @@
+{
+  "author": [
+    "WatchMyAI contributors"
+  ],
+  "description": "Defines the deterministic Elastic match contract for indirect prompt injection indicator using WatchMyAI custom telemetry.",
+  "enabled": false,
+  "false_positives": [
+    "A producer classification or policy-version error could emit the violating state for an authorized action."
+  ],
+  "from": "now-6m",
+  "index": [
+    "logs-watchmyai.events-*"
+  ],
+  "interval": "5m",
+  "language": "kuery",
+  "license": "Apache-2.0",
+  "max_signals": 100,
+  "name": "Indirect Prompt Injection Indicator",
+  "note": "## Expected alert\n\nOne high-severity alert for Indirect Prompt Injection Indicator, preserving the fields declared by this rule.\n\n## Investigation\n\n1. Confirm the originating AI task, human owner and relevant policy version.\n2. Inspect the source event, process ancestry and affected resource evidence.\n3. Validate approvals and determine whether the observed action was authorized.\n4. Preserve timestamps and stable correlation identifiers before containment.\n\n## Limitations\n\n- The rule requires WatchMyAI Telemetry Gateway 1.1.0; standard endpoint integrations do not emit the AI-specific fields.\n- Synthetic fixture validation does not claim live-production validation; controlled Elastic replay is still required.",
+  "query": "event.dataset:watchmyai.events and event.action:context_changed and watchmyai.context.injection_indicator:true",
+  "references": [
+    "docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-038",
+    "../telemetry-gateway/docs/TELEMETRY_SCHEMA.md"
+  ],
+  "risk_score": 73,
+  "rule_id": "WMAI-038",
+  "rule_source": {
+    "type": "internal"
+  },
+  "severity": "high",
+  "tags": [
+    "WatchMyAI",
+    "AI Agent",
+    "Context",
+    "Maturity: validated",
+    "Custom telemetry: true"
+  ],
+  "to": "now",
+  "type": "query",
+  "version": 1
+}

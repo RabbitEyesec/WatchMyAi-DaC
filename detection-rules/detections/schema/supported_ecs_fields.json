@@ -1,0 +1,25 @@
+{
+  "schema": "ECS",
+  "verified_against": "https://www.elastic.co/docs/reference/ecs",
+  "fields": [
+    "@timestamp",
+    "event.action",
+    "event.category",
+    "event.dataset",
+    "event.type",
+    "file.extension",
+    "file.path",
+    "host.name",
+    "process.entity_id",
+    "process.executable",
+    "process.name",
+    "process.parent.command_line",
+    "process.parent.entity_id",
+    "process.parent.executable",
+    "process.parent.name",
+    "registry.path",
+    "threat.indicator.ip",
+    "threat.indicator.url.full",
+    "user.name"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "rule_id": "WMAI-025",
+  "variants": [
+    {
+      "variant_id": "EVASION-025-01",
+      "class": "direct-binary",
+      "description": "Write a harmless synthetic executable fixture",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-025-02",
+      "class": "script-extension",
+      "description": "Write an executable script extension",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-025-03",
+      "class": "chmod-after-write",
+      "description": "Add execute permission after writing",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-025-04",
+      "class": "extensionless-shebang",
+      "description": "Write an extensionless shebang fixture",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-025-05",
+      "class": "copied-executable",
+      "description": "Copy a harmless executable fixture",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-025-06",
+      "class": "decoded-payload",
+      "description": "Decode a harmless payload into an executable fixture",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-025-07",
+      "class": "archive-extraction",
+      "description": "Extract an executable fixture from an archive",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

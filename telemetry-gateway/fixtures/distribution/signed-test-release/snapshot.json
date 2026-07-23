@@ -1,0 +1,21 @@
+{
+  "signatures": [
+    {
+      "keyid": "434830b3f321df87ae48e01406e0ce15a7d05ee0aec14dcaaab738c1a72a0167",
+      "signature": "SFOSeuJXlMCDXxyxu2FlsTinc2sTjUsSLKzSwQ0Z2-3re8ngvpV0p3Dl5vNloVw_XTAr2yPleBi_ivASQp4MBA"
+    }
+  ],
+  "signed": {
+    "_type": "snapshot",
+    "expires_at": "2030-01-02T00:00:00Z",
+    "organization_id": "org-test",
+    "snapshot_version": 1,
+    "targets": {
+      "hashes": {
+        "sha256": "72e039aaaae7b4ccf0e9bb6e84f302f6681c65d1093341a737182c4acb98eda2"
+      },
+      "length": 923,
+      "metadata_version": 1
+    }
+  }
+}

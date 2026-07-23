@@ -1,0 +1,82 @@
+{
+  "WMAI-001": {
+    "malicious": "tests/fixtures/malicious/WMAI-001.json",
+    "benign": "tests/fixtures/benign/WMAI-001.json"
+  },
+  "WMAI-002": {
+    "malicious": "tests/fixtures/malicious/WMAI-002.json",
+    "benign": "tests/fixtures/benign/WMAI-002.json"
+  },
+  "WMAI-007": {
+    "malicious": "tests/fixtures/malicious/WMAI-007.json",
+    "benign": "tests/fixtures/benign/WMAI-007.json"
+  },
+  "WMAI-009": {
+    "malicious": "tests/fixtures/malicious/WMAI-009.json",
+    "benign": "tests/fixtures/benign/WMAI-009.json"
+  },
+  "WMAI-022": {
+    "malicious": "tests/fixtures/malicious/WMAI-022.json",
+    "benign": "tests/fixtures/benign/WMAI-022.json"
+  },
+  "WMAI-023": {
+    "malicious": "tests/fixtures/malicious/WMAI-023.json",
+    "benign": "tests/fixtures/benign/WMAI-023.json"
+  },
+  "WMAI-024": {
+    "malicious": "tests/fixtures/malicious/WMAI-024.json",
+    "benign": "tests/fixtures/benign/WMAI-024.json"
+  },
+  "WMAI-025": {
+    "malicious": "tests/fixtures/malicious/WMAI-025.json",
+    "benign": "tests/fixtures/benign/WMAI-025.json"
+  },
+  "WMAI-030": {
+    "malicious": "tests/fixtures/malicious/WMAI-030.json",
+    "benign": "tests/fixtures/benign/WMAI-030.json"
+  },
+  "WMAI-048": {
+    "malicious": "tests/fixtures/malicious/WMAI-048.json",
+    "benign": "tests/fixtures/benign/WMAI-048.json"
+  },
+  "WMAI-051": {
+    "malicious": "tests/fixtures/malicious/WMAI-051.json",
+    "benign": "tests/fixtures/benign/WMAI-051.json"
+  },
+  "WMAI-053": {
+    "malicious": "tests/fixtures/malicious/WMAI-053.json",
+    "benign": "tests/fixtures/benign/WMAI-053.json"
+  },
+  "WMAI-054": {
+    "malicious": "tests/fixtures/malicious/WMAI-054.json",
+    "benign": "tests/fixtures/benign/WMAI-054.json"
+  },
+  "WMAI-055": {
+    "malicious": "tests/fixtures/malicious/WMAI-055.json",
+    "benign": "tests/fixtures/benign/WMAI-055.json"
+  },
+  "WMAI-057": {
+    "malicious": "tests/fixtures/malicious/WMAI-057.json",
+    "benign": "tests/fixtures/benign/WMAI-057.json"
+  },
+  "WMAI-058": {
+    "malicious": "tests/fixtures/malicious/WMAI-058.json",
+    "benign": "tests/fixtures/benign/WMAI-058.json"
+  },
+  "WMAI-059": {
+    "malicious": "tests/fixtures/malicious/WMAI-059.json",
+    "benign": "tests/fixtures/benign/WMAI-059.json"
+  },
+  "WMAI-060": {
+    "malicious": "tests/fixtures/malicious/WMAI-060.json",
+    "benign": "tests/fixtures/benign/WMAI-060.json"
+  },
+  "WMAI-061": {
+    "malicious": "tests/fixtures/malicious/WMAI-061.json",
+    "benign": "tests/fixtures/benign/WMAI-061.json"
+  },
+  "WMAI-063": {
+    "malicious": "tests/fixtures/malicious/WMAI-063.json",
+    "benign": "tests/fixtures/benign/WMAI-063.json"
+  }
+}

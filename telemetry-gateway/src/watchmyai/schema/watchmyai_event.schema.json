@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://watchmyai.dev/schema/watchmyai_event/1.1.0",
+  "title": "WatchMyAI Master Telemetry Event 1.1",
+  "description": "ECS-compatible schema validated by the WatchMyAI 1.0.0 Elastic laboratory deployment.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["@timestamp", "event", "host", "watchmyai"],
+  "properties": {
+    "@timestamp": {"type": "string", "format": "date-time"},
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "category", "type", "action", "dataset", "provider"],
+      "properties": {
+        "id": {"type": "string", "minLength": 8},
+        "kind": {"enum": ["event", "alert", "metric", "state"]},
+        "category": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "type": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "action": {"type": "string", "minLength": 1},
+        "dataset": {"const": "watchmyai.events"},
+        "module": {"const": "watchmyai"},
+        "outcome": {"enum": ["success", "failure", "unknown"]},
+        "sequence": {"type": "integer", "minimum": 0},
+        "provider": {"const": "watchmyai"}
+      }
+    },
+    "host": {"$ref": "#/$defs/host"},
+    "user": {"$ref": "#/$defs/user"},
+    "process": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pid": {"type": "integer"},
+        "entity_id": {"type": "string"},
+        "name": {"type": "string"},
+        "executable": {"type": "string"},
+        "working_directory": {"type": "string"},
+        "exit_code": {"type": "integer"},
+        "command_line": {"type": "string"},
+        "parent": {"type": "object"},
+        "ancestry": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "network": {"type": "object"},
+    "destination": {"type": "object"},
+    "dns": {"type": "object"},
+    "file": {"type": "object"},
+    "registry": {"type": "object"},
+    "threat": {"type": "object"},
+    "error": {"type": "object", "properties": {"type": {"type": "string"}}},
+    "watchmyai": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "agent", "attribution"],
+      "properties": {
+        "schema": {"type": "object", "additionalProperties": false, "required": ["version"], "properties": {"version": {"const": "1.1.0"}}},
+        "agent": {"$ref": "#/$defs/agent"},
+        "adapter": {"$ref": "#/$defs/adapter"},
+        "attribution": {"$ref": "#/$defs/attribution"},
+        "visibility": {"type": "object", "additionalProperties": false, "properties": {"mode": {"enum": ["deep", "generic"]}}},
+        "human": {"type": "object", "additionalProperties": false, "properties": {"owner": {"type": "string"}}},
+        "session": {"$ref": "#/$defs/session"},
+        "task": {"$ref": "#/$defs/task"},
+        "request": {"$ref": "#/$defs/request"},
+        "action": {"$ref": "#/$defs/action"},
+        "tool": {"$ref": "#/$defs/tool"},
+        "command": {"$ref": "#/$defs/command"},
+        "resource": {"$ref": "#/$defs/resource"},
+        "repository": {"$ref": "#/$defs/repository"},
+        "destination": {"$ref": "#/$defs/wma_destination"},
+        "context": {"type": "object"},
+        "policy": {"$ref": "#/$defs/policy"},
+        "decision": {"$ref": "#/$defs/decision"},
+        "obligation": {"$ref": "#/$defs/obligation"},
+        "guarantee": {"$ref": "#/$defs/guarantee"},
+        "capability": {"$ref": "#/$defs/capability"},
+        "pep": {"$ref": "#/$defs/pep"},
+        "approval": {"$ref": "#/$defs/approval"},
+        "execution": {"$ref": "#/$defs/execution"},
+        "delegation": {"type": "object"},
+        "credential": {"type": "object"},
+        "network": {"type": "object"},
+        "dns": {"type": "object"},
+        "mcp": {"$ref": "#/$defs/mcp"},
+        "evidence": {"$ref": "#/$defs/evidence"},
+        "distribution": {"$ref": "#/$defs/distribution"},
+        "investigation": {"type": "object"},
+        "incident": {"type": "object"},
+        "data": {"type": "object"},
+        "redaction": {"type": "object"}
+      }
+    }
+  },
+  "$defs": {
+    "host": {
+      "type": "object", "required": ["name"],
+      "properties": {"id": {"type": "string"}, "name": {"type": "string", "minLength": 1}, "os": {"type": "object"}}
+    },
+    "user": {"type": "object", "properties": {"id": {"type": "string"}, "name": {"type": "string"}}},
+    "agent": {
+      "type": "object", "additionalProperties": false, "required": ["type"],
+      "properties": {
+        "id": {"type": "string"}, "name": {"type": "string"}, "parent_id": {"type": "string"},
+        "vendor": {"type": "string"}, "version": {"type": "string"},
+        "type": {"enum": ["known_ai_agent", "unknown_ai_agent", "gateway", "system"]},
+        "discovery_method": {"type": "string"}, "discovery_confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "adapter": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"id": {"type": "string"}, "version": {"type": "string"}, "mode": {"type": "string"}, "health": {"type": "string"}}
+    },
+    "attribution": {"type": "object", "additionalProperties": false, "required": ["level"], "properties": {"level": {"enum": ["confirmed", "strong", "probable", "weak", "unknown"]}}},
+    "session": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"id": {"type": "string"}, "claim_ids": {"type": "array", "items": {"type": "string"}}, "execution_count": {"type": "integer", "minimum": 0}, "risk_score": {"type": "integer", "minimum": 0, "maximum": 100}}
+    },
+    "task": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"id": {"type": "string"}, "hash": {"type": "string"}, "classification": {"type": "string"}, "project_id": {"type": "string"}, "objective_hash": {"type": "string"}}
+    },
+    "request": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string"}, "canonicalizer_version": {"type": "string"}, "payload_hash": {"type": "string"},
+        "argument_hash": {"type": "string"}, "target_hash": {"type": "string"}
+      }
+    },
+    "action": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string"}, "name": {"type": "string"}, "operation": {"type": "string"}, "sequence": {"type": "integer", "minimum": 0},
+        "execution_status": {"type": "string"}, "executed_at": {"type": "string", "format": "date-time"}, "command_hash": {"type": "string"},
+        "payload_hash": {"type": "string"}, "target_hash": {"type": "string"}, "resolved_path": {"type": "string"}
+      }
+    },
+    "tool": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string"}, "class": {"type": "string"}, "category": {"type": "string"},
+        "sequence": {"type": "integer", "minimum": 0},
+        "arguments": {
+          "type": "object", "additionalProperties": true,
+          "properties": {
+            "command": {"type": "string"}, "file_path": {"type": "string"},
+            "description": {"type": "string"}, "content": {"type": "string"},
+            "url": {"type": "string"}
+          }
+        },
+        "arguments_hash": {"type": "string"}, "description_hash": {"type": "string"}
+      }
+    },
+    "command": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"class": {"type": "string"}, "executable": {"type": "string"}, "operation": {"type": "string"}, "flags": {"type": "array", "items": {"type": "string"}}}
+    },
+    "resource": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "requested_count": {"type": "integer", "minimum": 0}, "resolved": {"type": "array", "items": {"type": "string"}},
+            "classes": {"type": "array", "items": {"type": "string"}}, "outside_approved_workspace": {"type": "boolean"}, "restricted": {"type": "boolean"},
+            "operation": {"type": "string"}
+          }
+        },
+        "file": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "operation": {"type": "string"}, "executable": {"type": "boolean"},
+            "approved_output": {"type": "boolean"}, "path_hash": {"type": "string"},
+            "artifact_type": {"type": "string"}
+          }
+        },
+        "network": {
+          "type": "object", "additionalProperties": false,
+          "properties": {"operation": {"type": "string"}}
+        },
+        "git": {"type": "object"}, "container": {"type": "object"}, "kubernetes": {"type": "object"}
+      }
+    },
+    "repository": {"type": "object", "additionalProperties": false, "properties": {"id": {"type": "string"}, "approved": {"type": "boolean"}, "remote_hash": {"type": "string"}}},
+    "wma_destination": {"type": "object", "additionalProperties": false, "properties": {"hash": {"type": "string"}, "approved": {"type": "boolean"}, "port": {"type": "integer"}, "scheme": {"type": "string"}}},
+    "policy": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "winning_policy_id": {"type": "string"}, "winning_policy_version": {"type": "string"},
+        "policy_bundle_id": {"type": "string"}, "policy_bundle_version": {"type": "string"}, "policy_sequence": {"type": "integer", "minimum": 0},
+        "match_evidence": {"type": "array", "items": {"type": "object"}},
+        "violation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["type"],
+          "properties": {"detected": {"type": "boolean"}, "type": {"type": "string"}}
+        }
+      }
+    },
+    "decision": {"type": "object", "additionalProperties": false, "properties": {"id": {"type": "string"}, "effect": {"enum": ["ALLOW", "DENY", "REQUIRE_APPROVAL", "MONITOR"]}, "reason_codes": {"type": "array", "items": {"type": "string"}}}},
+    "obligation": {"type": "object", "additionalProperties": false, "properties": {"requested": {"type": "array", "items": {"type": "string"}}, "effective": {"type": "array", "items": {"type": "string"}}, "status": {"type": "string"}}},
+    "guarantee": {"type": "object", "additionalProperties": false, "properties": {"status": {"enum": ["deterministic_pre_execution", "deterministic_post_execution", "cooperative", "degraded", "unavailable"]}}},
+    "capability": {"type": "object", "additionalProperties": false, "properties": {"coverage": {"type": "boolean"}, "fingerprint": {"type": "string"}, "required": {"type": "array", "items": {"type": "string"}}, "gaps": {"type": "array", "items": {"type": "string"}}}},
+    "pep": {"type": "object", "additionalProperties": false, "properties": {"result": {"enum": ["released", "blocked", "awaiting_approval", "failed_closed"]}, "reason": {"type": "string"}}},
+    "approval": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "id_hash": {"type": "string"}, "status": {"type": "string"}, "required": {"type": "boolean"}, "requires_justification": {"type": "boolean"},
+        "expires_at": {"type": "string", "format": "date-time"}, "consumed_at": {"type": "string", "format": "date-time"},
+        "use_count": {"type": "integer", "minimum": 0}, "max_uses": {"type": "integer", "minimum": 0}, "attempt_count": {"type": "integer", "minimum": 0},
+        "payload_hash": {"type": "string"}, "target_hash": {"type": "string"},
+        "failure": {"type": "object", "additionalProperties": false, "properties": {"reason": {"type": "string"}}}
+      }
+    },
+    "execution": {"type": "object", "additionalProperties": false, "properties": {"id": {"type": "string"}, "sequence": {"type": "integer", "minimum": 0}, "result_hash": {"type": "string"}, "error_class": {"type": "string"}, "result": {"type": "string"}}},
+    "mcp": {"type": "object", "additionalProperties": false, "properties": {"client": {"type": "string"}, "server": {"type": "object", "additionalProperties": false, "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "version": {"type": "string"}, "fingerprint": {"type": "string"}, "transport": {"type": "string"}, "approved": {"type": "boolean"}}}, "tool_approved": {"type": "boolean"}, "gateway_bypassed": {"type": "boolean"}}},
+    "evidence": {"type": "object", "additionalProperties": false, "properties": {"chain_id": {"type": "string"}, "sequence": {"type": "integer", "minimum": 1}, "previous_hash": {"type": "string"}, "event_hash": {"type": "string"}, "hash_algorithm": {"const": "sha256"}, "complete": {"type": "boolean"}, "present_ids": {"type": "array", "items": {"type": "string"}}, "required_ids": {"type": "array", "items": {"type": "string"}}}},
+    "distribution": {"type": "object", "additionalProperties": false, "properties": {"state": {"enum": ["FRESH", "STALE_GRACE", "STALE_BLOCKED", "CLOCK_UNTRUSTED"]}, "role": {"type": "string"}, "result": {"type": "string"}, "reason_code": {"type": "string"}, "metadata_versions": {"type": "object"}, "candidate_bundle_id": {"type": "string"}, "active_bundle_id": {"type": "string"}}}
+  }
+}

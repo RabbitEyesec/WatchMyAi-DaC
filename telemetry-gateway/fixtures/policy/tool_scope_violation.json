@@ -1,0 +1,14 @@
+{
+  "description": "Read-only analysis agent invoking a write tool — tool_scope violation.",
+  "event": {
+    "event": { "kind": "event", "category": ["process"], "type": ["start"], "action": "tool_request" },
+    "watchmyai": {
+      "agent": { "id": "claude_code", "type": "known_ai_agent" },
+      "attribution": { "level": "confirmed" },
+      "session": { "id": "cc-sess-0002" },
+      "task": { "id": "task-readonly-1", "classification": "code_change" },
+      "tool": { "name": "Write", "category": "file" }
+    },
+    "file": { "path": "/Users/dev/projects/demo/src/main.py" }
+  }
+}

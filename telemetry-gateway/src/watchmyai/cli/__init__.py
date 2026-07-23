@@ -1,0 +1,1 @@
+"""watchmyai command-line interface."""

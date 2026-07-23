@@ -1,0 +1,28 @@
+# WatchMyAI redaction configuration.
+#
+# Defaults already redact: API keys (Anthropic/OpenAI/AWS/GitHub/Slack),
+# generic key=value secrets, bearer tokens, authorization headers, cookies,
+# SSH private keys, and secret-like environment variables.
+#
+# enabled: false disables redaction entirely (NOT recommended).
+enabled: true
+
+# Keep the built-in rule set and extend it with the rules below.
+include_defaults: true
+
+# Extra operator-defined rules.
+rules: []
+#  - name: internal_ticket_token
+#    pattern: 'TKT-[0-9a-f]{32}'
+#    replacement: '[REDACTED:internal_ticket_token]'
+
+# Names of built-in rules to disable (use sparingly).
+disable_rules: []
+
+# Environment variable names (regex) whose values are always redacted.
+env_key_patterns:
+  - '.*_API_KEY$'
+  - '.*_SECRET.*'
+  - '.*_TOKEN$'
+  - '.*PASSWORD.*'
+  - '^AWS_(SECRET_ACCESS_KEY|SESSION_TOKEN)$'

@@ -1,0 +1,16 @@
+{
+  "description": "Child-agent delegation two levels deeper than the policy allows — delegation_depth violation.",
+  "event": {
+    "event": { "kind": "event", "category": ["session"], "type": ["start"], "action": "subagent_start" },
+    "watchmyai": {
+      "agent": { "id": "claude_code", "type": "known_ai_agent" },
+      "attribution": { "level": "confirmed" },
+      "session": { "id": "cc-sess-0005" },
+      "delegation": {
+        "parent_agent_id": "claude_code:cc-sess-0005",
+        "child_agent_id": "claude_code:cc-sess-0005:sub:sub:sub",
+        "depth": 3
+      }
+    }
+  }
+}

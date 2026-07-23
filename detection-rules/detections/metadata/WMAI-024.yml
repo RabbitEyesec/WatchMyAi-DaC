@@ -1,0 +1,104 @@
+rule_id: WMAI-024
+name: Bulk File Deletion
+description: Detects at least 20 file deletions by one process entity during a rule execution window.
+category: Filesystem
+maturity: validated
+version: 1.0.0
+author: WatchMyAI contributors
+severity: medium
+risk_score: 47
+confidence: high
+test_tier: T3
+guarantee: deterministic where a registered pre-tool adapter mediates the covered action; otherwise cooperative
+  detection only
+threat_scenario: An attributed AI-agent action produces underlying evidence consistent with bulk file
+  deletion and requires investigation or containment.
+target_agents:
+- Claude Code
+- Codex CLI
+- MCP clients through WatchMyAI gateway
+required_telemetry:
+- Elastic Defend or Sysmon file events using ECS
+required_fields:
+- event.category
+- event.type
+- process.entity_id
+data_sources:
+- logs-endpoint.events.file-*
+- logs-windows.sysmon_operational-*
+custom_telemetry: false
+endpoint_only: true
+correlation: true
+detection_logic:
+  kind: threshold
+  query: event.category:file and event.type:deletion
+  threshold: &id001
+    field:
+    - process.entity_id
+    value: 20
+elastic:
+  type: threshold
+  language: kuery
+  query: event.category:file and event.type:deletion
+  index_patterns:
+  - logs-endpoint.events.file-*
+  - logs-windows.sysmon_operational-*
+  interval: 5m
+  from: now-6m
+  enabled: false
+  target_stack_versions:
+  - 9.4.3
+  lab_tested_versions:
+  - 9.4.3
+  threshold: *id001
+sigma:
+  status: not_applicable
+  path: null
+  reason: The rule depends on WatchMyAI policy and identity fields that have no portable Sigma logsource.
+false_positives:
+- Approved maintenance or controlled laboratory activity can resemble bulk file deletion.
+tuning_guidance: Tune with explicit policy IDs, stable resource identities, and bounded maintenance windows;
+  never suppress a DENY-followed-by-execution invariant.
+investigation_steps:
+- Confirm the originating AI task, human owner and relevant policy version.
+- Inspect the source event, process ancestry and affected resource evidence.
+- Validate approvals and determine whether the observed action was authorized.
+- Preserve timestamps and stable correlation identifiers before containment.
+response_playbook: playbooks/WMAI-024.md
+limitations:
+- The default threshold requires local baseline tuning and does not establish authorization.
+- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.
+- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+validation_scenario: Generate isolated endpoint-native file events for SCN-WMAI-024 under a run-ID path,
+  confirm the source-event threshold for one process.entity_id, and require that entity in the resulting
+  threshold alert.
+expected_alert: One medium-severity alert for Bulk File Deletion, preserving the fields declared by this
+  rule.
+fixtures:
+  malicious: tests/fixtures/malicious/WMAI-024.json
+  benign: tests/fixtures/benign/WMAI-024.json
+test_artifacts:
+  atomic: tests/corpus/atomic/WMAI-024.json
+  evasion: tests/corpus/evasion/WMAI-024.json
+  producer_conformance: tests/corpus/conformance/WMAI-024.json
+traceability:
+- ../deployment/rules_schema_1.1.0.ndjson
+- ../docs/DETECTION_RULES.md
+related_rules: []
+references:
+- ../docs/DETECTION_RULES.md
+- https://www.elastic.co/docs/reference/ecs
+threat_mappings: []
+deployment:
+  packageable: true
+  status: production_validated
+blocked_reason: null
+history:
+- version: 1.0.0
+  date: '2026-07-18'
+  author: WatchMyAI contributors
+  change: Rebuilt from the approved production design baseline using underlying evidence.
+- version: 1.1.0
+  date: '2026-07-20'
+  author: WatchMyAI release engineering
+  change: Reconciled with the rule validated in the Elastic laboratory.

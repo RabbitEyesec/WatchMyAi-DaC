@@ -1,0 +1,43 @@
+{
+  "author": [
+    "WatchMyAI contributors"
+  ],
+  "description": "Detects access to .env files from underlying WatchMyAI request, decision, approval, resource, capability, and execution evidence without producer-declared findings.",
+  "enabled": false,
+  "false_positives": [
+    "An outdated allowlist, workspace root, adapter capability declaration, or operator-approved administrative workflow can resemble the condition."
+  ],
+  "from": "now-6m",
+  "index": [
+    "logs-watchmyai.events-*"
+  ],
+  "interval": "1m",
+  "language": "kuery",
+  "license": "Apache-2.0",
+  "max_signals": 100,
+  "name": "Access to .env Files",
+  "note": "## Expected alert\n\nOne deduplicated high alert for Access to .env Files with action, session, policy, guarantee, and chain evidence.\n\n## Investigation\n\n1. Verify event-chain continuity and adapter capability.\n2. Review request, decision, approval, and execution records sharing the action ID.\n3. Confirm the active signed policy bundle and resource classification.\n4. Contain the session when execution followed DENY or approval integrity failed.\n\n## Limitations\n\n- Cooperative hooks do not provide kernel-level containment.\n- Hosted or direct tool paths outside declared adapter coverage can require endpoint evidence.\n- Retained isolated-lab alert evidence is documented separately; it proves observed alerts only, not efficacy, recall, false-positive rate, or future connected validation.",
+  "query": "event.dataset:\"watchmyai.events\" and event.action:\"tool_request\" and (watchmyai.tool.arguments.command:(*.env or *.env.* or *dotenv*) or watchmyai.tool.arguments.file_path:(*.env or *.env.*) or process.command_line:*.env)",
+  "references": [
+    "../telemetry-gateway/docs/TELEMETRY_SCHEMA.md",
+    "../telemetry-gateway/docs/ARCHITECTURE.md"
+  ],
+  "risk_score": 73,
+  "rule_id": "WMAI-057",
+  "rule_source": {
+    "type": "internal"
+  },
+  "severity": "high",
+  "tags": [
+    "AI Agent",
+    "Sensitive Data",
+    "Maturity: testable",
+    "Custom telemetry: true",
+    "WatchMyAI",
+    "schema-1.1.0",
+    "remediated-2026-07-20"
+  ],
+  "to": "now",
+  "type": "query",
+  "version": 2
+}

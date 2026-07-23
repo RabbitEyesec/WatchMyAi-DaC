@@ -1,0 +1,1 @@
+"""WatchMyAI deterministic tests."""

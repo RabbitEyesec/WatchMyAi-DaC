@@ -1,0 +1,44 @@
+{
+  "author": [
+    "WatchMyAI contributors"
+  ],
+  "description": "Detects command-line creation of a Windows scheduled task.",
+  "enabled": false,
+  "false_positives": [
+    "Approved maintenance or controlled laboratory activity can resemble scheduled task creation."
+  ],
+  "from": "now-6m",
+  "index": [
+    "logs-endpoint.events.process-*",
+    "logs-windows.sysmon_operational-*",
+    "winlogbeat-*"
+  ],
+  "interval": "5m",
+  "language": "kuery",
+  "license": "Apache-2.0",
+  "max_signals": 100,
+  "name": "Scheduled Task Creation",
+  "note": "## Expected alert\n\nOne medium-severity alert for Scheduled Task Creation, preserving the fields declared by this rule.\n\n## Investigation\n\n1. Confirm the originating AI task, human owner and relevant policy version.\n2. Inspect the source event, process ancestry and affected resource evidence.\n3. Validate approvals and determine whether the observed action was authorized.\n4. Preserve timestamps and stable correlation identifiers before containment.\n\n## Limitations\n\n- Task Scheduler API activity without the covered command lines needs Windows task telemetry.\n- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.\n- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.",
+  "query": "event.category:process and event.type:start and (process.name:(schtasks.exe or schtasks) and process.command_line:(\"* /create *\" or \"*/create *\") or process.name:(powershell.exe or pwsh.exe) and process.command_line:\"*Register-ScheduledTask*\")",
+  "references": [
+    "docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-027",
+    "https://www.elastic.co/docs/reference/ecs"
+  ],
+  "risk_score": 47,
+  "rule_id": "WMAI-027",
+  "rule_source": {
+    "type": "internal"
+  },
+  "severity": "medium",
+  "tags": [
+    "WatchMyAI",
+    "AI Agent",
+    "Persistence",
+    "Maturity: validated",
+    "Custom telemetry: false",
+    "Endpoint building block"
+  ],
+  "to": "now",
+  "type": "query",
+  "version": 1
+}

@@ -1,0 +1,1282 @@
+{
+  "case_id": "negative-WMAI-023",
+  "case_type": "deterministic_unit_fixture_not_measured_efficacy",
+  "rule_id": "WMAI-023",
+  "expected_match": false,
+  "events": [
+    {
+      "@timestamp": "2026-07-20T04:00:00.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-000",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-000"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:01.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-001",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-001"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:02.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-002",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-002"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:03.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-003",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-003"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:04.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-004",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-004"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:05.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-005",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-005"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:06.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-006",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-006"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:07.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-007",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-007"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:08.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-008",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-008"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:09.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-009",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-009"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:10.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-010",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-010"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:11.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-011",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-011"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:12.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-012",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-012"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:13.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-013",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-013"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:14.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-014",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-014"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:15.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-015",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-015"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:16.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-016",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-016"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:17.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-017",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-017"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:18.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-018",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-018"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:19.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-019",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-019"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:20.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-020",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-020"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:21.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-021",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-021"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:22.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-022",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-022"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:23.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-023",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-023"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:24.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-024",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-024"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:25.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-025",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-025"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:26.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-026",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-026"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:27.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-027",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-027"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:28.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-028",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-028"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:29.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-029",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-029"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:30.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-030",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-030"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:31.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-031",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-031"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:32.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-032",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-032"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:33.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-033",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-033"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:34.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-034",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-034"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:35.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-035",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-035"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:36.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-036",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-036"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:37.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-037",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-037"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:38.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-038",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-038"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:39.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-039",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-039"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:40.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-040",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-040"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:41.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-041",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-041"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:42.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-042",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-042"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:43.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-043",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-043"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:44.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-044",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-044"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:45.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-045",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-045"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:46.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-046",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-046"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:47.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-047",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-047"
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:48.000Z",
+      "event": {
+        "id": "fixture-WMAI-023-048",
+        "kind": "event",
+        "category": [
+          "file"
+        ],
+        "type": [
+          "change"
+        ],
+        "action": "file_change",
+        "dataset": "endpoint.events.file",
+        "provider": "elastic_endpoint"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-023",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "file": {
+        "path": "/tmp/watchmyai-validation/file-048"
+      }
+    }
+  ]
+}

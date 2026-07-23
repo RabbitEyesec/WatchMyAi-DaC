@@ -1,0 +1,24 @@
+{
+  "@timestamp": "2026-01-01T01:01:04Z",
+  "event": {
+    "category": [
+      "process"
+    ],
+    "type": [
+      "start"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "process": {
+    "command_line": "chmod 644 /lab/disposable/file.txt",
+    "name": "chmod",
+    "parent": {
+      "name": "aider"
+    }
+  },
+  "user": {
+    "name": "lab-user"
+  }
+}

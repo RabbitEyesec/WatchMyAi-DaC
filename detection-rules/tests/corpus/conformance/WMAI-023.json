@@ -1,0 +1,18 @@
+{
+  "rule_id": "WMAI-023",
+  "schema_version": "1.1.0",
+  "required_fields": [
+    "event.category",
+    "event.type",
+    "process.entity_id"
+  ],
+  "required_correlations": [
+    "process.entity_id"
+  ],
+  "prohibited_fields": [
+    "watchmyai.approval.id",
+    "watchmyai.prompt.text",
+    "secret.value"
+  ],
+  "status": "REQUIRES_LIVE_PRODUCER"
+}

@@ -1,0 +1,61 @@
+{
+  "description": "Deterministic process snapshot: one known agent (claude), one unknown AI agent (matches mcp heuristic), one desktop agent (Cursor), and ordinary processes that must NOT match.",
+  "processes": [
+    {
+      "pid": 1,
+      "name": "launchd",
+      "executable": "/sbin/launchd",
+      "command_line": "/sbin/launchd",
+      "ppid": 0,
+      "username": "root"
+    },
+    {
+      "pid": 300,
+      "name": "zsh",
+      "executable": "/bin/zsh",
+      "command_line": "-zsh",
+      "ppid": 1,
+      "parent_name": "launchd",
+      "username": "dev"
+    },
+    {
+      "pid": 402,
+      "name": "node",
+      "executable": "/usr/local/bin/node",
+      "command_line": "node /usr/local/lib/node_modules/@anthropic-ai/claude-code/cli.js",
+      "ppid": 300,
+      "parent_name": "zsh",
+      "username": "dev",
+      "working_directory": "/Users/dev/projects/demo",
+      "environ": { "CLAUDECODE": "1" }
+    },
+    {
+      "pid": 510,
+      "name": "novel-agent",
+      "executable": "/opt/novel/bin/novel-agent",
+      "command_line": "novel-agent --mcp-server tools.example.com --task refactor",
+      "ppid": 300,
+      "parent_name": "zsh",
+      "username": "dev",
+      "working_directory": "/Users/dev/projects/demo"
+    },
+    {
+      "pid": 610,
+      "name": "Cursor",
+      "executable": "/Applications/Cursor.app/Contents/MacOS/Cursor",
+      "command_line": "/Applications/Cursor.app/Contents/MacOS/Cursor",
+      "ppid": 1,
+      "parent_name": "launchd",
+      "username": "dev"
+    },
+    {
+      "pid": 700,
+      "name": "python3",
+      "executable": "/usr/bin/python3",
+      "command_line": "python3 backup_script.py",
+      "ppid": 300,
+      "parent_name": "zsh",
+      "username": "dev"
+    }
+  ]
+}

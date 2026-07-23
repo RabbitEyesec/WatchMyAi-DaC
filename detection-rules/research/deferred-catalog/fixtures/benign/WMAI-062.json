@@ -1,0 +1,24 @@
+{
+  "@timestamp": "2026-01-01T01:01:02Z",
+  "event": {
+    "category": [
+      "process"
+    ],
+    "type": [
+      "start"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "process": {
+    "command_line": "npm test",
+    "name": "npm",
+    "parent": {
+      "name": "gemini"
+    }
+  },
+  "user": {
+    "name": "lab-user"
+  }
+}

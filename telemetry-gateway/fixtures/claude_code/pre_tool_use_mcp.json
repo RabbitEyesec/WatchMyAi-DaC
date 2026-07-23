@@ -1,0 +1,12 @@
+{
+  "session_id": "cc-sess-0001",
+  "transcript_path": "/Users/dev/.claude/projects/demo/transcript-0001.jsonl",
+  "cwd": "/Users/dev/projects/demo",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "mcp__github__create_issue",
+  "tool_input": {
+    "repo": "acme/demo",
+    "title": "Login test flaky",
+    "body": "See CI run 4211"
+  }
+}

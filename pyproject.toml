@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "WatchMyAI"
+dynamic = ["version"]
+description = "Policy enforcement, telemetry, and Elastic detection for AI coding agents."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "RabbitEyeSec" }]
+maintainers = [{ name = "WatchMyAI contributors" }]
+dependencies = [
+  "cryptography>=42.0",
+  "jsonschema>=4.23,<5",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+capture = ["psutil>=5.9"]
+validation = [
+  "build>=1.0",
+  "psutil>=5.9",
+  "pytest>=9.0.3,<10",
+  "setuptools>=77",
+  "wheel>=0.45",
+]
+dev = [
+  "bandit>=1.7",
+  "build>=1.0",
+  # mypy 1.16+ adds librt/ast-serialize, which are unnecessary for this
+  # Python 3.11-3.12 release and previously leaked from a 3.13 environment.
+  "mypy>=1.9,<1.16",
+  "pip-audit>=2.9",
+  "psutil>=5.9",
+  "pytest>=9.0.3,<10",
+  "ruff==0.15.21",
+  "setuptools>=77",
+  "types-PyYAML",
+  "wheel>=0.45",
+]
+
+[project.scripts]
+watchmyai = "watchmyai.cli.main:main"
+
+[tool.setuptools]
+package-dir = { "" = "telemetry-gateway/src" }
+
+[tool.setuptools.packages.find]
+where = ["telemetry-gateway/src"]
+
+[tool.setuptools.package-data]
+"watchmyai.schema" = ["*.json"]
+"watchmyai.policy" = ["*.json"]
+"watchmyai.resources" = ["*.yml"]
+
+[tool.setuptools.dynamic]
+version = { attr = "watchmyai.__version__" }
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+# Preflight can run before package installation and must emit a clear minimum-version failure.
+"scripts/preflight.py" = ["UP036"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "telemetry-gateway/tests", "detection-rules/tests"]
+pythonpath = [".", "telemetry-gateway/src"]
+addopts = "-q --import-mode=importlib"
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "telemetry-gateway/src"
+files = ["telemetry-gateway/src/watchmyai"]
+ignore_missing_imports = true
+check_untyped_defs = true
+disable_error_code = ["import-untyped"]

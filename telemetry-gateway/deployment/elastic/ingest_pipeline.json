@@ -1,0 +1,18 @@
+{
+  "version": 10100,
+  "description": "WatchMyAI 1.1.0 validated telemetry routing",
+  "processors": [
+    {"fail": {"if": "ctx.watchmyai?.schema?.version != '1.1.0'", "message": "expected watchmyai.schema.version 1.1.0"}},
+    {"fail": {"if": "ctx.watchmyai?.approval?.id != null || ctx.watchmyai?.prompt?.text != null", "message": "prohibited raw secret-bearing field"}},
+    {"set": {"field": "event.ingested", "value": "{{_ingest.timestamp}}"}},
+    {"set": {"field": "event.dataset", "value": "watchmyai.events"}},
+    {"set": {"field": "event.module", "value": "watchmyai"}},
+    {"set": {"field": "event.provider", "value": "watchmyai"}},
+    {"lowercase": {"field": "watchmyai.agent.id", "ignore_missing": true}}
+  ],
+  "on_failure": [
+    {"set": {"field": "error.type", "value": "watchmyai_ingest_rejected"}},
+    {"set": {"field": "error.message", "value": "{{ _ingest.on_failure_message }}"}},
+    {"fail": {"message": "WatchMyAI event rejected: {{ _ingest.on_failure_message }}"}}
+  ]
+}

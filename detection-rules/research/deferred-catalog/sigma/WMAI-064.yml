@@ -1,0 +1,54 @@
+title: Dangerous chmod/chown
+id: 881fc913-80bd-5ad5-8dbe-bb1b31605909
+status: experimental
+description: Detects recursive, world-writable, set-ID or root ownership changes launched
+  directly by a supported CLI AI agent.
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-064
+- https://www.elastic.co/docs/reference/ecs
+author: WatchMyAI contributors
+date: '2026-07-16'
+modified: '2026-07-16'
+license: Apache-2.0
+logsource:
+  category: process_creation
+detection:
+  selection_parent:
+    ParentImage|endswith:
+    - /aider
+    - \aider.exe
+    - /claude
+    - \claude.exe
+    - /codex
+    - \codex.exe
+    - /copilot
+    - \copilot.exe
+    - /gemini
+    - \gemini.exe
+  selection_chmod:
+    Image|endswith:
+    - /chmod
+    - \chmod.exe
+  selection_chmod_risky:
+    CommandLine|contains:
+    - ' -R '
+    - ' 777 '
+    - a+rwx
+    - g+s
+    - u+s
+  selection_chown:
+    Image|endswith:
+    - /chown
+    - \chown.exe
+  selection_chown_risky:
+    CommandLine|contains:
+    - ' -R '
+    - ' root'
+    - ' root:'
+    - ' :root '
+  condition: selection_parent and ((selection_chmod and selection_chmod_risky) or
+    (selection_chown and selection_chown_risky))
+falsepositives:
+- Approved maintenance or controlled laboratory activity can resemble dangerous chmod/chown.
+level: high
+x_watchmyai_rule_id: WMAI-064

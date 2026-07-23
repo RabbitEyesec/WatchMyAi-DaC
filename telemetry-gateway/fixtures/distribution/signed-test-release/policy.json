@@ -1,0 +1,25 @@
+{
+  "default_effect": "DENY",
+  "metadata": {},
+  "mode": "strict",
+  "organization_id": "org-test",
+  "policies": [
+    {
+      "effect": "ALLOW",
+      "match": {
+        "tool_class": "local_function"
+      },
+      "obligations": [
+        "AUDIT_METADATA_ONLY"
+      ],
+      "policy_id": "allow-local",
+      "policy_version": "1",
+      "priority": 1
+    }
+  ],
+  "policy_bundle_id": "bundle-1",
+  "policy_bundle_version": "1.0.0",
+  "policy_sequence": 1,
+  "required_capabilities": [],
+  "schema_version": "1.2"
+}

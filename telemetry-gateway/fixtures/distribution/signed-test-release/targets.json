@@ -1,0 +1,31 @@
+{
+  "signatures": [
+    {
+      "keyid": "59bc0073528c8f665d3653c75726f0c154f4059d92cc5418ad9edb7d6c1a64ea",
+      "signature": "CuK9r7YkjCmys7mt622aCFe3QGZvF2vlUeoN0DkZq_MfWpekxXqzZGNLl8GUtHS1l8B6E63xdvWBeD1Aude9AQ"
+    }
+  ],
+  "signed": {
+    "_type": "targets",
+    "expires_at": "2030-02-01T00:00:00Z",
+    "organization_id": "org-test",
+    "targets": {
+      "policy.json": {
+        "expires_at": "2030-02-01T00:00:00Z",
+        "hashes": {
+          "sha256": "243b02b132e95a0e10897652cf77247a9c63bfeb1c414f3b68ada808d4972428"
+        },
+        "issued_at": "2026-07-01T00:00:00Z",
+        "length": 522,
+        "minimum_agent_version": "1.0.0",
+        "organization_id": "org-test",
+        "policy_bundle_id": "bundle-1",
+        "policy_bundle_version": "1.0.0",
+        "policy_sequence": 1,
+        "required_capabilities": [],
+        "schema_version": "1.2"
+      }
+    },
+    "targets_version": 1
+  }
+}

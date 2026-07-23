@@ -1,0 +1,49 @@
+{
+  "author": [
+    "WatchMyAI contributors"
+  ],
+  "description": "Detects at least 100 file changes for one repository and process entity in one rule window.",
+  "enabled": false,
+  "false_positives": [
+    "Approved maintenance or controlled laboratory activity can resemble mass repository modification."
+  ],
+  "from": "now-6m",
+  "index": [
+    "logs-watchmyai.events-*"
+  ],
+  "interval": "5m",
+  "language": "kuery",
+  "license": "Apache-2.0",
+  "max_signals": 100,
+  "name": "Mass repository modification",
+  "note": "## Expected alert\n\nOne medium-severity alert for Mass repository modification, preserving the fields declared by this rule.\n\n## Investigation\n\n1. Confirm the originating AI task, human owner and relevant policy version.\n2. Inspect the source event, process ancestry and affected resource evidence.\n3. Validate approvals and determine whether the observed action was authorized.\n4. Preserve timestamps and stable correlation identifiers before containment.\n\n## Limitations\n\n- The rule requires WatchMyAI Telemetry Gateway 1.1.0; standard endpoint integrations do not emit the AI-specific fields.\n- Synthetic fixture validation does not claim live-production validation; controlled Elastic replay is still required.",
+  "query": "event.dataset:watchmyai.events and event.action:ai_file_access and event.category:file and event.type:(change or creation or deletion) and watchmyai.repository.id:*",
+  "references": [
+    "docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-056",
+    "https://www.elastic.co/docs/reference/ecs",
+    "../telemetry-gateway/docs/TELEMETRY_SCHEMA.md"
+  ],
+  "risk_score": 47,
+  "rule_id": "WMAI-056",
+  "rule_source": {
+    "type": "internal"
+  },
+  "severity": "medium",
+  "tags": [
+    "WatchMyAI",
+    "AI Agent",
+    "CLI Agent",
+    "Maturity: validated",
+    "Custom telemetry: true"
+  ],
+  "threshold": {
+    "field": [
+      "watchmyai.repository.id",
+      "process.entity_id"
+    ],
+    "value": 100
+  },
+  "to": "now",
+  "type": "threshold",
+  "version": 1
+}

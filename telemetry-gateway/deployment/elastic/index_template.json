@@ -1,0 +1,17 @@
+{
+  "index_patterns": ["logs-watchmyai.events-*"],
+  "data_stream": {"hidden": false, "allow_custom_routing": false},
+  "priority": 500,
+  "composed_of": ["watchmyai-events-mappings"],
+  "template": {
+    "settings": {
+      "index.lifecycle.name": "watchmyai-events",
+      "index.default_pipeline": "watchmyai-events"
+    }
+  },
+  "_meta": {
+    "description": "WatchMyAI 1.1.0 telemetry data stream",
+    "managed_by": "watchmyai",
+    "schema_version": "1.1.0"
+  }
+}

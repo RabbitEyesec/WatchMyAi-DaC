@@ -1,0 +1,11 @@
+{
+  "session_id": "cc-sess-0001",
+  "transcript_path": "/Users/dev/.claude/projects/demo/transcript-0001.jsonl",
+  "cwd": "/Users/dev/projects/demo",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "git push origin main",
+    "description": "Push commits to main"
+  }
+}

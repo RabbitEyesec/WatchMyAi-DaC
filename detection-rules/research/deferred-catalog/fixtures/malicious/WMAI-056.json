@@ -1,0 +1,4304 @@
+{
+  "events": [
+    {
+      "@timestamp": "2026-07-16T00:00:00Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-000",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-0.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:01Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-001",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-1.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:02Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-002",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-2.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:03Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-003",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-3.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:04Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-004",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-4.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:05Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-005",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-5.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:06Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-006",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-6.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:07Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-007",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-7.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:08Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-008",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-8.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:09Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-009",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-9.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:10Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-010",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-10.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:11Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-011",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-11.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:12Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-012",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-12.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:13Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-013",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-13.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:14Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-014",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-14.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:15Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-015",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-15.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:16Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-016",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-16.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:17Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-017",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-17.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:18Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-018",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-18.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:19Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-019",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-19.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:20Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-020",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-20.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:21Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-021",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-21.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:22Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-022",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-22.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:23Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-023",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-23.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:24Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-024",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-24.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:25Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-025",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-25.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:26Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-026",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-26.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:27Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-027",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-27.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:28Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-028",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-28.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:29Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-029",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-29.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:30Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-030",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-30.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:31Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-031",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-31.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:32Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-032",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-32.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:33Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-033",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-33.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:34Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-034",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-34.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:35Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-035",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-35.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:36Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-036",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-36.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:37Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-037",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-37.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:38Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-038",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-38.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:39Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-039",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-39.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:40Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-040",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-40.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:41Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-041",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-41.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:42Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-042",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-42.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:43Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-043",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-43.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:44Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-044",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-44.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:45Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-045",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-45.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:46Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-046",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-46.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:47Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-047",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-47.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:48Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-048",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-48.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:49Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-049",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-49.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:50Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-050",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-50.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:51Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-051",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-51.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:52Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-052",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-52.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:53Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-053",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-53.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:54Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-054",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-54.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:55Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-055",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-55.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:56Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-056",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-56.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:57Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-057",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-57.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:58Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-058",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-58.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:59Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-059",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-59.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:00Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-060",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-60.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:01Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-061",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-61.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:02Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-062",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-62.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:03Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-063",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-63.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:04Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-064",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-64.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:05Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-065",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-65.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:06Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-066",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-66.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:07Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-067",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-67.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:08Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-068",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-68.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:09Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-069",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-69.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:10Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-070",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-70.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:11Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-071",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-71.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:12Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-072",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-72.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:13Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-073",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-73.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:14Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-074",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-74.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:15Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-075",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-75.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:16Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-076",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-76.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:17Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-077",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-77.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:18Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-078",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-78.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:19Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-079",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-79.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:20Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-080",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-80.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:21Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-081",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-81.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:22Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-082",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-82.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:23Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-083",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-83.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:24Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-084",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-84.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:25Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-085",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-85.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:26Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-086",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-86.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:27Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-087",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-87.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:28Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-088",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-88.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:29Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-089",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-89.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:30Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-090",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-90.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:31Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-091",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-91.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:32Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-092",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-92.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:33Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-093",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-93.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:34Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-094",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-94.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:35Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-095",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-95.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:36Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-096",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-96.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:37Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-097",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-97.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:38Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-098",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-98.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:39Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-malicious-099",
+        "kind": "alert",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-99.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    }
+  ]
+}

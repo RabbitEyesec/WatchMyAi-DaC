@@ -1,0 +1,25 @@
+title: Registry Persistence Modification
+id: 94f91f25-ac2b-5673-9225-5f34ffa70c7e
+status: experimental
+description: Detects modification of common Windows Run or RunOnce persistence registry
+  locations.
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-026
+- https://www.elastic.co/docs/reference/ecs
+author: WatchMyAI contributors
+date: '2026-07-16'
+modified: '2026-07-16'
+license: Apache-2.0
+logsource:
+  category: registry_set
+detection:
+  selection:
+    TargetObject|contains:
+    - \Software\Microsoft\Windows\CurrentVersion\Run\
+    - \Software\Microsoft\Windows\CurrentVersion\RunOnce\
+  condition: selection
+falsepositives:
+- Approved maintenance or controlled laboratory activity can resemble registry persistence
+  modification.
+level: medium
+x_watchmyai_rule_id: WMAI-026

@@ -1,0 +1,44 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "action": "ai_tool_executed",
+    "category": [
+      "configuration"
+    ],
+    "dataset": "watchmyai.events",
+    "id": "evt-wmai-041-benign-000",
+    "kind": "event",
+    "provider": "watchmyai",
+    "type": [
+      "change"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "user": {
+    "name": "lab-user"
+  },
+  "watchmyai": {
+    "agent": {
+      "id": "agent-wmai-041",
+      "parent_id": "wmai-041-parent_id-benign",
+      "type": "known_ai_agent"
+    },
+    "approval": {
+      "delegation_valid": true
+    },
+    "attribution": {
+      "level": "confirmed"
+    },
+    "policy": {
+      "violation": {
+        "detected": false,
+        "type": "unauthorized_child_agent_creation"
+      }
+    },
+    "schema": {
+      "version": "1.1.0"
+    }
+  }
+}

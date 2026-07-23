@@ -1,0 +1,43 @@
+{
+  "author": [
+    "WatchMyAI contributors"
+  ],
+  "description": "Detects modification of common Windows Run or RunOnce persistence registry locations.",
+  "enabled": false,
+  "false_positives": [
+    "Approved maintenance or controlled laboratory activity can resemble registry persistence modification."
+  ],
+  "from": "now-6m",
+  "index": [
+    "logs-endpoint.events.registry-*",
+    "logs-windows.sysmon_operational-*"
+  ],
+  "interval": "5m",
+  "language": "kuery",
+  "license": "Apache-2.0",
+  "max_signals": 100,
+  "name": "Registry Persistence Modification",
+  "note": "## Expected alert\n\nOne medium-severity alert for Registry Persistence Modification, preserving the fields declared by this rule.\n\n## Investigation\n\n1. Confirm the originating AI task, human owner and relevant policy version.\n2. Inspect the source event, process ancestry and affected resource evidence.\n3. Validate approvals and determine whether the observed action was authorized.\n4. Preserve timestamps and stable correlation identifiers before containment.\n\n## Limitations\n\n- Only the listed persistence locations are covered; authorized installers can also modify them.\n- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.\n- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.",
+  "query": "event.category:registry and event.type:change and registry.path:(\"*\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run*\" or \"*\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\RunOnce*\")",
+  "references": [
+    "docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-026",
+    "https://www.elastic.co/docs/reference/ecs"
+  ],
+  "risk_score": 47,
+  "rule_id": "WMAI-026",
+  "rule_source": {
+    "type": "internal"
+  },
+  "severity": "medium",
+  "tags": [
+    "WatchMyAI",
+    "AI Agent",
+    "Persistence",
+    "Maturity: validated",
+    "Custom telemetry: false",
+    "Endpoint building block"
+  ],
+  "to": "now",
+  "type": "query",
+  "version": 1
+}

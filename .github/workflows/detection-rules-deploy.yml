@@ -1,0 +1,145 @@
+name: Deploy WatchMyAI detection rules
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_production:
+        description: Import the exact staging-tested artifact after production environment approval
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: watchmyai-detection-deploy
+  cancel-in-progress: false
+
+jobs:
+  validate_and_package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-dev.lock
+      - run: |
+          python -m pip install --require-hashes -r requirements-dev.lock
+          python -m pip install --no-build-isolation --no-deps .
+      - name: Validate and package the authoritative rules
+        run: |
+          ruff check detection-rules/scripts detection-rules/tests scripts/import
+          (cd detection-rules && python scripts/validate.py)
+          pytest detection-rules/tests tests/test_release_hardening.py
+          python detection-rules/scripts/package_rules.py --output-dir dist
+          (cd dist && sha256sum --check SHA256SUMS.txt)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: watchmyai-deployment-package
+          path: |
+            dist/watchmyai-rules.ndjson
+            dist/watchmyai-package-manifest.json
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
+
+  staging_import:
+    needs: validate_and_package
+    runs-on: ubuntu-24.04
+    environment: staging
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+      - run: |
+          python -m pip install --require-hashes -r requirements-release.lock
+          python -m pip install --no-build-isolation --no-deps .
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: watchmyai-deployment-package
+          path: dist
+      - name: Verify and import disabled rules into staging
+        env:
+          KIBANA_URL: ${{ secrets.KIBANA_URL }}
+          ELASTIC_API_KEY: ${{ secrets.ELASTIC_API_KEY }}
+          ELASTIC_AUTH_METHOD: api_key
+          TLS_VERIFY: "true"
+          ELASTIC_CA_CERT: ${{ secrets.ELASTIC_CA_CERT }}
+          ENABLE_RULES: "false"
+          KIBANA_SPACE: ${{ secrets.KIBANA_SPACE }}
+        run: |
+          (cd dist && sha256sum --check SHA256SUMS.txt)
+          python scripts/import/import_rules.py --config .env.example \
+            --ndjson dist/watchmyai-rules.ndjson
+
+  staging_smoke:
+    needs: staging_import
+    runs-on: ubuntu-24.04
+    environment: staging
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+      - run: |
+          python -m pip install --require-hashes -r requirements-release.lock
+          python -m pip install --no-build-isolation --no-deps .
+      - name: Read-only staging smoke test
+        env:
+          KIBANA_URL: ${{ secrets.KIBANA_URL }}
+          ELASTIC_API_KEY: ${{ secrets.ELASTIC_API_KEY }}
+          KIBANA_SPACE: ${{ secrets.KIBANA_SPACE }}
+          TLS_VERIFY: "true"
+          ELASTIC_CA_CERT: ${{ secrets.ELASTIC_CA_CERT }}
+        run: python detection-rules/scripts/smoke_test_elastic.py
+
+  production_import:
+    if: ${{ inputs.deploy_production == true }}
+    needs: staging_smoke
+    runs-on: ubuntu-24.04
+    environment: production
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+      - run: |
+          python -m pip install --require-hashes -r requirements-release.lock
+          python -m pip install --no-build-isolation --no-deps .
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: watchmyai-deployment-package
+          path: dist
+      - name: Import the exact staging-tested artifact into production
+        env:
+          KIBANA_URL: ${{ secrets.KIBANA_URL }}
+          ELASTIC_API_KEY: ${{ secrets.ELASTIC_API_KEY }}
+          ELASTIC_AUTH_METHOD: api_key
+          TLS_VERIFY: "true"
+          ELASTIC_CA_CERT: ${{ secrets.ELASTIC_CA_CERT }}
+          ENABLE_RULES: "true"
+          KIBANA_SPACE: ${{ secrets.KIBANA_SPACE }}
+        run: |
+          (cd dist && sha256sum --check SHA256SUMS.txt)
+          python scripts/import/import_rules.py --config .env.example \
+            --ndjson dist/watchmyai-rules.ndjson
+
+  deployment_summary:
+    if: ${{ always() && needs.staging_smoke.result == 'success' }}
+    needs: [staging_smoke, production_import]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Write deployment summary
+        run: |
+          echo "## WatchMyAI deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Staging smoke: ${{ needs.staging_smoke.result }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Production import: ${{ needs.production_import.result }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Staging rules remain disabled; production enablement requires protected approval." >> "$GITHUB_STEP_SUMMARY"

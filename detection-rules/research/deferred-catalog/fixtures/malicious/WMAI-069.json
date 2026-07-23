@@ -1,0 +1,48 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "action": "policy_violation",
+    "category": [
+      "configuration"
+    ],
+    "dataset": "watchmyai.events",
+    "id": "evt-wmai-069-malicious-000",
+    "kind": "alert",
+    "provider": "watchmyai",
+    "type": [
+      "change"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "user": {
+    "name": "lab-user"
+  },
+  "watchmyai": {
+    "action": {
+      "resolved_path": "/lab/outside/.ssh/id_rsa"
+    },
+    "agent": {
+      "id": "agent-wmai-069",
+      "type": "known_ai_agent"
+    },
+    "attribution": {
+      "level": "confirmed"
+    },
+    "policy": {
+      "violation": {
+        "detected": true,
+        "type": "execution_outside_approved_workspace"
+      }
+    },
+    "schema": {
+      "version": "1.1.0"
+    },
+    "task": {
+      "approved_paths": [
+        "wmai-069-approved-value"
+      ]
+    }
+  }
+}

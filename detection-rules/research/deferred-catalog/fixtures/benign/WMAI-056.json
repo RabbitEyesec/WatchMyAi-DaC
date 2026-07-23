@@ -1,0 +1,4261 @@
+{
+  "events": [
+    {
+      "@timestamp": "2026-07-16T00:00:00Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-000",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-0.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:01Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-001",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-1.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:02Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-002",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-2.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:03Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-003",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-3.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:04Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-004",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-4.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:05Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-005",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-5.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:06Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-006",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-6.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:07Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-007",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-7.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:08Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-008",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-8.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:09Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-009",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-9.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:10Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-010",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-10.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:11Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-011",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-11.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:12Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-012",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-12.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:13Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-013",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-13.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:14Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-014",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-14.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:15Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-015",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-15.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:16Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-016",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-16.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:17Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-017",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-17.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:18Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-018",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-18.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:19Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-019",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-19.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:20Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-020",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-20.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:21Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-021",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-21.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:22Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-022",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-22.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:23Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-023",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-23.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:24Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-024",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-24.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:25Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-025",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-25.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:26Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-026",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-26.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:27Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-027",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-27.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:28Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-028",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-28.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:29Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-029",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-29.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:30Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-030",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-30.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:31Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-031",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-31.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:32Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-032",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-32.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:33Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-033",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-33.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:34Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-034",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-34.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:35Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-035",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-35.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:36Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-036",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-36.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:37Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-037",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-37.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:38Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-038",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-38.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:39Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-039",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-39.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:40Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-040",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-40.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:41Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-041",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-41.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:42Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-042",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-42.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:43Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-043",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-43.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:44Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-044",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-44.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:45Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-045",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-45.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:46Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-046",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-46.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:47Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-047",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-47.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:48Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-048",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-48.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:49Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-049",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-49.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:50Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-050",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-50.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:51Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-051",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-51.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:52Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-052",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-52.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:53Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-053",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-53.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:54Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-054",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-54.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:55Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-055",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-55.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:56Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-056",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-56.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:57Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-057",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-57.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:58Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-058",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-58.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:00:59Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-059",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-59.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:00Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-060",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-60.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:01Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-061",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-61.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:02Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-062",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-62.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:03Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-063",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-63.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:04Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-064",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-64.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:05Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-065",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-65.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:06Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-066",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-66.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:07Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-067",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-67.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:08Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-068",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-68.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:09Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-069",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-69.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:10Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-070",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-70.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:11Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-071",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-71.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:12Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-072",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-72.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:13Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-073",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-73.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:14Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-074",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-74.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:15Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-075",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-75.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:16Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-076",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-76.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:17Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-077",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-77.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:18Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-078",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-78.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:19Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-079",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-79.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:20Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-080",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-80.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:21Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-081",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-81.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:22Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-082",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-82.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:23Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-083",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-83.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:24Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-084",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-84.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:25Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-085",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-85.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:26Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-086",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-86.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:27Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-087",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-87.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:28Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-088",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-88.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:29Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-089",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-89.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:30Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-090",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-90.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:31Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-091",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-91.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:32Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-092",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-92.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:33Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-093",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-93.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:34Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-094",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-94.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:35Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-095",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-95.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:36Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-096",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-96.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:37Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-097",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-97.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-16T00:01:38Z",
+      "event": {
+        "action": "ai_file_access",
+        "category": [
+          "file"
+        ],
+        "dataset": "watchmyai.events",
+        "id": "evt-wmai-056-benign-098",
+        "kind": "event",
+        "provider": "watchmyai",
+        "type": [
+          "change"
+        ]
+      },
+      "file": {
+        "path": "/lab/repository/file-98.txt"
+      },
+      "host": {
+        "name": "lab-host"
+      },
+      "process": {
+        "entity_id": "process-1"
+      },
+      "user": {
+        "name": "lab-user"
+      },
+      "watchmyai": {
+        "agent": {
+          "id": "agent-lab",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "repository": {
+          "id": "repository-lab"
+        },
+        "schema": {
+          "version": "1.1.0"
+        }
+      }
+    }
+  ]
+}

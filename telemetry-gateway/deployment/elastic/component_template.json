@@ -1,0 +1,53 @@
+{
+  "version": 10100,
+  "_meta": {"schema_version": "1.1.0", "managed_by": "watchmyai"},
+  "template": {
+    "settings": {"index.mapping.total_fields.limit": 2000},
+    "mappings": {
+      "dynamic": false,
+      "properties": {
+        "@timestamp": {"type": "date"},
+        "event": {"properties": {"id": {"type": "keyword"}, "kind": {"type": "keyword"}, "category": {"type": "keyword"}, "type": {"type": "keyword"}, "action": {"type": "keyword"}, "dataset": {"type": "constant_keyword", "value": "watchmyai.events"}, "module": {"type": "constant_keyword", "value": "watchmyai"}, "provider": {"type": "constant_keyword", "value": "watchmyai"}, "outcome": {"type": "keyword"}, "ingested": {"type": "date"}}},
+        "host": {"properties": {"id": {"type": "keyword"}, "name": {"type": "keyword"}, "os": {"properties": {"type": {"type": "keyword"}, "name": {"type": "keyword"}, "version": {"type": "keyword"}}}}},
+        "user": {"properties": {"id": {"type": "keyword"}, "name": {"type": "keyword"}}},
+        "process": {"properties": {"pid": {"type": "long"}, "entity_id": {"type": "keyword"}, "name": {"type": "keyword"}, "executable": {"type": "keyword"}, "command_line": {"type": "wildcard"}, "working_directory": {"type": "keyword", "ignore_above": 4096}, "exit_code": {"type": "long"}}},
+        "watchmyai": {
+          "dynamic": "strict",
+          "properties": {
+            "schema": {"properties": {"version": {"type": "constant_keyword", "value": "1.1.0"}}},
+            "agent": {"properties": {"id": {"type": "keyword"}, "name": {"type": "keyword"}, "parent_id": {"type": "keyword"}, "vendor": {"type": "keyword"}, "version": {"type": "keyword"}, "type": {"type": "keyword"}, "discovery_method": {"type": "keyword"}, "discovery_confidence": {"type": "float"}}},
+            "adapter": {"properties": {"id": {"type": "keyword"}, "version": {"type": "keyword"}, "mode": {"type": "keyword"}, "health": {"type": "keyword"}}},
+            "attribution": {"properties": {"level": {"type": "keyword"}}},
+            "visibility": {"properties": {"mode": {"type": "keyword"}}},
+            "session": {"properties": {"id": {"type": "keyword"}, "claim_ids": {"type": "keyword"}, "execution_count": {"type": "long"}, "risk_score": {"type": "integer"}}},
+            "task": {"properties": {"id": {"type": "keyword"}, "hash": {"type": "keyword"}, "classification": {"type": "keyword"}, "project_id": {"type": "keyword"}, "objective_hash": {"type": "keyword"}}},
+            "request": {"properties": {"id": {"type": "keyword"}, "canonicalizer_version": {"type": "keyword"}, "payload_hash": {"type": "keyword"}, "argument_hash": {"type": "keyword"}, "target_hash": {"type": "keyword"}}},
+            "action": {"properties": {"id": {"type": "keyword"}, "name": {"type": "keyword"}, "operation": {"type": "keyword"}, "sequence": {"type": "long"}, "execution_status": {"type": "keyword"}, "executed_at": {"type": "date"}, "command_hash": {"type": "keyword"}, "payload_hash": {"type": "keyword"}, "target_hash": {"type": "keyword"}, "resolved_path": {"type": "keyword", "ignore_above": 4096}}},
+            "tool": {"properties": {"name": {"type": "keyword"}, "class": {"type": "keyword"}, "category": {"type": "keyword"}, "sequence": {"type": "long"}, "arguments": {"type": "flattened", "depth_limit": 10, "ignore_above": 8191}, "arguments_hash": {"type": "keyword"}, "description_hash": {"type": "keyword"}}},
+            "command": {"properties": {"class": {"type": "keyword"}, "executable": {"type": "keyword"}, "operation": {"type": "keyword"}, "flags": {"type": "keyword"}}},
+            "resource": {"properties": {
+              "path": {"properties": {"requested_count": {"type": "integer"}, "resolved": {"type": "keyword", "ignore_above": 4096}, "classes": {"type": "keyword"}, "outside_approved_workspace": {"type": "boolean"}, "restricted": {"type": "boolean"}, "operation": {"type": "keyword"}}},
+              "file": {"properties": {"operation": {"type": "keyword"}, "executable": {"type": "boolean"}, "approved_output": {"type": "boolean"}, "path_hash": {"type": "keyword"}, "artifact_type": {"type": "keyword"}}},
+              "network": {"properties": {"operation": {"type": "keyword"}}},
+              "git": {"type": "flattened"}, "container": {"type": "flattened"}, "kubernetes": {"type": "flattened"}
+            }},
+            "repository": {"properties": {"id": {"type": "keyword"}, "approved": {"type": "boolean"}, "remote_hash": {"type": "keyword"}}},
+            "destination": {"properties": {"hash": {"type": "keyword"}, "approved": {"type": "boolean"}, "port": {"type": "integer"}, "scheme": {"type": "keyword"}}},
+            "policy": {"properties": {"winning_policy_id": {"type": "keyword"}, "winning_policy_version": {"type": "keyword"}, "policy_bundle_id": {"type": "keyword"}, "policy_bundle_version": {"type": "keyword"}, "policy_sequence": {"type": "long"}, "match_evidence": {"type": "flattened"}, "violation": {"properties": {"detected": {"type": "boolean"}, "type": {"type": "keyword"}}}}},
+            "decision": {"properties": {"id": {"type": "keyword"}, "effect": {"type": "keyword"}, "reason_codes": {"type": "keyword"}}},
+            "obligation": {"properties": {"requested": {"type": "keyword"}, "effective": {"type": "keyword"}, "status": {"type": "keyword"}}},
+            "guarantee": {"properties": {"status": {"type": "keyword"}}},
+            "capability": {"properties": {"coverage": {"type": "boolean"}, "fingerprint": {"type": "keyword"}, "required": {"type": "keyword"}, "gaps": {"type": "keyword"}}},
+            "pep": {"properties": {"result": {"type": "keyword"}, "reason": {"type": "keyword"}}},
+            "approval": {"properties": {"id_hash": {"type": "keyword"}, "status": {"type": "keyword"}, "required": {"type": "boolean"}, "requires_justification": {"type": "boolean"}, "expires_at": {"type": "date"}, "consumed_at": {"type": "date"}, "use_count": {"type": "long"}, "max_uses": {"type": "long"}, "attempt_count": {"type": "long"}, "payload_hash": {"type": "keyword"}, "target_hash": {"type": "keyword"}, "failure": {"properties": {"reason": {"type": "keyword"}}}}},
+            "execution": {"properties": {"id": {"type": "keyword"}, "sequence": {"type": "long"}, "result_hash": {"type": "keyword"}, "error_class": {"type": "keyword"}, "result": {"type": "keyword"}}},
+            "mcp": {"properties": {"client": {"type": "keyword"}, "server": {"properties": {"id": {"type": "keyword"}, "name": {"type": "keyword"}, "version": {"type": "keyword"}, "fingerprint": {"type": "keyword"}, "transport": {"type": "keyword"}, "approved": {"type": "boolean"}}}, "tool_approved": {"type": "boolean"}, "gateway_bypassed": {"type": "boolean"}}},
+            "evidence": {"properties": {"chain_id": {"type": "keyword"}, "sequence": {"type": "long"}, "previous_hash": {"type": "keyword"}, "event_hash": {"type": "keyword"}, "hash_algorithm": {"type": "constant_keyword", "value": "sha256"}, "complete": {"type": "boolean"}, "present_ids": {"type": "keyword"}, "required_ids": {"type": "keyword"}}},
+            "distribution": {"properties": {"state": {"type": "keyword"}, "role": {"type": "keyword"}, "result": {"type": "keyword"}, "reason_code": {"type": "keyword"}, "metadata_versions": {"type": "flattened"}, "candidate_bundle_id": {"type": "keyword"}, "active_bundle_id": {"type": "keyword"}}},
+            "redaction": {"type": "flattened"}, "context": {"type": "flattened"}, "delegation": {"type": "flattened"}, "credential": {"type": "flattened"}, "network": {"type": "flattened"}, "dns": {"type": "flattened"}, "investigation": {"type": "flattened"}, "incident": {"type": "flattened"}, "data": {"type": "flattened"}, "human": {"properties": {"owner": {"type": "keyword"}}}
+          }
+        }
+      }
+    }
+  }
+}

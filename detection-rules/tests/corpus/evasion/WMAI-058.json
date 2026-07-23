@@ -1,0 +1,47 @@
+{
+  "rule_id": "WMAI-058",
+  "variants": [
+    {
+      "variant_id": "EVASION-058-01",
+      "class": "env",
+      "description": "Enumerate names through env",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-058-02",
+      "class": "printenv",
+      "description": "Enumerate names through printenv",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-058-03",
+      "class": "set",
+      "description": "Enumerate names through shell set",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-058-04",
+      "class": "powershell-env",
+      "description": "Use the PowerShell environment provider",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-058-05",
+      "class": "shell-expansion",
+      "description": "Enumerate through shell expansion",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-058-06",
+      "class": "proc-environment",
+      "description": "Inspect a disposable process environment where supported",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-058-07",
+      "class": "script-library",
+      "description": "Enumerate through a script or library",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

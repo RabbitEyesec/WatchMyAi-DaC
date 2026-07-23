@@ -1,0 +1,47 @@
+{
+  "rule_id": "WMAI-055",
+  "variants": [
+    {
+      "variant_id": "EVASION-055-01",
+      "class": "push-clone",
+      "description": "Use push or clone against a disposable unapproved remote",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-055-02",
+      "class": "url-variant",
+      "description": "Express the same remote through a URL variant",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-055-03",
+      "class": "remote-alias",
+      "description": "Use a configured remote alias",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-055-04",
+      "class": "credential-helper",
+      "description": "Invoke a synthetic credential helper",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-055-05",
+      "class": "shell-script",
+      "description": "Wrap Git in a shell script",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-055-06",
+      "class": "libgit-client",
+      "description": "Use a library client where observable",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-055-07",
+      "class": "changed-remote",
+      "description": "Push after changing the configured remote",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

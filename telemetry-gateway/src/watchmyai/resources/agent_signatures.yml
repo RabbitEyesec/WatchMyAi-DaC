@@ -1,0 +1,172 @@
+# WatchMyAI agent signature catalogue.
+#
+# All known-agent detection logic lives here — never hardcode signatures in
+# the codebase. Add future agents by appending entries; the discovery engine
+# picks them up without code changes.
+#
+# Fields per signature:
+#   agent_id                stable identifier used in watchmyai.agent.id
+#   vendor / product        reporting metadata
+#   executable_names        exact process/executable basenames (case-insensitive)
+#   process_patterns        regexes matched against the full command line
+#   install_paths           directories whose existence indicates installation
+#   config_paths            configuration directories/files for the agent
+#   parent_process_patterns regexes matched against the parent process name
+#   env_markers             environment variable names that indicate the agent
+#   adapter                 deep adapter module name, or generic fallback
+#   confidence              base confidence (0..1) for an executable-name match
+#
+# Confidence is combined per match method by the discovery engine; the final
+# score maps to watchmyai.attribution.level. Signature matches alone never
+# yield "confirmed" — only deep-adapter telemetry does.
+
+schema_version: 1
+
+signatures:
+  - agent_id: claude_code
+    vendor: Anthropic
+    product: Claude Code
+    executable_names: [claude, claude.exe, claude-code]
+    process_patterns: ['(^|[/\\ ])claude(\.js|\.exe)?(\s|$)', '@anthropic-ai/claude-code']
+    install_paths: ['~/.claude', '~/.npm-global/lib/node_modules/@anthropic-ai/claude-code']
+    config_paths: ['~/.claude/settings.json', '~/.claude.json']
+    parent_process_patterns: ['node', 'bun']
+    env_markers: [CLAUDECODE, CLAUDE_CODE_ENTRYPOINT]
+    adapter: claude_code
+    confidence: 0.7
+
+  - agent_id: codex_cli
+    vendor: OpenAI
+    product: Codex CLI
+    executable_names: [codex, codex.exe]
+    process_patterns: ['(^|[/\\ ])codex(\.exe)?(\s|$)', '@openai/codex']
+    install_paths: ['~/.codex']
+    config_paths: ['~/.codex/config.toml']
+    parent_process_patterns: []
+    env_markers: [CODEX_HOME, CODEX_SANDBOX]
+    adapter: codex_cli
+    confidence: 0.7
+
+  - agent_id: gemini_cli
+    vendor: Google
+    product: Gemini CLI
+    executable_names: [gemini, gemini.exe]
+    process_patterns: ['@google/gemini-cli', '(^|[/\\ ])gemini(\.exe)?(\s|$)']
+    install_paths: ['~/.gemini']
+    config_paths: ['~/.gemini/settings.json']
+    parent_process_patterns: ['node']
+    env_markers: [GEMINI_CLI]
+    adapter: generic_cli
+    confidence: 0.65
+
+  - agent_id: cursor
+    vendor: Anysphere
+    product: Cursor
+    executable_names: [Cursor, cursor, Cursor.exe, cursor.exe]
+    process_patterns: ['Cursor\.app', 'cursor-agent']
+    install_paths: ['/Applications/Cursor.app', '~/AppData/Local/Programs/cursor', '~/.cursor']
+    config_paths: ['~/.cursor']
+    parent_process_patterns: []
+    env_markers: [CURSOR_TRACE_ID]
+    adapter: generic_desktop
+    confidence: 0.65
+
+  - agent_id: cline
+    vendor: Cline Bot Inc.
+    product: Cline
+    executable_names: []
+    process_patterns: ['saoudrizwan\.claude-dev', 'cline']
+    install_paths: ['~/.vscode/extensions']
+    config_paths: ['~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev']
+    parent_process_patterns: ['Code', 'code', 'Code - Insiders']
+    env_markers: []
+    adapter: generic_desktop
+    confidence: 0.5
+
+  - agent_id: roo_code
+    vendor: Roo Code Inc.
+    product: Roo Code
+    executable_names: []
+    process_patterns: ['rooveterinaryinc\.roo-cline', 'roo-code']
+    install_paths: ['~/.vscode/extensions']
+    config_paths: ['~/Library/Application Support/Code/User/globalStorage/rooveterinaryinc.roo-cline']
+    parent_process_patterns: ['Code', 'code']
+    env_markers: []
+    adapter: generic_desktop
+    confidence: 0.5
+
+  - agent_id: aider
+    vendor: Aider AI
+    product: Aider
+    executable_names: [aider, aider.exe]
+    process_patterns: ['(^|[/\\ ])aider(\s|$)', '-m aider']
+    install_paths: []
+    config_paths: ['~/.aider.conf.yml']
+    parent_process_patterns: ['python', 'python3']
+    env_markers: [AIDER_MODEL]
+    adapter: generic_cli
+    confidence: 0.65
+
+  - agent_id: github_copilot_cli
+    vendor: GitHub
+    product: GitHub Copilot CLI
+    executable_names: [copilot, github-copilot-cli]
+    process_patterns: ['gh copilot', 'github-copilot-cli', '@githubnext/github-copilot-cli']
+    install_paths: []
+    config_paths: ['~/.config/github-copilot']
+    parent_process_patterns: ['gh', 'node']
+    env_markers: [GITHUB_COPILOT_TOKEN]
+    adapter: generic_cli
+    confidence: 0.6
+
+  - agent_id: warp
+    vendor: Warp
+    product: Warp Terminal (Agent Mode)
+    executable_names: [Warp, warp, Warp.exe, stable]
+    process_patterns: ['Warp\.app', 'dev\.warp\.Warp']
+    install_paths: ['/Applications/Warp.app']
+    config_paths: ['~/.warp']
+    parent_process_patterns: []
+    env_markers: [WARP_IS_LOCAL_SHELL_SESSION]
+    adapter: generic_desktop
+    confidence: 0.55
+
+  - agent_id: opencode
+    vendor: SST
+    product: OpenCode
+    executable_names: [opencode, opencode.exe]
+    process_patterns: ['(^|[/\\ ])opencode(\s|$)']
+    install_paths: []
+    config_paths: ['~/.config/opencode']
+    parent_process_patterns: []
+    env_markers: []
+    adapter: generic_cli
+    confidence: 0.6
+
+  - agent_id: continue_dev
+    vendor: Continue Dev Inc.
+    product: Continue
+    executable_names: [continue, cn]
+    process_patterns: ['continue\.continue', '@continuedev']
+    install_paths: ['~/.continue']
+    config_paths: ['~/.continue/config.yaml', '~/.continue/config.json']
+    parent_process_patterns: ['Code', 'code', 'node']
+    env_markers: []
+    adapter: generic_desktop
+    confidence: 0.5
+
+# Conservative heuristics for agents not in the catalogue. A process matching
+# one of these command-line regexes is classified as unknown_ai_agent with
+# weak attribution and generic telemetry only. Keep this list narrow to limit
+# false positives.
+unknown_agent_heuristics:
+  cmdline_patterns:
+    - 'mcp[-_]?server'
+    - '--mcp(-config)?\b'
+    - '\bllm[-_]?agent\b'
+    - '\bai[-_]?agent\b'
+    - 'agentic'
+  env_markers:
+    - ANTHROPIC_API_KEY
+    - OPENAI_API_KEY
+    - MCP_SERVER_NAME

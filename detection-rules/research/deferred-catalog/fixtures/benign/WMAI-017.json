@@ -1,0 +1,49 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "action": "ai_tool_executed",
+    "category": [
+      "configuration"
+    ],
+    "dataset": "watchmyai.events",
+    "id": "evt-wmai-017-benign-000",
+    "kind": "event",
+    "provider": "watchmyai",
+    "type": [
+      "change"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "user": {
+    "name": "lab-user"
+  },
+  "watchmyai": {
+    "action": {
+      "resolved_path": "/lab/workspace/README.md"
+    },
+    "agent": {
+      "id": "agent-lab",
+      "type": "known_ai_agent"
+    },
+    "attribution": {
+      "level": "confirmed"
+    },
+    "credential": {
+      "id": "credential-approved"
+    },
+    "policy": {
+      "allowed_credentials": [
+        "wmai-017-approved-value"
+      ],
+      "violation": {
+        "detected": false,
+        "type": "unexpected_ssh_key_access"
+      }
+    },
+    "schema": {
+      "version": "1.1.0"
+    }
+  }
+}

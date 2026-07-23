@@ -1,0 +1,26 @@
+{
+  "@timestamp": "2026-07-16T00:00:00Z",
+  "event": {
+    "category": [
+      "process"
+    ],
+    "type": [
+      "start"
+    ]
+  },
+  "host": {
+    "name": "lab-host"
+  },
+  "process": {
+    "command_line": "rg -i 'password|secret|token' /lab/repository",
+    "entity_id": "process-0",
+    "name": "rg",
+    "parent": {
+      "entity_id": "agent-parent-1",
+      "name": "codex"
+    }
+  },
+  "user": {
+    "name": "lab-user"
+  }
+}

@@ -1,0 +1,27 @@
+title: Persistent configuration modification
+id: 187953ee-a1eb-54ad-8541-0dda1d112cd0
+status: experimental
+description: Detects changes to selected persistent AI-agent configuration files.
+references:
+- docs/WatchMyAI_Detection_Engineering_Handbook.docx#WMAI-072
+- https://www.elastic.co/docs/reference/ecs
+author: WatchMyAI contributors
+date: '2026-07-16'
+modified: '2026-07-16'
+license: Apache-2.0
+logsource:
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith:
+    - /.claude/settings.json
+    - /.codex/config.toml
+    - /.gemini/settings.json
+    - /.aider.conf.yml
+    - /.cursor/mcp.json
+  condition: selection
+falsepositives:
+- Approved maintenance or controlled laboratory activity can resemble persistent configuration
+  modification.
+level: medium
+x_watchmyai_rule_id: WMAI-072

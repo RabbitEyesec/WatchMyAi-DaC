@@ -1,0 +1,102 @@
+rule_id: WMAI-002
+name: AI File Modification Outside Approved Workspace
+description: Detects ai file modification outside approved workspace from underlying WatchMyAI request,
+  decision, approval, resource, capability, and execution evidence without producer-declared findings.
+category: Workspace Control
+maturity: testable
+version: 2.0.0
+author: WatchMyAI contributors
+severity: critical
+risk_score: 91
+confidence: high
+test_tier: T1
+guarantee: deterministic where a registered pre-tool adapter mediates the covered action; otherwise cooperative
+  detection only
+threat_scenario: An attributed AI-agent action produces underlying evidence consistent with ai file modification
+  outside approved workspace and requires investigation or containment.
+target_agents:
+- Claude Code
+- Codex CLI
+- MCP clients through WatchMyAI gateway
+required_telemetry:
+- WatchMyAI Telemetry Schema 1.1.0
+required_fields:
+- event.action
+- event.dataset
+- watchmyai.policy.violation.type
+- watchmyai.tool.category
+data_sources:
+- logs-watchmyai.events-*
+custom_telemetry: true
+endpoint_only: false
+correlation: false
+detection_logic:
+  kind: query
+  query: event.dataset:"watchmyai.events" and event.action:"policy_violation" and watchmyai.policy.violation.type:("execution_outside_approved_workspace"
+    or "path_scope") and watchmyai.tool.category:"file"
+elastic:
+  type: query
+  language: kuery
+  query: event.dataset:"watchmyai.events" and event.action:"policy_violation" and watchmyai.policy.violation.type:("execution_outside_approved_workspace"
+    or "path_scope") and watchmyai.tool.category:"file"
+  index_patterns:
+  - logs-watchmyai.events-*
+  interval: 1m
+  from: now-6m
+  enabled: false
+  target_stack_versions:
+  - 9.4.3
+  lab_tested_versions:
+  - 9.4.3
+sigma:
+  status: not_applicable
+  path: null
+  reason: The rule depends on WatchMyAI policy and identity fields that have no portable Sigma logsource.
+false_positives:
+- An outdated allowlist, workspace root, adapter capability declaration, or operator-approved administrative
+  workflow can resemble the condition.
+tuning_guidance: Tune with explicit policy IDs, stable resource identities, and bounded maintenance windows;
+  never suppress a DENY-followed-by-execution invariant.
+investigation_steps:
+- Verify event-chain continuity and adapter capability.
+- Review request, decision, approval, and execution records sharing the action ID.
+- Confirm the active signed policy bundle and resource classification.
+- Contain the session when execution followed DENY or approval integrity failed.
+response_playbook: playbooks/WMAI-002.md
+limitations:
+- Cooperative hooks do not provide kernel-level containment.
+- Hosted or direct tool paths outside declared adapter coverage can require endpoint evidence.
+- Retained isolated-lab alert evidence is documented separately; it proves observed alerts only, not efficacy,
+  recall, false-positive rate, or future connected validation.
+validation_scenario: Ingest the schema 1.1.0 malicious fixture for SCN-WMAI-002 and correlate the resulting
+  alert to the fixture session and action IDs.
+expected_alert: One deduplicated critical alert for AI File Modification Outside Approved Workspace with
+  action, session, policy, guarantee, and chain evidence.
+fixtures:
+  malicious: tests/fixtures/malicious/WMAI-002.json
+  benign: tests/fixtures/benign/WMAI-002.json
+test_artifacts:
+  atomic: tests/corpus/atomic/WMAI-002.json
+  evasion: tests/corpus/evasion/WMAI-002.json
+  producer_conformance: tests/corpus/conformance/WMAI-002.json
+traceability:
+- ../deployment/rules_schema_1.1.0.ndjson
+- ../docs/DETECTION_RULES.md
+related_rules: []
+references:
+- ../telemetry-gateway/docs/TELEMETRY_SCHEMA.md
+- ../telemetry-gateway/docs/ARCHITECTURE.md
+threat_mappings: []
+deployment:
+  packageable: true
+  status: production_validated
+blocked_reason: null
+history:
+- version: 1.0.0
+  date: '2026-07-18'
+  author: WatchMyAI contributors
+  change: Rebuilt from the approved production design baseline using underlying evidence.
+- version: 1.1.0
+  date: '2026-07-20'
+  author: WatchMyAI release engineering
+  change: Reconciled with the rule validated in the Elastic laboratory.

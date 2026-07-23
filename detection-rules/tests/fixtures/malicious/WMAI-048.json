@@ -1,0 +1,273 @@
+{
+  "case_id": "positive-WMAI-048",
+  "case_type": "deterministic_unit_fixture_not_measured_efficacy",
+  "rule_id": "WMAI-048",
+  "expected_match": true,
+  "events": [
+    {
+      "@timestamp": "2026-07-20T04:00:00.000Z",
+      "event": {
+        "id": "fixture-WMAI-048-000",
+        "kind": "event",
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ],
+        "action": "policy_violation",
+        "dataset": "watchmyai.events",
+        "provider": "watchmyai"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-048",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "watchmyai": {
+        "schema": {
+          "version": "1.1.0"
+        },
+        "agent": {
+          "id": "fixture-agent",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "session": {
+          "id": "fixture-session-WMAI-048"
+        },
+        "action": {
+          "id": "fixture-action-WMAI-048-000"
+        },
+        "tool": {
+          "name": "Bash",
+          "category": "shell",
+          "arguments": {
+            "command": "echo safe"
+          }
+        },
+        "policy": {
+          "violation": {
+            "type": "validation_violation"
+          }
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:01.000Z",
+      "event": {
+        "id": "fixture-WMAI-048-001",
+        "kind": "event",
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ],
+        "action": "policy_violation",
+        "dataset": "watchmyai.events",
+        "provider": "watchmyai"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-048",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "watchmyai": {
+        "schema": {
+          "version": "1.1.0"
+        },
+        "agent": {
+          "id": "fixture-agent",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "session": {
+          "id": "fixture-session-WMAI-048"
+        },
+        "action": {
+          "id": "fixture-action-WMAI-048-001"
+        },
+        "tool": {
+          "name": "Bash",
+          "category": "shell",
+          "arguments": {
+            "command": "echo safe"
+          }
+        },
+        "policy": {
+          "violation": {
+            "type": "validation_violation"
+          }
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:02.000Z",
+      "event": {
+        "id": "fixture-WMAI-048-002",
+        "kind": "event",
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ],
+        "action": "policy_violation",
+        "dataset": "watchmyai.events",
+        "provider": "watchmyai"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-048",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "watchmyai": {
+        "schema": {
+          "version": "1.1.0"
+        },
+        "agent": {
+          "id": "fixture-agent",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "session": {
+          "id": "fixture-session-WMAI-048"
+        },
+        "action": {
+          "id": "fixture-action-WMAI-048-002"
+        },
+        "tool": {
+          "name": "Bash",
+          "category": "shell",
+          "arguments": {
+            "command": "echo safe"
+          }
+        },
+        "policy": {
+          "violation": {
+            "type": "validation_violation"
+          }
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:03.000Z",
+      "event": {
+        "id": "fixture-WMAI-048-003",
+        "kind": "event",
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ],
+        "action": "policy_violation",
+        "dataset": "watchmyai.events",
+        "provider": "watchmyai"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-048",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "watchmyai": {
+        "schema": {
+          "version": "1.1.0"
+        },
+        "agent": {
+          "id": "fixture-agent",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "session": {
+          "id": "fixture-session-WMAI-048"
+        },
+        "action": {
+          "id": "fixture-action-WMAI-048-003"
+        },
+        "tool": {
+          "name": "Bash",
+          "category": "shell",
+          "arguments": {
+            "command": "echo safe"
+          }
+        },
+        "policy": {
+          "violation": {
+            "type": "validation_violation"
+          }
+        }
+      }
+    },
+    {
+      "@timestamp": "2026-07-20T04:00:04.000Z",
+      "event": {
+        "id": "fixture-WMAI-048-004",
+        "kind": "event",
+        "category": [
+          "process"
+        ],
+        "type": [
+          "start"
+        ],
+        "action": "policy_violation",
+        "dataset": "watchmyai.events",
+        "provider": "watchmyai"
+      },
+      "host": {
+        "name": "watchmyai-validation-host"
+      },
+      "process": {
+        "entity_id": "fixture-process-WMAI-048",
+        "working_directory": "/tmp/watchmyai-validation"
+      },
+      "watchmyai": {
+        "schema": {
+          "version": "1.1.0"
+        },
+        "agent": {
+          "id": "fixture-agent",
+          "type": "known_ai_agent"
+        },
+        "attribution": {
+          "level": "confirmed"
+        },
+        "session": {
+          "id": "fixture-session-WMAI-048"
+        },
+        "action": {
+          "id": "fixture-action-WMAI-048-004"
+        },
+        "tool": {
+          "name": "Bash",
+          "category": "shell",
+          "arguments": {
+            "command": "echo safe"
+          }
+        },
+        "policy": {
+          "violation": {
+            "type": "validation_violation"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "rule_id": "WMAI-022",
+  "variants": [
+    {
+      "variant_id": "EVASION-022-01",
+      "class": "absolute-path",
+      "description": "Use an absolute sensitive path",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-022-02",
+      "class": "relative-traversal",
+      "description": "Reach the same path through relative traversal",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-022-03",
+      "class": "symlink",
+      "description": "Reach the same file through a symlink or junction",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-022-04",
+      "class": "hard-link",
+      "description": "Reach the same fixture through a hard link where supported",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-022-05",
+      "class": "alternate-reader",
+      "description": "Use cat/head/tail/sed/awk or Python",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-022-06",
+      "class": "archive-then-read",
+      "description": "Archive a fixture before reading it",
+      "expected": "match_or_documented_capability_gap"
+    },
+    {
+      "variant_id": "EVASION-022-07",
+      "class": "case-platform-path",
+      "description": "Use filename case or an alternate platform path",
+      "expected": "match_or_documented_capability_gap"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "type": "agent-turn-complete",
+  "turn-id": "cx-turn-0001",
+  "input-messages": ["Add retry logic to the fetcher"],
+  "last-assistant-message": "Done. Retry logic added with tenacity."
+}
