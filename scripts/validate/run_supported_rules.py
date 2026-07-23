@@ -26,7 +26,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "scenarios/runners"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(ROOT / "telemetry-gateway/src"))
+sys.path.insert(0, str(ROOT / "src"))
 
 from utilities.release_contract import (  # noqa: E402
     DEFERRED_IDS,
@@ -41,12 +41,12 @@ from utilities.release_contract import (  # noqa: E402
     resolve_repository_path,
 )
 from validate_ndjson import iter_ndjson  # noqa: E402
-from watchmyai.exporters.elastic.exporter import ElasticSink  # noqa: E402
 
 from scenarios.runners.run_scenario import (  # noqa: E402
     load_scenarios,
     write_scenario,
 )
+from watchmyai.exporters.elastic.exporter import ElasticSink  # noqa: E402
 
 NATIVE_FILE_INDEX_PATTERN = ",".join(NATIVE_FILE_INDEX_PATTERNS)
 NATIVE_RULE_REQUIREMENTS = {

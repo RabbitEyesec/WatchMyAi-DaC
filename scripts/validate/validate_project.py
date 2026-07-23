@@ -158,7 +158,7 @@ def validate() -> list[str]:
         "docs/ARCHITECTURE.md": f"Runtime and package: {version}",
         "docs/INSTALLATION.md": f"v{version} live onboarding contract",
         "requirements-release.lock": f"WatchMyAI v{version}",
-        "telemetry-gateway/src/watchmyai/schema/watchmyai_event.schema.json": (
+        "src/watchmyai/schema/watchmyai_event.schema.json": (
             f"WatchMyAI {version} Elastic laboratory deployment"
         ),
     }
@@ -183,7 +183,7 @@ def validate() -> list[str]:
     )
     for relative in ("detection-rules/README.md", "telemetry-gateway/README.md"):
         text = (ROOT / relative).read_text(encoding="utf-8")
-        _require(errors, "../QUICKSTART.md" in text, f"{relative} must link to QUICKSTART.md")
+        _require(errors, "../docs/QUICKSTART.md" in text, f"{relative} must link to docs/QUICKSTART.md")
 
     for relative in DEPLOYMENT_DOCUMENTATION:
         path = ROOT / relative
@@ -213,7 +213,7 @@ def validate() -> list[str]:
         for obsolete in ("detection-rules/pyproject.toml", "telemetry-gateway/pyproject.toml"):
             _require(errors, obsolete not in text, f"obsolete configuration reference in {path}: {obsolete}")
 
-    sys.path.insert(0, str(ROOT / "telemetry-gateway/src"))
+    sys.path.insert(0, str(ROOT / "src"))
     from watchmyai import __version__
 
     _require(errors, __version__ == version, "runtime package version differs from VERSION")

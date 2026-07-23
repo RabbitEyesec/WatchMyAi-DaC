@@ -1,6 +1,6 @@
 # Installation and lifecycle
 
-The [quick start](../QUICKSTART.md) is the supported first-user path. This document defines package
+The [quick start](QUICKSTART.md) is the supported first-user path. This document defines package
 installation, platform boundaries, upgrades, and reinstalls.
 
 ## Supported environment

@@ -42,22 +42,22 @@ jobs:
           python scripts/validate/validate_ndjson.py \
             --telemetry-schema fixtures/telemetry/canonical.ndjson
           python scripts/import/import_rules.py --dry-run
-          pytest
+          python -m pytest
       - name: Formatting, lint, typing, and security
         run: |
-          ruff format --check telemetry-gateway/src telemetry-gateway/tests \
+          ruff format --check src telemetry-gateway/tests \
             detection-rules/scripts detection-rules/tests scripts scenarios tests
-          ruff check telemetry-gateway/src telemetry-gateway/tests \
+          ruff check src telemetry-gateway/tests \
             detection-rules/scripts detection-rules/tests scripts scenarios tests
           mypy
-          bandit -q -r telemetry-gateway/src -ll
+          bandit -q -r src -ll
           pip-audit --strict --requirement requirements-release.lock
       - name: Validate executable entry points
         run: |
           bash -n scripts/install/install.sh scripts/validate/preflight.sh \
             detection-rules/deployment/export_rules.sh \
             telemetry-gateway/deployment/elastic/load-assets.sh
-          python -m compileall -q scripts scenarios tests telemetry-gateway/src detection-rules/scripts
+          python -m compileall -q scripts scenarios tests src detection-rules/scripts
       - name: Validate reproducible release outputs
         run: python scripts/preflight.py --repository-only
       - name: Reject generated drift and whitespace errors
@@ -82,7 +82,7 @@ jobs:
           cache-dependency-path: requirements-release.lock
       - run: python -m pip install --require-hashes -r requirements-release.lock
       - run: python -m pip install --no-build-isolation --no-deps .
-      - run: pytest
+      - run: python -m pytest
       - name: Gateway packaged-resource self-validation
         env:
           WATCHMYAI_ALLOW_UNSIGNED_POLICY: "1"
@@ -140,7 +140,7 @@ jobs:
           if ($Failures.Count -gt 0) { $Failures | Write-Error; exit 1 }
 
   build_release:
-    needs: [repository_gate, cross_platform_tests, powershell_syntax]
+    needs: [repository_gate, cross_platform_tests, documented_user_journey, powershell_syntax]
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -166,6 +166,9 @@ jobs:
           .wheel-smoke/bin/pip install --no-deps dist/*.whl
           .wheel-smoke/bin/watchmyai --home ./.wheel-smoke-home init
           .wheel-smoke/bin/watchmyai --home ./.wheel-smoke-home self-check
+          .wheel-smoke/bin/watchmyai --home ./.wheel-smoke-home install elastic
+          test -s .wheel-smoke-home/elastic/component_template.json
+          test -x .wheel-smoke-home/elastic/load-assets.sh
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: watchmyai-release

@@ -27,6 +27,7 @@ import os
 import platform
 import shutil
 import sys
+import sysconfig
 from datetime import UTC, datetime
 from importlib import resources
 from pathlib import Path
@@ -330,14 +331,24 @@ def _install_elastic(args: argparse.Namespace) -> int:
     gw_config = GatewayConfig.load(args.home)
     dst = gw_config.home / "elastic"
     dst.mkdir(parents=True, exist_ok=True)
-    src = Path(__file__).resolve().parents[3] / "deployment" / "elastic"
+    repository_root = Path(__file__).resolve().parents[3]
+    source_assets = repository_root / "telemetry-gateway" / "deployment" / "elastic"
+    installed_assets = Path(sysconfig.get_path("data")) / "share" / "watchmyai" / "elastic"
+    src = source_assets if source_assets.is_dir() else installed_assets
+    if not src.is_dir():
+        print("WatchMyAI Elastic assets are missing from this installation", file=sys.stderr)
+        return 1
     copied = []
     if src.exists():
         for item in src.iterdir():
             shutil.copy2(item, dst / item.name)
             copied.append(item.name)
     print(f"Elastic assets copied to {dst}: {copied}")
-    print("\nNext steps (see docs/ELASTIC_INTEGRATION.md):")
+    print(
+        "\nNext steps (see "
+        "https://github.com/rabbiteyesec/WatchMyAi-DaC/blob/main/"
+        "telemetry-gateway/docs/ELASTIC_INTEGRATION.md):"
+    )
     print("  1. export ELASTIC_URL=https://<your-cluster>:9243")
     print("  2. export ELASTIC_API_KEY=<api key with create_doc on logs-watchmyai.events-*>")
     print(f"  3. Load templates:   see {dst}/load-assets.sh")
@@ -409,7 +420,8 @@ def cmd_self_check(args: argparse.Namespace) -> int:
     check("packaged policy bundle parses", _policies)
 
     def _fixtures() -> None:
-        fixtures = Path(__file__).resolve().parents[3] / "fixtures"
+        repository_root = Path(__file__).resolve().parents[3]
+        fixtures = repository_root / "telemetry-gateway" / "fixtures"
         if not fixtures.exists():
             return  # installed package: fixtures live in the repo only
         from watchmyai.adapters.claude_code.adapter import parse_hook_payload

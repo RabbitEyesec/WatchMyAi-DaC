@@ -344,7 +344,7 @@ def check_signed_test_policy(release_dir: Path) -> str:
     missing = sorted(name for name in required if not (release_dir / name).is_file())
     if missing:
         raise RuntimeError(f"signed test release is incomplete: {', '.join(missing)}")
-    source_path = str(GATEWAY / "src")
+    source_path = str(ROOT / "src")
     if source_path not in sys.path:
         sys.path.insert(0, source_path)
     from watchmyai.distribution.client import DistributionClient
@@ -498,7 +498,7 @@ def check_runtime_self_validation() -> str:
         command = [sys.executable, "-m", "watchmyai.cli.main", "--home", str(home)]
         environment = dict(os.environ)
         environment["WATCHMYAI_ALLOW_UNSIGNED_POLICY"] = "1"
-        source_path = str(GATEWAY / "src")
+        source_path = str(ROOT / "src")
         environment["PYTHONPATH"] = source_path + os.pathsep + environment.get("PYTHONPATH", "")
         for action in ("init", "self-check"):
             completed = subprocess.run(
@@ -855,7 +855,7 @@ def check_fleet_and_gateway() -> str:
     environment = dict(os.environ)
     development = os.environ.get("WATCHMYAI_POLICY_MODE") == "development"
     environment["WATCHMYAI_ALLOW_UNSIGNED_POLICY"] = "1" if development else "0"
-    source = str(GATEWAY / "src")
+    source = str(ROOT / "src")
     environment["PYTHONPATH"] = source + os.pathsep + environment.get("PYTHONPATH", "")
     completed = subprocess.run(
         [

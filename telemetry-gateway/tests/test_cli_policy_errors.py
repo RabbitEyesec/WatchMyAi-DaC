@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from pytest import CaptureFixture
+
 from watchmyai.cli.main import EXIT_VALIDATION, main
 
 

@@ -6,7 +6,7 @@ workflows.
 
 ## New users
 
-- [Quick start](../QUICKSTART.md): fresh checkout to current alerts on the validated live platform.
+- [Quick start](QUICKSTART.md): fresh checkout to current alerts on the validated live platform.
 - [Installation](INSTALLATION.md): supported platforms, packages, upgrades, and reinstalls.
 - [Setup and configuration](SETUP_AND_CONFIGURATION.md): complete operator deployment sequence.
 - [Troubleshooting](TROUBLESHOOTING.md): symptom-based diagnostics and exit codes.

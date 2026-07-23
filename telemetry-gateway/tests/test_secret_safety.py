@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 
 import pytest
+
 from watchmyai.adapters.claude_code.adapter import parse_hook_payload
 from watchmyai.exporters.elastic.exporter import ElasticSink, elastic_settings_from_env
 from watchmyai.exporters.http.exporter import HttpSink

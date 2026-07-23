@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+
 from watchmyai.capability.service import CapabilityRegistry
 from watchmyai.classifiers.command import classify_command
 from watchmyai.classifiers.path import classify_paths, resolve_paths

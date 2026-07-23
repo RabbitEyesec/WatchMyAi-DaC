@@ -60,7 +60,7 @@ export FLEET_CA_CERT=/etc/watchmyai/fleet-ca.pem
 
 The scoped key must cover the WatchMyAI Elastic assets, Detection Engine rules, Fleet reads and
 Elastic Defend package-policy setup, controlled validation writes, and the source and alert reads
-described in [Installation](docs/INSTALLATION.md). Do not use a credential embedded in a URL.
+described in [Installation](INSTALLATION.md). Do not use a credential embedded in a URL.
 
 ## 4. Run development setup
 
@@ -125,12 +125,12 @@ to an unsigned policy.
 ## If a command fails
 
 Do not edit generated rule JSON, gateway YAML, hook JSON, or installed Elastic assets as a repair.
-Use the reported exit code and [Troubleshooting](docs/TROUBLESHOOTING.md), correct the input or
+Use the reported exit code and [Troubleshooting](TROUBLESHOOTING.md), correct the input or
 external service, rerun the same setup mode, and then run `verify` again.
 
 For configuration details, upgrades, and safe removal, see:
 
-- [Setup and configuration](docs/SETUP_AND_CONFIGURATION.md)
-- [Configuration reference](docs/CONFIGURATION.md)
-- [Installation and upgrades](docs/INSTALLATION.md)
-- [Uninstall](docs/UNINSTALL.md)
+- [Setup and configuration](SETUP_AND_CONFIGURATION.md)
+- [Configuration reference](CONFIGURATION.md)
+- [Installation and upgrades](INSTALLATION.md)
+- [Uninstall](UNINSTALL.md)

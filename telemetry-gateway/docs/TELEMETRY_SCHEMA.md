@@ -1,6 +1,9 @@
 # WatchMyAI telemetry schema 1.1.0
 
-The JSON Schema at `src/watchmyai/schema/watchmyai_event.schema.json` and the Elastic component template at `deployment/elastic/component_template.json` define the release contract. The ingest pipeline rejects any WatchMyAI event whose `watchmyai.schema.version` is not `1.1.0`.
+The JSON Schema at `src/watchmyai/schema/watchmyai_event.schema.json` and the Elastic component
+template at `telemetry-gateway/deployment/elastic/component_template.json` define the release
+contract. The ingest pipeline rejects any WatchMyAI event whose `watchmyai.schema.version` is not
+`1.1.0`.
 
 Every WatchMyAI event contains `@timestamp`, ECS `event.*`, host identity, `watchmyai.schema.version`, agent identity, and attribution. Events use `event.dataset: watchmyai.events` and are routed to `logs-watchmyai.events-*`.
 

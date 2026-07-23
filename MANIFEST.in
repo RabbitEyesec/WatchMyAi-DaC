@@ -1,1 +1,23 @@
+include .env.example
+include CHANGELOG.md
+include CONTRIBUTING.md
+include LICENSE
+include README.md
+include SECURITY.md
 include VERSION
+include requirements-dev.lock
+include requirements-release.lock
+
+recursive-include deployment *
+recursive-include detection-rules *
+recursive-include docs *.md
+recursive-include fixtures *
+recursive-include release *
+recursive-include scenarios *.json *.py
+recursive-include scripts *.ps1 *.py *.sh
+recursive-include telemetry-gateway *.json *.jsonl *.md *.ndjson *.sh
+recursive-include tests *.py
+
+global-exclude .DS_Store
+global-exclude *.py[cod]
+global-exclude __pycache__

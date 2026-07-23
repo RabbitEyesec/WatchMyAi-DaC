@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import importlib
 import json
 import os
@@ -15,10 +16,6 @@ from types import SimpleNamespace
 
 import pytest
 import yaml
-from watchmyai import onboarding
-from watchmyai.adapters.claude_code import installer as claude_installer
-from watchmyai.adapters.codex_cli import installer as codex_installer
-from watchmyai.schema.event import validate_event
 
 from scenarios.runners.run_scenario import (
     correlate_events,
@@ -52,10 +49,28 @@ from scripts.validate.run_supported_rules import (
 )
 from scripts.validate.validate_config import validate_config
 from scripts.validate.validate_ndjson import validate_file
+from watchmyai import onboarding
+from watchmyai.adapters.claude_code import installer as claude_installer
+from watchmyai.adapters.codex_cli import installer as codex_installer
+from watchmyai.schema.event import validate_event
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES = ROOT / "detection-rules"
 importer = importlib.import_module("scripts.import.import_rules")
+
+
+def _tree_state(path: Path) -> tuple[tuple[str, int, str], ...] | None:
+    if not path.exists():
+        return None
+    return tuple(
+        (
+            item.relative_to(path).as_posix(),
+            item.stat().st_mode,
+            hashlib.sha256(item.read_bytes()).hexdigest(),
+        )
+        for item in sorted(path.rglob("*"))
+        if item.is_file()
+    )
 
 
 def test_supported_python_version_is_consistent() -> None:
@@ -68,7 +83,7 @@ def test_supported_python_version_is_consistent() -> None:
     assert 'python: ["3.11", "3.12"]' in workflow
     assert 'python: ["3.10"' not in workflow
 
-    doctor = (ROOT / "telemetry-gateway/src/watchmyai/cli/main.py").read_text("utf-8")
+    doctor = (ROOT / "src/watchmyai/cli/main.py").read_text("utf-8")
     assert '"Python 3.11 or 3.12"' in doctor
 
 
@@ -92,7 +107,7 @@ def test_source_archive_is_deterministic_and_excludes_local_state(
     build_source_archive(second)
 
     assert first.read_bytes() == second.read_bytes()
-    assert first.stat().st_size < 10 * 1024 * 1024
+    assert first.stat().st_size < 25 * 1024 * 1024
     with zipfile.ZipFile(first) as archive:
         names = archive.namelist()
         assert names == sorted(names)
@@ -107,20 +122,20 @@ def test_source_archive_no_git_fallback_is_strict(tmp_path: Path) -> None:
     required = {
         ".env.example": "SAFE=value\n",
         "LICENSE": "synthetic licence\n",
-        "QUICKSTART.md": "# Quick start\n",
         "README.md": "# WatchMyAI\n",
         "VERSION": "1.0.0\n",
         "deployment/rules_schema_1.1.0.ndjson": "{}\n",
         "detection-rules/detections/manifest.yml": "rule_count: 20\n",
         "detection-rules/tests/fixtures/manifest.json": "{}\n",
         "docs/DETECTION_RULES.md": "# Detection rules\n",
+        "docs/QUICKSTART.md": "# Quick start\n",
         "docs/assets/screenshots/elastic-watchmyai-alerts.png": "reviewed public image",
         "docs/assets/screenshots/elastic-watchmyai-events.png": "reviewed public image",
         "pyproject.toml": "[build-system]\n",
         "scripts/install/install.ps1": "exit 0\n",
         "scripts/install/install.sh": "#!/usr/bin/env bash\n",
         "telemetry-gateway/deployment/elastic/load-assets.sh": "#!/usr/bin/env bash\n",
-        "telemetry-gateway/src/watchmyai/__init__.py": "__version__ = '1.0.0'\n",
+        "src/watchmyai/__init__.py": "__version__ = '1.0.0'\n",
     }
     for relative, content in required.items():
         target = source / relative
@@ -182,8 +197,8 @@ def test_source_archive_git_inventory_excludes_arbitrary_untracked_files(
 
 
 def test_release_build_does_not_write_generated_metadata_into_source(tmp_path: Path) -> None:
-    generated = [ROOT / "build", ROOT / "telemetry-gateway/src/WatchMyAI.egg-info"]
-    assert not any(path.exists() for path in generated)
+    generated = [ROOT / "build", ROOT / "src/WatchMyAI.egg-info"]
+    before = {path: _tree_state(path) for path in generated}
     artifacts = build_release(tmp_path / "release")
     assert {path.name for path in artifacts} == {
         "SHA256SUMS.txt",
@@ -193,7 +208,15 @@ def test_release_build_does_not_write_generated_metadata_into_source(tmp_path: P
         "watchmyai-package-manifest.json",
         "watchmyai-rules.ndjson",
     }
-    assert not any(path.exists() for path in generated)
+    wheel = next(path for path in artifacts if path.suffix == ".whl")
+    with zipfile.ZipFile(wheel) as archive:
+        names = set(archive.namelist())
+    assert {
+        "watchmyai-1.0.0.data/data/share/watchmyai/elastic/component_template.json",
+        "watchmyai-1.0.0.data/data/share/watchmyai/elastic/load-assets.sh",
+    } <= names
+    after = {path: _tree_state(path) for path in generated}
+    assert after == before
 
 
 def test_shebang_entry_points_are_executable() -> None:

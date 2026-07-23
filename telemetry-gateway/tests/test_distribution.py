@@ -7,6 +7,7 @@ from datetime import UTC, datetime, timedelta
 import pytest
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+
 from watchmyai.distribution.canonical import CanonicalJSONError, canonicalize, load_strict_json
 from watchmyai.distribution.client import DistributionClient, OfflineState
 from watchmyai.distribution.metadata import MetadataError, RoleVerifier, public_key_id, sign_signed_object

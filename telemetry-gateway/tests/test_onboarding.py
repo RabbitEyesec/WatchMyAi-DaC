@@ -6,6 +6,7 @@ from typing import Any
 
 import pytest
 import yaml
+
 from watchmyai import onboarding
 from watchmyai.cli.main import main
 from watchmyai.gateway import Gateway, GatewayConfig

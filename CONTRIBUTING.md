@@ -46,9 +46,9 @@ Run the applicable checks from the repository root:
 .venv/bin/python scripts/preflight.py --repository-only --allow-dirty
 .venv/bin/python scripts/validate/validate_docs.py
 .venv/bin/python -m pytest
-.venv/bin/ruff format --check telemetry-gateway/src telemetry-gateway/tests \
+.venv/bin/ruff format --check src telemetry-gateway/tests \
   detection-rules/scripts detection-rules/tests scripts scenarios tests
-.venv/bin/ruff check telemetry-gateway/src telemetry-gateway/tests \
+.venv/bin/ruff check src telemetry-gateway/tests \
   detection-rules/scripts detection-rules/tests scripts scenarios tests
 .venv/bin/mypy
 ```

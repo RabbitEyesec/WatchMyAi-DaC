@@ -19,7 +19,7 @@ product.
 
 ## Onboarding boundary
 
-Use the root [`QUICKSTART.md`](../QUICKSTART.md) for the authoritative installation, setup,
+Use the root [quick start](../docs/QUICKSTART.md) for the authoritative installation, setup,
 verification, validation, and uninstall workflow. Gateway documentation covers component-specific
 runtime and administration details only. The root setup workflow owns runtime initialization,
 generated configuration, policy mode, gateway export, hooks, Fleet, Elastic assets, and detection

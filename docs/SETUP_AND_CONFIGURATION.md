@@ -3,7 +3,7 @@
 This is the complete operator workflow after package installation. Run commands from the repository
 root. The validated connected deployment uses Ubuntu 24.04, Python 3.11 or 3.12, and Elastic 9.4.3.
 
-For the shortest path, use the [quick start](../QUICKSTART.md). For every supported variable and
+For the shortest path, use the [quick start](QUICKSTART.md). For every supported variable and
 validation rule, use the [configuration reference](CONFIGURATION.md).
 
 ## 1. Confirm operator prerequisites

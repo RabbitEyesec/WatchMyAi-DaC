@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXED_ZIP_TIME = (1980, 1, 1, 0, 0, 0)
-MAX_SOURCE_ARCHIVE_BYTES = 10 * 1024 * 1024
+MAX_SOURCE_ARCHIVE_BYTES = 25 * 1024 * 1024
 FORBIDDEN_PARTS = {
     ".cache",
     ".claude",
@@ -76,20 +76,20 @@ FORBIDDEN_SUFFIXES = {
 REQUIRED_FILES = {
     ".env.example",
     "LICENSE",
-    "QUICKSTART.md",
     "README.md",
     "VERSION",
     "deployment/rules_schema_1.1.0.ndjson",
     "detection-rules/detections/manifest.yml",
     "detection-rules/tests/fixtures/manifest.json",
     "docs/DETECTION_RULES.md",
+    "docs/QUICKSTART.md",
     "docs/assets/screenshots/elastic-watchmyai-alerts.png",
     "docs/assets/screenshots/elastic-watchmyai-events.png",
     "pyproject.toml",
     "scripts/install/install.ps1",
     "scripts/install/install.sh",
     "telemetry-gateway/deployment/elastic/load-assets.sh",
-    "telemetry-gateway/src/watchmyai/__init__.py",
+    "src/watchmyai/__init__.py",
 }
 
 

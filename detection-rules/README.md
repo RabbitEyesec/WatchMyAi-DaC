@@ -2,7 +2,7 @@
 
 This internal component validates, tests, documents, and packages WatchMyAI's 20 production rules
 for Elastic 9.4.3. It is not a separately published product. Use the root
-[`QUICKSTART.md`](../QUICKSTART.md) for installation, setup, verification, and live validation.
+[quick start](../docs/QUICKSTART.md) for installation, setup, verification, and live validation.
 
 The sole rule source of truth is
 [`../deployment/rules_schema_1.1.0.ndjson`](../deployment/rules_schema_1.1.0.ndjson). The files in

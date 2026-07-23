@@ -63,9 +63,7 @@ def validate_file(path: Path, *, telemetry_schema: bool = False) -> tuple[int, l
         except ImportError:
             return 0, ["jsonschema is required for --telemetry-schema"]
         root = Path(__file__).resolve().parents[2]
-        schema_path = (
-            root / "telemetry-gateway" / "src" / "watchmyai" / "schema" / "watchmyai_event.schema.json"
-        )
+        schema_path = root / "src" / "watchmyai" / "schema" / "watchmyai_event.schema.json"
         schema = json.loads(schema_path.read_text("utf-8"))
         validator = Draft202012Validator(schema, format_checker=FormatChecker())
     try:

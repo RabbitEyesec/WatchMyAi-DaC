@@ -15,13 +15,14 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 GATEWAY = ROOT / "telemetry-gateway"
 RULES = ROOT / "detection-rules"
-SCHEMA_PATH = GATEWAY / "src/watchmyai/schema/watchmyai_event.schema.json"
-CONTRACT_PATH = GATEWAY / "src/watchmyai/schema/telemetry_contract.json"
+SCHEMA_PATH = ROOT / "src/watchmyai/schema/watchmyai_event.schema.json"
+CONTRACT_PATH = ROOT / "src/watchmyai/schema/telemetry_contract.json"
 MAPPING_PATH = GATEWAY / "deployment/elastic/component_template.json"
-sys.path.insert(0, str(GATEWAY / "src"))
+sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from validate_ndjson import validate_file  # noqa: E402
+
 from watchmyai.normalization.normalizer import Normalizer  # noqa: E402
 
 

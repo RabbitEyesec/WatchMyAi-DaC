@@ -34,7 +34,7 @@ jobs:
         run: |
           ruff check detection-rules/scripts detection-rules/tests scripts/import
           (cd detection-rules && python scripts/validate.py)
-          pytest detection-rules/tests tests/test_release_hardening.py
+          python -m pytest detection-rules/tests tests/test_release_hardening.py
           python detection-rules/scripts/package_rules.py --output-dir dist
           (cd dist && sha256sum --check SHA256SUMS.txt)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

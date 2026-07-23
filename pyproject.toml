@@ -12,6 +12,20 @@ license = "Apache-2.0"
 license-files = ["LICENSE"]
 authors = [{ name = "RabbitEyeSec" }]
 maintainers = [{ name = "WatchMyAI contributors" }]
+keywords = ["ai-agents", "detection-engineering", "elastic-security", "policy-enforcement", "telemetry"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Operating System :: MacOS",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security",
+]
 dependencies = [
   "cryptography>=42.0",
   "jsonschema>=4.23,<5",
@@ -45,16 +59,33 @@ dev = [
 [project.scripts]
 watchmyai = "watchmyai.cli.main:main"
 
+[project.urls]
+Changelog = "https://github.com/rabbiteyesec/WatchMyAi-DaC/blob/main/CHANGELOG.md"
+Documentation = "https://github.com/rabbiteyesec/WatchMyAi-DaC/tree/main/docs"
+Issues = "https://github.com/rabbiteyesec/WatchMyAi-DaC/issues"
+Repository = "https://github.com/rabbiteyesec/WatchMyAi-DaC"
+
 [tool.setuptools]
-package-dir = { "" = "telemetry-gateway/src" }
+package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
-where = ["telemetry-gateway/src"]
+where = ["src"]
 
 [tool.setuptools.package-data]
 "watchmyai.schema" = ["*.json"]
 "watchmyai.policy" = ["*.json"]
 "watchmyai.resources" = ["*.yml"]
+
+[tool.setuptools.data-files]
+"share/watchmyai/elastic" = [
+  "telemetry-gateway/deployment/elastic/README.md",
+  "telemetry-gateway/deployment/elastic/component_template.json",
+  "telemetry-gateway/deployment/elastic/ilm_policy.json",
+  "telemetry-gateway/deployment/elastic/index_template.json",
+  "telemetry-gateway/deployment/elastic/ingest_pipeline.json",
+  "telemetry-gateway/deployment/elastic/kibana.ndjson",
+  "telemetry-gateway/deployment/elastic/load-assets.sh",
+]
 
 [tool.setuptools.dynamic]
 version = { attr = "watchmyai.__version__" }
@@ -67,19 +98,22 @@ target-version = "py311"
 select = ["E", "F", "W", "I", "B", "UP"]
 ignore = ["E501"]
 
+[tool.ruff.lint.isort]
+known-first-party = ["watchmyai"]
+
 [tool.ruff.lint.per-file-ignores]
 # Preflight can run before package installation and must emit a clear minimum-version failure.
 "scripts/preflight.py" = ["UP036"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests", "telemetry-gateway/tests", "detection-rules/tests"]
-pythonpath = [".", "telemetry-gateway/src"]
+pythonpath = [".", "src"]
 addopts = "-q --import-mode=importlib"
 
 [tool.mypy]
 python_version = "3.11"
-mypy_path = "telemetry-gateway/src"
-files = ["telemetry-gateway/src/watchmyai"]
+mypy_path = "src"
+files = ["src/watchmyai"]
 ignore_missing_imports = true
 check_untyped_defs = true
 disable_error_code = ["import-untyped"]

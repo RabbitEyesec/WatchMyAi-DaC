@@ -1,5 +1,10 @@
 # WatchMyAI
 
+[![WatchMyAI CI](https://github.com/rabbiteyesec/WatchMyAi-DaC/actions/workflows/watchmyai-ci.yml/badge.svg)](https://github.com/rabbiteyesec/WatchMyAi-DaC/actions/workflows/watchmyai-ci.yml)
+[![CodeQL](https://github.com/rabbiteyesec/WatchMyAi-DaC/actions/workflows/codeql.yml/badge.svg)](https://github.com/rabbiteyesec/WatchMyAi-DaC/actions/workflows/codeql.yml)
+[![Python 3.11–3.12](https://img.shields.io/badge/python-3.11%20%7C%203.12-3776AB.svg)](https://www.python.org/)
+[![Apache-2.0 license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 ## Detection-as-Code for AI Agent Security
 
 WatchMyAI monitors AI coding agent activity at supported hook and gateway boundaries, applies
@@ -94,7 +99,7 @@ Clone the repository using the URL shown by its GitHub **Code** menu. From the c
 ```bash
 cd watchmyai
 ./scripts/install/install.sh
-# Export the Elastic and Fleet values described in QUICKSTART.md.
+# Export the Elastic and Fleet values described in docs/QUICKSTART.md.
 .venv/bin/watchmyai setup --development
 .venv/bin/watchmyai verify
 .venv/bin/watchmyai validate
@@ -102,7 +107,7 @@ cd watchmyai
 
 Development setup enables rules only because that validation mode was selected explicitly. Signed
 production setup requires organization-controlled policy inputs and explicit rule enablement.
-Follow the complete [quick start](QUICKSTART.md) before running a connected deployment.
+Follow the complete [quick start](docs/QUICKSTART.md) before running a connected deployment.
 
 ## Detection-rule summary
 
@@ -140,7 +145,8 @@ WatchMyAI/
 |-- release/             machine-readable release and validation status
 |-- scenarios/           controlled rule-validation scenarios
 |-- scripts/             install, import, validation, and release tooling
-|-- telemetry-gateway/   internal runtime component
+|-- src/                 importable watchmyai Python package
+|-- telemetry-gateway/   gateway deployment assets, fixtures, tests, and component documentation
 |-- tests/               project-level consistency and hardening tests
 |-- VERSION              one product version
 |-- pyproject.toml       one Python package and tool configuration
@@ -160,13 +166,14 @@ current, authentic, and sanitized before publication; no dashboard image is requ
 
 ## Documentation index
 
-- [Quick start](QUICKSTART.md): shortest supported checkout-to-current-alert path.
+- [Quick start](docs/QUICKSTART.md): shortest supported checkout-to-current-alert path.
 - [Documentation index](docs/README.md): guides by audience and task.
 - [Installation](docs/INSTALLATION.md): platforms, packages, upgrades, and reinstalls.
 - [Setup and configuration](docs/SETUP_AND_CONFIGURATION.md): complete operator workflow.
 - [Configuration reference](docs/CONFIGURATION.md): inputs, defaults, validation, and secrets.
 - [Verification](docs/VERIFICATION.md): static, connected, and current-alert result meanings.
 - [Troubleshooting](docs/TROUBLESHOOTING.md): symptom-based diagnostics and exit codes.
+- [Changelog](CHANGELOG.md): release history and notable changes.
 - [Security policy](SECURITY.md): reporting and sensitive-data handling.
 
 ## Verification

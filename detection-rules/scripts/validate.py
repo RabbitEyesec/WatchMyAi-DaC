@@ -26,7 +26,7 @@ from rulelib import (
 )
 
 GATEWAY_ROOT = ROOT.parent / "telemetry-gateway"
-GATEWAY_SCHEMA_PATH = GATEWAY_ROOT / "src" / "watchmyai" / "schema" / "watchmyai_event.schema.json"
+GATEWAY_SCHEMA_PATH = ROOT.parent / "src" / "watchmyai" / "schema" / "watchmyai_event.schema.json"
 GATEWAY_MAPPING_PATH = GATEWAY_ROOT / "deployment" / "elastic" / "component_template.json"
 
 sys.path.insert(0, str(ROOT.parent / "scripts"))
