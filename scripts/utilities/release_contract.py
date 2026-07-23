@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 import re
+import tempfile
 from collections.abc import Mapping
 from pathlib import Path
 from urllib.parse import urlparse
@@ -283,8 +284,11 @@ def require_safe_workspace(path: Path) -> None:
         raise ValueError(f"unsafe test workspace {resolved}: use a dedicated disposable child path")
     if len(resolved.parts) < 3:
         raise ValueError(f"unsafe test workspace {resolved}: path is too broad")
-    if resolved.is_relative_to(Path.home().resolve()) and not resolved.is_relative_to(
-        REPOSITORY_ROOT.resolve()
+    temp_root = Path(tempfile.gettempdir()).resolve()
+    if (
+        resolved.is_relative_to(Path.home().resolve())
+        and not resolved.is_relative_to(REPOSITORY_ROOT.resolve())
+        and not resolved.is_relative_to(temp_root)
     ):
         raise ValueError(f"unsafe test workspace {resolved}: real user-home targets are forbidden")
 

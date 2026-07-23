@@ -220,6 +220,8 @@ def test_release_build_does_not_write_generated_metadata_into_source(tmp_path: P
 
 
 def test_shebang_entry_points_are_executable() -> None:
+    if os.name == "nt":
+        pytest.skip("POSIX executable permission bits are not meaningful on Windows")
     required = {
         "detection-rules/deployment/export_rules.sh",
         "detection-rules/scripts/package_rules.py",
@@ -425,6 +427,7 @@ def test_config_allows_deployment_paths_and_rfc1918_addresses(
             "FLEET_AGENT_POLICY_ID": "watchmyai-test-policy",
             "CLAUDE_SETTINGS_PATH": deployment_path,
             "TLS_VERIFY": "true",
+            "WATCHMYAI_HOME": str(tmp_path / "watchmyai-home"),
         }
     )
     config = tmp_path / ".env"
@@ -617,7 +620,8 @@ def test_generated_config_is_backed_up_only_when_changed(tmp_path: Path) -> None
     first_backups = list(tmp_path.glob(".env.wmai-backup-*"))
     assert len(first_backups) == 1
     assert first_backups[0].read_text("utf-8") == "A=old\n"
-    assert config.stat().st_mode & 0o777 == 0o600
+    if os.name != "nt":
+        assert config.stat().st_mode & 0o777 == 0o600
 
     onboarding._write_config(config, {"A": ""}, {"A": "new"})
     assert list(tmp_path.glob(".env.wmai-backup-*")) == first_backups

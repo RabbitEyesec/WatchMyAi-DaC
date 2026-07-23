@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 
 import pytest
 
@@ -54,6 +55,8 @@ def test_elastic_environment_supports_owner_only_key_file_and_tls_switch(tmp_pat
 
 
 def test_elastic_environment_rejects_permissive_key_file(tmp_path):
+    if os.name == "nt":
+        pytest.skip("owner-only key file enforcement is a POSIX-only permission check")
     key_file = tmp_path / "elastic-api-key"
     key_file.write_text("synthetic-redaction-test-value\n", "utf-8")
     key_file.chmod(0o644)

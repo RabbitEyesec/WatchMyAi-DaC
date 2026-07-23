@@ -390,7 +390,7 @@ def sync_fixtures(rules: list[dict[str, Any]]) -> None:
                 "events": _fixture_events(rule, malicious),
             }
             target.write_text(json.dumps(fixture, indent=2) + "\n", "utf-8", newline="\n")
-            manifest[rule_id][fixture_type] = str(relative)
+            manifest[rule_id][fixture_type] = relative.as_posix()
     (RULES_ROOT / "tests" / "fixtures" / "manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", "utf-8", newline="\n"
     )

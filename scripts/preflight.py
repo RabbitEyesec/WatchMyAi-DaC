@@ -228,7 +228,8 @@ def check_repository_clean() -> str:
 
 def check_machine_specific_and_secrets() -> str:
     findings: list[str] = []
-    local_values = {str(ROOT), str(Path.home())}
+    home = Path.home()
+    local_values = {str(ROOT), str(home), ROOT.as_posix(), home.as_posix()}
     local_values.discard("")
     for path in _tracked_files():
         if (
