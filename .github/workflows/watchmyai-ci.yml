@@ -163,6 +163,7 @@ jobs:
       - name: Verify wheel runtime resources
         run: |
           python -m venv .wheel-smoke
+          .wheel-smoke/bin/pip install --require-hashes -r requirements-release.lock
           .wheel-smoke/bin/pip install --no-deps dist/*.whl
           .wheel-smoke/bin/watchmyai --home ./.wheel-smoke-home init
           .wheel-smoke/bin/watchmyai --home ./.wheel-smoke-home self-check
