@@ -2,7 +2,7 @@
 
 - WatchMyAI is not a kernel sandbox. A process that bypasses configured hooks/gateways can perform effects outside the PEP.
 - Claude/Codex enforcement is only as complete as the local lifecycle-hook coverage reported by that installed version. Hosted tools and specialized paths can be outside coverage.
-- The MCP gateway provides deterministic pre-execution control for its stdio route. Direct, SSE, and Streamable HTTP connections are not mediated in v1.
+- The MCP gateway provides deterministic pre-execution control for its stdio route. Direct, SSE, and Streamable HTTP connections are not mediated by the stdio gateway.
 - Generic wrapping/discovery supplies metadata and probable/strong process attribution, not confirmed per-action causation or blocking.
 - A `DENY` proves the mediated request was not released; it does not prove an equivalent alternate request was impossible.
 - Ed25519 signatures establish provenance/integrity, not policy correctness. Compromise of a signing threshold, local administrator, kernel, or trusted root is outside the design boundary.

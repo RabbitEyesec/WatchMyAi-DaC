@@ -72,7 +72,6 @@ investigation_steps:
 - Preserve timestamps and stable correlation identifiers before containment.
 limitations:
 - Task Scheduler API activity without the covered command lines needs Windows task telemetry.
-- Synthetic fixture success is not a substitute for a live Elastic import and real-agent replay.
 - Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
 validation_scenario: Replay a synthetic scheduled task creation event and a challenging benign event;
   then repeat with the target agent in the controlled lab.

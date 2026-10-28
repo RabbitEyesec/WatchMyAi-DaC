@@ -267,10 +267,9 @@ Screenshots are sanitized before publication. No dashboard is required to run Wa
 
 ## Verification
 
-Repository validation proves syntax, schemas, generated-rule parity, fixture/query behavior, and
-an import dry run. It does not prove that a connected deployment currently emits alerts. Use
-`watchmyai verify` and `watchmyai validate` for the connected and current-run checks documented in
-the [verification guide](docs/VERIFICATION.md).
+Repository validation checks syntax, schemas, generated-rule parity, fixture/query behavior, and
+an import dry run. `watchmyai verify` and `watchmyai validate` check the connected deployment and
+current-run alerts, as documented in the [verification guide](docs/VERIFICATION.md).
 
 ## Security
 

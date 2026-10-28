@@ -10,7 +10,7 @@ installation, platform boundaries, upgrades, and reinstalls.
 | Python | 3.11 and 3.12 |
 | Connected deployment host | Ubuntu 24.04 |
 | Elastic | Elasticsearch, Kibana, Fleet Server, and Elastic Agent 9.4.3 |
-| Windows | Bootstrap installer and repository tests; connected Elastic deployment not validated |
+| Windows | Bootstrap installer, repository tests, and Sysmon telemetry through Elastic Agent ([Version 2 guide](V2_INTEGRATIONS.md#windows-sysmon)) |
 
 The Bash installer rejects non-Ubuntu live installation. `--bootstrap-only` exists for repository
 checks on another host. This does not extend the validated live deployment claim.
@@ -67,8 +67,9 @@ From PowerShell:
 ```
 
 The script uses Python 3.12 or 3.11, creates `.venv`, applies the same hash-locked runtime and
-validation environment, and runs package smoke checks. Use `-Dev` for contributor tools. Windows
-bootstrap support does not claim that the complete live Elastic path was validated on Windows.
+validation environment, and runs package smoke checks. Use `-Dev` for contributor tools. For
+Windows Sysmon collection, use `.\scripts\install\install-v2.ps1 -InstallSysmon` as described in the
+[Version 2 guide](V2_INTEGRATIONS.md#windows-sysmon).
 
 ## Install from a release package
 

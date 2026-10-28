@@ -259,7 +259,7 @@ def test_exact_supported_and_excluded_release_sets() -> None:
     assert manifest["selected_rule_ids"] == list(SUPPORTED_RULES)
     assert {item["rule_id"] for item in excluded["rules"]} == set(EXCLUDED_RULES)
     assert all(item["status"] == "excluded" for item in excluded["rules"])
-    assert all(item["reason"] == "not validated in v2.0.0" for item in excluded["rules"])
+    assert all(item["reason"] == "excluded from the v2.0.0 production pack" for item in excluded["rules"])
     assert all(item["rule_name"] == EXCLUDED_RULES[item["rule_id"]] for item in excluded["rules"])
     assert all(item["future_telemetry_work_required"] is True for item in excluded["rules"])
     deferred = {path.stem for path in (RULES / "research/deferred-catalog/metadata").glob("WMAI-*.yml")}
