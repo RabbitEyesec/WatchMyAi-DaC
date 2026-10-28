@@ -111,7 +111,7 @@ rules you already run.
 | **File activity generator** | Safely creates harmless test files so the bulk-change alerts can be seen working | `scripts/validate/generate-sysmon-load.ps1` |
 | **Agent-to-endpoint correlation** | Links what an AI agent did to the Windows activity it caused, and says how sure it is (confirmed, strong, probable, or endpoint-only) | `scripts/validate/correlate_agent_endpoint.py` |
 | **Automated test suite** | 24 new automated checks cover the converter, Sysmon data, D3FEND sheet and correlation | `tests/test_v2_integrations.py` |
-| **MITRE D3FEND mapping** | Records which defensive technique each of the 20 rules supports, with a reviewer and a reason | `detection-rules/detections/mappings/` |
+| **MITRE D3FEND mapping** | Shows which defensive technique each of the 20 rules supports, with the reason | `detection-rules/detections/mappings/` |
 | **One-command installers** | Sets up and runs everything for you | `scripts/install/install-v2.sh`, `install-v2.ps1` |
 | **Single runner** | Runs every Version 2 tool in order and prints a clear PASS or FAIL | `scripts/run_v2_integrations.py` |
 

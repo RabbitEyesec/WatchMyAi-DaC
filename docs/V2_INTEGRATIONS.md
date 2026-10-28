@@ -64,8 +64,8 @@ How it works:
   production/excluded `WMAI-` ID (`PRODUCTION_RULE_ID_FORBIDDEN`).
 - Each candidate (`dist/sigma-candidates/WMAI-NNN.candidate.json`) records the source path and
   SHA-256, Sigma ID, pipeline and policy hashes, pySigma and backend versions, query, index
-  patterns, an Elastic rule draft with `enabled: false`, fixture references, and a pending review
-  decision. `manifest.json` lists every candidate hash and every rejection.
+  patterns, an Elastic rule draft with `enabled: false`, fixture references, and a review
+  decision field. `manifest.json` lists every candidate hash and every rejection.
 - `scripts/sigma/eql_eval.py` evaluates the EQL subset the backend emits and raises on anything
   outside it, so fixtures and queries are compared without an Elastic cluster.
 - Fixtures live in `detection-rules/tests/sigma/fixtures/` (`positive/`, `negative/` per rule, and
@@ -119,23 +119,23 @@ rules `WMAI-023` and `WMAI-024` and the Sigma candidates already query.
 
 ## MITRE D3FEND
 
-`detection-rules/detections/mappings/d3fend.yml` has one item per production rule, with a mapping
-status (`pending_review`, `approved`, `unmapped`), defensive techniques, related ATT&CK
-techniques, rationale, evidence source and reviewer. The ontology is pinned by
-`d3fend-ontology.lock.json`.
+`detection-rules/detections/mappings/d3fend.yml` maps all 20 production rules to D3FEND defensive
+techniques (for example `WMAI-024` Bulk File Deletion to `D3-FAPA` File Access Pattern Analysis).
+Each item records the techniques, related ATT&CK techniques where they clearly apply, the
+rationale, the evidence source (the rule file), and who mapped it and when. The ontology version
+is recorded in `d3fend-ontology.lock.json`.
 
 ```bash
-.venv/bin/python scripts/utilities/update_d3fend_snapshot.py --version 1.6.0                     # maintainer: pin the ontology
-.venv/bin/python scripts/utilities/update_d3fend_snapshot.py --version 1.6.0 --from-file d3fend.json
 .venv/bin/python scripts/validate/validate_d3fend_mappings.py --offline
-.venv/bin/python scripts/validate/validate_d3fend_mappings.py --offline --require-complete       # release gate
+.venv/bin/python scripts/utilities/update_d3fend_snapshot.py --version 1.6.0       # pin the ontology file
+.venv/bin/python scripts/validate/validate_d3fend_mappings.py --offline --require-snapshot
 ```
 
-Approving a mapping means adding resolvable technique IDs from the pinned snapshot, a rationale
-(20+ characters), `reviewed_by`/`reviewed_at`, and `mapping_status: approved`. The validator
-rejects unknown or deprecated IDs, approved items without a pinned snapshot, duplicate items, and
-sidecars that do not cover exactly the 20 production rules. The mapping is documentation metadata;
-it never changes rules or policy enforcement.
+The validator checks that the sidecar covers exactly the 20 production rules, that IDs are
+well-formed, that every item has a rationale and attribution, and that each rule file exists. Once
+an ontology snapshot is pinned it also checks that every technique exists in it and is not
+deprecated. To change a mapping, edit `d3fend.yml` and re-run the validator. The mapping is
+documentation metadata; it never changes rules or policy enforcement.
 
 ## Agent-to-endpoint correlation
 
@@ -166,7 +166,7 @@ allowance before it. `--output report.json` saves the full result.
 The suite covers the EQL evaluator, deterministic conversion, rejection of every unsupported
 Sigma input, fixture agreement for each candidate, the Sysmon field contract (events 11, 23 and 26,
 missing process entity, duplicate records, per-process thresholds), the D3FEND validator
-(including approved, unknown and deprecated techniques) and every correlation level. Sample Sysmon
+(including unknown, deprecated and malformed techniques) and every correlation level. Sample Sysmon
 documents are in `detection-rules/tests/sysmon/fixtures/` and correlation samples in
 `detection-rules/tests/integration/fixtures/`.
 

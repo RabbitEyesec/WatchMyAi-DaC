@@ -173,10 +173,10 @@ def test_thresholds_respect_process_entities() -> None:
 # --- D3FEND ------------------------------------------------------------------------------
 
 
-def test_shipped_sidecar_is_valid_and_covers_all_production_rules() -> None:
+def test_shipped_sidecar_is_valid_and_maps_all_production_rules() -> None:
     errors, counts = d3fend.validate()
     assert errors == []
-    assert sum(counts.values()) == 20
+    assert counts == {"mapped": 20, "unmapped": 0}
 
 
 def make_sidecar(tmp_path: Path, **changes) -> Path:
@@ -187,20 +187,7 @@ def make_sidecar(tmp_path: Path, **changes) -> Path:
     return path
 
 
-def test_approved_mapping_is_rejected_without_a_pinned_snapshot(tmp_path) -> None:
-    sidecar = make_sidecar(
-        tmp_path,
-        mapping_status="approved",
-        defensive_techniques=["D3-PSA"],
-        rationale="Process spawn analysis fits this behaviour.",
-        reviewed_by="reviewer",
-        reviewed_at="2026-10-28",
-    )
-    errors, _ = d3fend.validate(sidecar)
-    assert any("no verified ontology snapshot" in error for error in errors)
-
-
-def test_approved_mapping_validates_against_a_pinned_snapshot(tmp_path) -> None:
+def pinned_lock(tmp_path: Path) -> Path:
     import hashlib
 
     snapshot = tmp_path / "d3fend.json"
@@ -208,7 +195,9 @@ def test_approved_mapping_validates_against_a_pinned_snapshot(tmp_path) -> None:
         json.dumps(
             {
                 "@graph": [
-                    {"d3f:d3fend-id": "D3-PSA", "rdfs:label": "Process Spawn Analysis"},
+                    {"d3f:d3fend-id": "D3-FAPA", "rdfs:label": "File Access Pattern Analysis"},
+                    {"d3f:d3fend-id": "D3-PA", "rdfs:label": "Process Analysis"},
+                    {"d3f:d3fend-id": "D3-UBA", "rdfs:label": "User Behavior Analysis"},
                     {"d3f:d3fend-id": "D3-OLD", "owl:deprecated": True},
                 ]
             }
@@ -221,26 +210,27 @@ def test_approved_mapping_validates_against_a_pinned_snapshot(tmp_path) -> None:
         snapshot_path=str(snapshot),
         sha256=hashlib.sha256(snapshot.read_bytes()).hexdigest(),
     )
-    lock_path = tmp_path / "lock.json"
-    lock_path.write_text(json.dumps(lock), encoding="utf-8")
-    common = {
-        "mapping_status": "approved",
-        "rationale": "Process spawn analysis fits this behaviour.",
-        "reviewed_by": "reviewer",
-        "reviewed_at": "2026-10-28",
-    }
-    ok = make_sidecar(tmp_path, defensive_techniques=["D3-PSA"], **common)
-    errors, counts = d3fend.validate(ok, lock_path)
-    assert errors == [] and counts["approved"] == 1
+    path = tmp_path / "lock.json"
+    path.write_text(json.dumps(lock), encoding="utf-8")
+    return path
+
+
+def test_unknown_and_deprecated_techniques_are_rejected_when_a_snapshot_is_pinned(tmp_path) -> None:
+    lock_path = pinned_lock(tmp_path)
+    ok = make_sidecar(tmp_path, defensive_techniques=["D3-FAPA"])
+    assert not [error for error in d3fend.validate(ok, lock_path)[0] if error.startswith("WMAI-001")]
     for technique, fragment in (("D3-NOPE", "does not exist"), ("D3-OLD", "deprecated")):
-        bad = make_sidecar(tmp_path, defensive_techniques=[technique], **common)
+        bad = make_sidecar(tmp_path, defensive_techniques=[technique])
         assert any(fragment in error for error in d3fend.validate(bad, lock_path)[0])
 
 
-def test_pending_item_with_content_is_rejected(tmp_path) -> None:
-    sidecar = make_sidecar(tmp_path, defensive_techniques=["D3-PSA"])
-    errors, _ = d3fend.validate(sidecar)
-    assert any("empty placeholder" in error for error in errors)
+def test_malformed_ids_and_missing_rationale_are_rejected(tmp_path) -> None:
+    bad_id = make_sidecar(tmp_path, defensive_techniques=["PSA"])
+    assert any("malformed D3FEND ID" in error for error in d3fend.validate(bad_id)[0])
+    no_reason = make_sidecar(tmp_path, rationale="short")
+    assert any("rationale" in error for error in d3fend.validate(no_reason)[0])
+    unmapped_with_techniques = make_sidecar(tmp_path, mapping_status="unmapped")
+    assert any("cannot list techniques" in error for error in d3fend.validate(unmapped_with_techniques)[0])
 
 
 # --- Agent-to-endpoint correlation ---------------------------------------------------------

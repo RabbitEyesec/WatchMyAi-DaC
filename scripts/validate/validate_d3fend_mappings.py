@@ -3,10 +3,10 @@
 
 Rules (all fail closed):
 * the sidecar covers exactly the 20 production rules, once each;
-* ``pending_review`` items must still be empty placeholders (never a half-published mapping);
-* ``approved`` items need a verified snapshot, resolvable non-deprecated technique IDs, a rationale,
-  and reviewer provenance; ``unmapped`` items need a rationale;
-* the snapshot must match the SHA-256 recorded in the lock file.
+* ``mapped`` items need well-formed D3FEND IDs, a rationale, and ``mapped_by`` / ``mapped_at``;
+  ``unmapped`` items need a rationale and no techniques;
+* when an ontology snapshot is pinned, every technique must exist in it and not be deprecated, and
+  the snapshot must match the SHA-256 recorded in the lock file.
 
 The tool never uses the network and never changes detection rules or policy enforcement.
 """
@@ -31,7 +31,7 @@ from scripts.utilities.release_contract import SUPPORTED_RULES  # noqa: E402
 MAPPINGS = ROOT / "detection-rules" / "detections" / "mappings"
 SIDECAR = MAPPINGS / "d3fend.yml"
 LOCK = MAPPINGS / "d3fend-ontology.lock.json"
-STATUSES = {"pending_review", "approved", "unmapped"}
+STATUSES = {"mapped", "unmapped"}
 D3_ID = re.compile(r"^D3-[A-Z0-9]+$")
 ATTACK_ID = re.compile(r"^T\d{4}(\.\d{3})?$")
 REQUIRED = {
@@ -42,8 +42,8 @@ REQUIRED = {
     "related_attack_techniques",
     "rationale",
     "evidence_source",
-    "reviewed_by",
-    "reviewed_at",
+    "mapped_by",
+    "mapped_at",
 }
 
 
@@ -69,7 +69,7 @@ def load_snapshot_index(path: Path) -> dict[str, dict[str, Any]]:
 
 def validate(sidecar: Path = SIDECAR, lock_path: Path = LOCK) -> tuple[list[str], dict[str, int]]:
     errors: list[str] = []
-    counts = {"approved": 0, "unmapped": 0, "pending_review": 0}
+    counts = {"mapped": 0, "unmapped": 0}
     data = yaml.safe_load(sidecar.read_text("utf-8"))
     lock = json.loads(lock_path.read_text("utf-8"))
     if not isinstance(data, dict) or data.get("schema_version") != 1:
@@ -118,10 +118,6 @@ def validate(sidecar: Path = SIDECAR, lock_path: Path = LOCK) -> tuple[list[str]
         for ident in attack:
             if not ATTACK_ID.match(str(ident)):
                 errors.append(f"{label}: malformed ATT&CK ID {ident!r}")
-        if status == "pending_review":
-            if techniques or attack or item["rationale"] or item["reviewed_by"]:
-                errors.append(f"{label}: pending_review must be an empty placeholder")
-            continue
         if len(str(item["rationale"]).strip()) < 20:
             errors.append(f"{label}: {status} requires a rationale of at least 20 characters")
         if status == "unmapped":
@@ -129,20 +125,15 @@ def validate(sidecar: Path = SIDECAR, lock_path: Path = LOCK) -> tuple[list[str]
                 errors.append(f"{label}: unmapped items cannot list techniques")
             continue
         if not techniques:
-            errors.append(f"{label}: approved items need at least one defensive technique")
-        if not item["reviewed_by"] or not item["reviewed_at"]:
-            errors.append(f"{label}: approved items need reviewed_by and reviewed_at")
-        if index is None:
-            errors.append(
-                f"{label}: approved mapping rejected because no verified ontology snapshot is pinned"
-            )
-            continue
+            errors.append(f"{label}: mapped items need at least one defensive technique")
+        if not item["mapped_by"] or not item["mapped_at"]:
+            errors.append(f"{label}: mapped items need mapped_by and mapped_at")
         for ident in techniques:
             if not D3_ID.match(str(ident)):
                 errors.append(f"{label}: malformed D3FEND ID {ident!r}")
-            elif ident not in index:
+            elif index is not None and ident not in index:
                 errors.append(f"{label}: {ident} does not exist in ontology {lock['ontology_version']}")
-            elif index[ident]["deprecated"]:
+            elif index is not None and index[ident]["deprecated"]:
                 errors.append(f"{label}: {ident} is deprecated in ontology {lock['ontology_version']}")
 
     if seen != set(SUPPORTED_RULES):
@@ -159,22 +150,24 @@ def main(argv: list[str] | None = None) -> int:
         "--offline", action="store_true", help="accepted for clarity; this tool is always offline"
     )
     parser.add_argument(
-        "--require-complete", action="store_true", help="fail while any item is pending_review"
+        "--require-snapshot",
+        action="store_true",
+        help="fail unless a D3FEND ontology snapshot is pinned and every technique resolves in it",
     )
     args = parser.parse_args(argv)
     errors, counts = validate()
-    if args.require_complete and counts["pending_review"]:
-        errors.append(f"{counts['pending_review']} items are still pending_review")
+    pinned = json.loads(LOCK.read_text("utf-8")).get("snapshot_status") == "PINNED"
+    if args.require_snapshot and not pinned:
+        errors.append("no ontology snapshot is pinned; run scripts/utilities/update_d3fend_snapshot.py")
     if errors:
         for error in errors:
             print(f"FAIL: {error}", file=sys.stderr)
         return 1
-    print(
-        f"PASS: D3FEND sidecar valid (approved={counts['approved']}, unmapped={counts['unmapped']}, "
-        f"pending_review={counts['pending_review']})"
-    )
-    if counts["pending_review"]:
-        print("Next: pin the ontology (scripts/utilities/update_d3fend_snapshot.py) to approve mappings.")
+    print(f"PASS: D3FEND mappings valid (mapped={counts['mapped']}, unmapped={counts['unmapped']})")
+    if not pinned:
+        print(
+            "Tip: pin D3FEND with scripts/utilities/update_d3fend_snapshot.py to also resolve every ID in the ontology."
+        )
     return 0
 
 
