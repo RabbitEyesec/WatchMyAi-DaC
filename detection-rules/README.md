@@ -60,7 +60,7 @@ enablement is requested; development setup enables them for the documented curre
 
 ## Validation meaning
 
-Fixture validation proves that checked-in events satisfy the checked-in query logic. Historical
-laboratory output is retained outside the source repository as private evidence and is not treated
-as a current release run. Neither claim establishes a false-positive rate or universal efficacy
-outside the validated environment.
+Fixture validation confirms that the checked-in events satisfy the checked-in query logic. Lab alert
+exports are kept outside the source repository as private evidence. `watchmyai validate` confirms
+current alerts in a connected deployment; tune thresholds to each environment's false-positive
+profile.

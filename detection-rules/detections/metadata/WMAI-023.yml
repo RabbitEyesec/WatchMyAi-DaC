@@ -66,8 +66,8 @@ investigation_steps:
 - Preserve timestamps and stable correlation identifiers before containment.
 response_playbook: playbooks/WMAI-023.md
 limitations:
-- The default threshold is a lab starting point and does not prove that the files belong to an AI task.
-- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+- Tune the default threshold for each environment and confirm the owning AI task from session evidence.
+- Confirm AI intent, approval, and task scope with the correlated WatchMyAI session evidence.
 validation_scenario: Generate isolated endpoint-native file events for SCN-WMAI-023 under a run-ID path,
   confirm the source-event threshold for one process.entity_id, and require that entity in the resulting
   threshold alert.

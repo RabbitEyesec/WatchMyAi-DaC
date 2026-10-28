@@ -14,8 +14,8 @@ Some hosted tools and specialized execution paths may not invoke local lifecycle
 
 `watchmyai mcp-gateway` is a protocol-aware stdio JSON-RPC proxy. It fingerprints the server command, evaluates connection and `tools/call` requests before forwarding, preserves request IDs, and returns a JSON-RPC error for blocked calls. Server responses add execution evidence without logging tool arguments/results.
 
-This release does not claim deterministic mediation for direct, SSE, or Streamable HTTP MCP routes. Clients must be configured so the stdio gateway is the sole route; otherwise `gateway_bypassed` is a correlated observation/capability gap.
+Deterministic mediation covers the stdio MCP gateway route. Configure clients so the stdio gateway is the sole route; direct, SSE, and Streamable HTTP connections are reported as `gateway_bypassed`.
 
 ## Generic sources
 
-`watchmyai run` and process discovery report session/process metadata and hashes only. They do not capture command-line arguments, do not create policy decisions for child processes, and do not claim prevention. Attribution is capped below confirmed unless a structured native adapter supplies the request.
+`watchmyai run` and process discovery report session/process metadata and hashes only. They do not capture command-line arguments, do not create policy decisions for child processes, and provide visibility rather than blocking. Attribution is capped below confirmed unless a structured native adapter supplies the request.

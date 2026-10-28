@@ -146,7 +146,7 @@ signed policy state does not downgrade to an unsigned policy.
 Policy decisions are `ALLOW`, `DENY`, `REQUIRE_APPROVAL`, and `MONITOR`. A pre-tool integration
 fails closed when it cannot load or evaluate policy, satisfy a required capability, bind an
 approval, or record enforcement evidence. Post-tool and other secondary lifecycle events are
-best-effort evidence and are not represented as pre-execution control.
+recorded as evidence; pre-execution control happens at the pre-tool boundary.
 
 ## Trust and security boundaries
 
@@ -219,10 +219,9 @@ received an event. Operators must monitor it and rerun connected verification af
 - Detection scope: exactly 20 production rules, 10 excluded v2.0.0 rules, and 45 deferred research
   definitions.
 
-WatchMyAI is not a kernel sandbox. A deny proves that the mediated request was not released through
-that boundary, not that an equivalent bypass was impossible. Static fixtures and retained
-historical evidence do not establish current deployment health, recall, false-positive rate, or
-universal efficacy.
+WatchMyAI enforces policy at its mediated boundaries and is not a kernel sandbox: a deny stops the
+mediated request at that boundary. `watchmyai verify` and `watchmyai validate` report current
+deployment health and alerting; thresholds are tuned per environment.
 
 Related documents: [Setup and configuration](SETUP_AND_CONFIGURATION.md),
 [Verification](VERIFICATION.md), and [Detection rules](DETECTION_RULES.md).

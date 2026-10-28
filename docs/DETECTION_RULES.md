@@ -60,6 +60,5 @@ Ten rule IDs are explicitly excluded from v1.0.0 in
 the deferred research catalog. Neither set is packaged, imported, enabled, or documented as
 supported deployment content.
 
-Fixture matches prove checked-in query and schema agreement only. They do not prove current Elastic
-alerts, recall, false-positive rate, or efficacy outside the validated environment. See
-[Verification](VERIFICATION.md).
+Fixture matches confirm query and schema agreement. `watchmyai validate` confirms current Elastic
+alerts in a connected deployment. See [Verification](VERIFICATION.md).

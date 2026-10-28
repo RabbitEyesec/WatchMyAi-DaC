@@ -103,8 +103,8 @@ accepts only correlated alerts inside the current run boundaries. Eighteen scena
 `watchmyai.events`; `WMAI-023` and `WMAI-024` use disposable native file activity and matching
 Elastic Defend process entities. Success is `20/20` current alerts and a final `PASS`.
 
-Default results are written to ignored `runtime/validation-results.json`. Historical alerts cannot
-satisfy the current run.
+Default results are written to ignored `runtime/validation-results.json`. Only alerts from the current
+run count toward the result.
 
 ## Signed production mode
 

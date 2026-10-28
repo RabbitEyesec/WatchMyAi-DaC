@@ -67,7 +67,7 @@ Do not repair generated JSON, gateway YAML, hooks, rules, or installed Elastic a
 | `3` | Invalid, missing, or unsafe configuration | Run the configuration validator, correct inputs, and rerun setup. |
 | `4` | Connectivity, TLS, authentication, or external service failure | Restore the named endpoint, trust, or credential. |
 | `5` | Rule import or post-import parity failure | Run reconciliation and dry-run import, then rerun setup. |
-| `6` | Repository, gateway, Fleet, telemetry, policy, alert, or uninstall validation failure | Correct the failed validation stage; a skipped live requirement is not a pass. |
+| `6` | Repository, gateway, Fleet, telemetry, policy, alert, or uninstall validation failure | Correct the failed validation stage and re-run any skipped live stage. |
 | `7` | Reserved release-contract code for a safety refusal | Stop and review the target or requested action. Current public v1.0.0 workflows generally report implemented safety/configuration refusals as code 3 or 6; do not reinterpret another code as success. |
 
 If a failure remains unclear, retain only sanitized command output, the checkout commit, and the

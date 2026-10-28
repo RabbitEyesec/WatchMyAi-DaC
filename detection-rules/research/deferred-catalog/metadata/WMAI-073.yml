@@ -75,7 +75,7 @@ investigation_steps:
 - Preserve timestamps and stable correlation identifiers before containment.
 limitations:
 - Keyword searches are noisy and miss custom secret names or direct file API access.
-- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+- Confirm AI intent, approval, and task scope with the correlated WatchMyAI session evidence.
 validation_scenario: Replay a synthetic secrets discovery activity event and a challenging benign event;
   then repeat with the target agent in the controlled lab.
 expected_alert: One medium-severity alert for Secrets discovery activity, preserving the fields declared

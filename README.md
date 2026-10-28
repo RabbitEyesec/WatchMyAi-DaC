@@ -181,8 +181,8 @@ Agent and check the data.
 | Dashboard | Not required |
 
 Elasticsearch, Kibana, Fleet Server, and an enrolled Elastic Agent must already exist. WatchMyAI
-does not provision that external infrastructure. Other platform versions and deployment topologies
-require their own qualification.
+does not provision that external infrastructure. For other platform versions or topologies, run
+`watchmyai verify` and `watchmyai validate` in that environment before rollout.
 
 ## Quick start
 

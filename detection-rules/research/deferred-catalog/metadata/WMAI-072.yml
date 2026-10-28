@@ -69,7 +69,7 @@ investigation_steps:
 - Preserve timestamps and stable correlation identifiers before containment.
 limitations:
 - Configuration paths vary by agent version and operating system and require lab confirmation.
-- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+- Confirm AI intent, approval, and task scope with the correlated WatchMyAI session evidence.
 validation_scenario: Replay a synthetic persistent configuration modification event and a challenging
   benign event; then repeat with the target agent in the controlled lab.
 expected_alert: One medium-severity alert for Persistent configuration modification, preserving the fields

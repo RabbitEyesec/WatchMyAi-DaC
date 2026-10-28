@@ -70,7 +70,7 @@ def main(argv: list[str] | None = None) -> int:
         lib.dumps(lib.build_manifest(candidates, rejected)), encoding="utf-8"
     )
     print(f"Wrote {len(candidates)} candidates to {lib.rel(output)} ({len(rejected)} rejected)")
-    print("Candidates are disabled, require review, and are not deployable.")
+    print("Candidates are staged disabled for review before promotion.")
     return 0 if (not rejected or args.allow_rejections) else 1
 
 

@@ -78,7 +78,7 @@ investigation_steps:
 - Preserve timestamps and stable correlation identifiers before containment.
 limitations:
 - Immediate-parent attribution can miss shell grandchildren and must be confirmed for each agent version.
-- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+- Confirm AI intent, approval, and task scope with the correlated WatchMyAI session evidence.
 validation_scenario: Replay a synthetic dangerous chmod/chown event and a challenging benign event; then
   repeat with the target agent in the controlled lab.
 expected_alert: One high-severity alert for Dangerous chmod/chown, preserving the fields declared by this

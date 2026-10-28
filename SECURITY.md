@@ -2,8 +2,8 @@
 
 ## Supported version
 
-Security fixes target the current v1.0.x release line. Historical engineering records and deferred
-research rules are not deployable releases.
+Security fixes target the current v2.0.x release line. The deferred research rules are not part of
+the deployable rule pack.
 
 ## Reporting a vulnerability
 

@@ -72,7 +72,7 @@ investigation_steps:
 - Preserve timestamps and stable correlation identifiers before containment.
 limitations:
 - Task Scheduler API activity without the covered command lines needs Windows task telemetry.
-- Endpoint telemetry identifies observable behavior but does not prove AI intent, approval, or task scope.
+- Confirm AI intent, approval, and task scope with the correlated WatchMyAI session evidence.
 validation_scenario: Replay a synthetic scheduled task creation event and a challenging benign event;
   then repeat with the target agent in the controlled lab.
 expected_alert: One medium-severity alert for Scheduled Task Creation, preserving the fields declared

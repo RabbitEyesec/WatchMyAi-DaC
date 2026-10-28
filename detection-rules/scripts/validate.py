@@ -501,7 +501,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print(f"PASS: {validation.checks} deterministic checks across {SUPPORTED_COUNT} supported rules")
-    print("LIVE VALIDATION: separate; static validation never claims alert generation")
+    print("LIVE VALIDATION: run `watchmyai validate` against a connected deployment for current alerts")
     return 0
 
 
