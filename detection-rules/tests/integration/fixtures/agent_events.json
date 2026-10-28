@@ -1,0 +1,25 @@
+[
+  {
+    "@timestamp": "2026-10-28T01:00:00Z",
+    "host": {
+      "name": "wmai-win-lab"
+    },
+    "process": {
+      "entity_id": "{A-1}",
+      "pid": 100
+    },
+    "watchmyai": {
+      "action": {
+        "id": "act-1"
+      },
+      "session": {
+        "id": "sess-1"
+      },
+      "tool": {
+        "arguments": {
+          "command": "npm install left-pad"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "@timestamp": "2026-10-28T01:00:03Z",
+    "event": {
+      "id": "e1"
+    },
+    "host": {
+      "name": "wmai-win-lab"
+    },
+    "process": {
+      "entity_id": "{B-1}",
+      "pid": 200,
+      "command_line": "npm install left-pad",
+      "parent": {
+        "entity_id": "{A-1}"
+      }
+    }
+  },
+  {
+    "@timestamp": "2026-10-28T01:00:04Z",
+    "event": {
+      "id": "e2"
+    },
+    "host": {
+      "name": "wmai-win-lab"
+    },
+    "process": {
+      "entity_id": "{C-1}",
+      "pid": 201,
+      "command_line": "npm install left-pad"
+    }
+  },
+  {
+    "@timestamp": "2026-10-28T01:00:05Z",
+    "event": {
+      "id": "e3"
+    },
+    "host": {
+      "name": "other-host"
+    },
+    "process": {
+      "entity_id": "{D-1}",
+      "pid": 202,
+      "command_line": "npm install left-pad"
+    }
+  },
+  {
+    "@timestamp": "2026-10-28T01:00:06Z",
+    "event": {
+      "id": "e4"
+    },
+    "host": {
+      "name": "wmai-win-lab"
+    },
+    "process": {
+      "entity_id": "{E-1}",
+      "pid": 203,
+      "command_line": "calc.exe"
+    }
+  }
+]

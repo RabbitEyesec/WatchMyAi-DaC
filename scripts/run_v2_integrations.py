@@ -3,9 +3,10 @@
 
 Steps: Sigma conversion (determinism check, then staging), candidate contract validation,
 fixture semantics, and D3FEND mapping validation. Nothing is imported into Elastic and the
-production rule pack is never modified. Add --sysmon-fixture FILE to also check saved Sysmon
-documents against the ECS field contract, or run scripts/validate/verify_sysmon_ingest.py
-directly against a live deployment.
+production rule pack is never modified. Also checks Sysmon sample documents against the ECS field
+contract (or --sysmon-fixture FILE) and runs agent-to-endpoint correlation on sample events. Run
+scripts/validate/verify_sysmon_ingest.py and correlate_agent_endpoint.py without arguments to use
+them against a live deployment.
 
 Usage:
     python scripts/run_v2_integrations.py [--output dist/sigma-candidates]
@@ -41,13 +42,34 @@ def main(argv: list[str] | None = None) -> int:
         ("Sigma fixture semantics", [python, "scripts/sigma/compare_semantics.py", "--input", args.output]),
         ("D3FEND mappings", [python, "scripts/validate/validate_d3fend_mappings.py", "--offline"]),
     ]
-    if args.sysmon_fixture:
+    sysmon_fixtures = (
+        [args.sysmon_fixture]
+        if args.sysmon_fixture
+        else [
+            f"detection-rules/tests/sysmon/fixtures/{name}"
+            for name in ("event11_create.json", "event23_delete.json", "event26_delete.json")
+        ]
+    )
+    for fixture in sysmon_fixtures:
         steps.append(
             (
-                "Sysmon ECS field contract",
-                [python, "scripts/validate/verify_sysmon_ingest.py", "--fixture", args.sysmon_fixture],
+                f"Sysmon ECS field contract ({Path(fixture).name})",
+                [python, "scripts/validate/verify_sysmon_ingest.py", "--fixture", fixture],
             )
         )
+    steps.append(
+        (
+            "Agent-to-endpoint correlation",
+            [
+                python,
+                "scripts/validate/correlate_agent_endpoint.py",
+                "--agent-events",
+                "detection-rules/tests/integration/fixtures/agent_events.json",
+                "--endpoint-events",
+                "detection-rules/tests/integration/fixtures/endpoint_events.json",
+            ],
+        )
+    )
     failed: list[str] = []
     for title, command in steps:
         print(f"\n== {title}")
