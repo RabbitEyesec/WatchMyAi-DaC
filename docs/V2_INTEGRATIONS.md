@@ -8,6 +8,8 @@ authoritative rule pack are unchanged.
 |---|---|---|
 | Sigma + pySigma | Converts the Sigma research catalog into reviewable, disabled Elastic EQL candidates | `scripts/sigma/` |
 | Windows Sysmon | Sysmon configuration, installer, load generator and an ECS field verifier for Elastic | `deployment/windows/sysmon/`, `scripts/install/install-sysmon.ps1`, `scripts/validate/` |
+| Agent-to-endpoint correlation | Links gateway action events to Sysmon / Elastic Defend process events with an explicit confidence level | `scripts/validate/correlate_agent_endpoint.py` |
+| Automated tests | Tests for the converter, EQL evaluator, Sysmon contract, D3FEND validator and correlation | `tests/test_v2_integrations.py` |
 | MITRE D3FEND | Version-pinned defensive-technique mapping sidecar and validator | `detection-rules/detections/mappings/`, `scripts/validate/validate_d3fend_mappings.py` |
 
 ## Install
@@ -134,6 +136,39 @@ Approving a mapping means adding resolvable technique IDs from the pinned snapsh
 rejects unknown or deprecated IDs, approved items without a pinned snapshot, duplicate items, and
 sidecars that do not cover exactly the 20 production rules. The mapping is documentation metadata;
 it never changes rules or policy enforcement.
+
+## Agent-to-endpoint correlation
+
+`correlate_agent_endpoint.py` joins `watchmyai.events` action events with endpoint process-start
+events and gives each endpoint event one of four levels:
+
+| Level | Evidence |
+|---|---|
+| `confirmed` | same host, and the agent's `process.entity_id` appears in the endpoint event's lineage |
+| `strong` | same host, matching process ID (or parent process ID) and matching command line |
+| `probable` | same host and matching command line inside the time window |
+| `endpoint-only` | no link found; `missing_links` lists what was absent |
+
+```bash
+.venv/bin/python scripts/validate/correlate_agent_endpoint.py --agent-events agent.json --endpoint-events endpoint.json
+.venv/bin/python scripts/validate/correlate_agent_endpoint.py --minutes 30        # live query using the Elastic variables
+```
+
+The default window is 60 seconds after the agent action (`--window`), with 2 seconds of clock-skew
+allowance before it. `--output report.json` saves the full result.
+
+## Automated tests
+
+```bash
+.venv/bin/python -m pytest tests/test_v2_integrations.py
+```
+
+The suite covers the EQL evaluator, deterministic conversion, rejection of every unsupported
+Sigma input, fixture agreement for each candidate, the Sysmon field contract (events 11, 23 and 26,
+missing process entity, duplicate records, per-process thresholds), the D3FEND validator
+(including approved, unknown and deprecated techniques) and every correlation level. Sample Sysmon
+documents are in `detection-rules/tests/sysmon/fixtures/` and correlation samples in
+`detection-rules/tests/integration/fixtures/`.
 
 ## CI
 
