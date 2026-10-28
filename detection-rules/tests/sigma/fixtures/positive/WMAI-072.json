@@ -1,0 +1,69 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "file"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "file": {
+          "path": "/home/lab/.codex/config.toml"
+        }
+      },
+      "id": "pos-codex-config"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "file"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "file": {
+          "path": "/home/lab/.claude/settings.json"
+        }
+      },
+      "id": "pos-claude-settings"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "file"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "file": {
+          "path": "/home/lab/.cursor/mcp.json"
+        }
+      },
+      "id": "pos-cursor-mcp"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "file"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "file": {
+          "path": "/HOME/LAB/.CLAUDE/SETTINGS.JSON"
+        }
+      },
+      "id": "pos-uppercase-path"
+    }
+  ],
+  "rule_id": "WMAI-072"
+}

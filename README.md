@@ -26,7 +26,8 @@ It is not retained laboratory evidence or a current deployment result.*
 - direct HTTPS export to the `watchmyai.events` Elastic dataset;
 - reviewed Elastic data-stream, ingest, lifecycle, and optional investigation assets;
 - 20 packaged Elastic Security rules with synchronized metadata, fixtures, and playbooks;
-- static, connected, and current-run validation tools; and
+- static, connected, and current-run validation tools;
+- Version 2 integrations: Sigma rule conversion, Windows Sysmon collection, and MITRE D3FEND mapping; and
 - CLI workflows for setup, verification, validation, approvals, policy administration, and
   uninstall.
 
@@ -71,6 +72,76 @@ the validated deployment topology.
 
 The root [`VERSION`](VERSION), [`pyproject.toml`](pyproject.toml), [`LICENSE`](LICENSE), and release
 workflow govern both components. Neither component is a separately published product.
+
+## WatchMyAI Version 2
+
+**Version 2 connects WatchMyAI to the tools security teams already use.** It can now turn public
+Sigma detection rules into Elastic rules, collect real Windows activity through Sysmon, and label
+every detection with the matching MITRE D3FEND defence, all without touching the 20 production
+rules you already run.
+
+> [!TIP]
+> **Install everything with one command.**
+>
+> Linux / macOS: `./scripts/install/install-v2.sh`
+> Windows (PowerShell): `.\scripts\install\install-v2.ps1`
+>
+> The installer creates its own private environment, installs exact, hash-checked versions of every
+> tool, and runs the whole Version 2 toolchain so you can see it work straight away.
+
+### What is new
+
+| New in Version 2 | In plain words | Where to find it |
+|---|---|---|
+| **Sigma rule converter** | Takes community Sigma rules and turns them into Elastic detections, ready for a person to review | `scripts/sigma/` |
+| **Windows Sysmon support** | Collects detailed Windows activity (programs started, files created and deleted) and sends it to Elastic | `deployment/windows/sysmon/`, `scripts/install/install-sysmon.ps1` |
+| **Sysmon health check** | Confirms the Windows data arrives complete, and counts file activity against the bulk-change alert limits | `scripts/validate/verify_sysmon_ingest.py` |
+| **File activity generator** | Safely creates harmless test files so the bulk-change alerts can be seen working | `scripts/validate/generate-sysmon-load.ps1` |
+| **MITRE D3FEND mapping** | Records which defensive technique each of the 20 rules supports, with a reviewer and a reason | `detection-rules/detections/mappings/` |
+| **One-command installers** | Sets up and runs everything for you | `scripts/install/install-v2.sh`, `install-v2.ps1` |
+| **Single runner** | Runs every Version 2 tool in order and prints a clear PASS or FAIL | `scripts/run_v2_integrations.py` |
+
+### Built to be safe
+
+> [!IMPORTANT]
+> **Nothing is switched on behind your back.** Converted Sigma rules are saved as *disabled
+> candidates* in a separate folder. They cannot be imported into Elastic or mixed into the
+> production rules unless a person reviews them and decides to promote them.
+
+- **Strict, never guessing.** If a Sigma rule uses something the converter cannot translate
+  exactly, it is rejected with a clear reason instead of being approximated.
+- **Repeatable.** The same input always produces the same output, and every candidate records
+  where it came from (file fingerprint, tool versions, settings used).
+- **Works without internet.** Conversion runs locally and never downloads anything.
+- **Production rules protected.** A converted rule can never reuse the ID of a production rule.
+- **Privacy-minded Sysmon setup.** Collects only what the rules need and does not archive the
+  contents of deleted files.
+- **Trusted install.** The Sysmon installer runs only if the download carries Microsoft's digital
+  signature.
+- **Honest labelling.** Windows activity is reported as *endpoint activity*; it is never claimed
+  to be caused by an AI agent without separate evidence.
+
+### Get started
+
+```bash
+# 1. Install and run everything (Linux / macOS)
+./scripts/install/install-v2.sh
+
+# 2. See the converted Sigma rules
+ls dist/sigma-candidates
+
+# 3. Run the full set of Version 2 checks again at any time
+.venv/bin/python scripts/run_v2_integrations.py
+```
+
+On a Windows lab machine, open PowerShell as administrator and run
+`.\scripts\install\install-v2.ps1 -InstallSysmon` to install the tools and Sysmon together. Then
+follow the three short steps in [Version 2 integrations](docs/V2_INTEGRATIONS.md) to connect Elastic
+Agent and check the data.
+
+> [!NOTE]
+> The step-by-step guide for every Version 2 tool, including all commands and options, is in
+> [docs/V2_INTEGRATIONS.md](docs/V2_INTEGRATIONS.md).
 
 ## Release v1.0.0 contract
 
@@ -138,13 +209,13 @@ describes the lower-level component boundary.
 ```text
 WatchMyAI/
 |-- .github/             CI, security scanning, and protected deployment workflows
-|-- deployment/          authoritative production-rule source
+|-- deployment/          authoritative production-rule source and Windows Sysmon configuration
 |-- detection-rules/     internal detection component
 |-- docs/                operator, security, and contributor documentation
 |-- fixtures/            canonical telemetry fixtures
 |-- release/             machine-readable release and validation status
 |-- scenarios/           controlled rule-validation scenarios
-|-- scripts/             install, import, validation, and release tooling
+|-- scripts/             install, import, validation, release, Sigma conversion, and Sysmon/D3FEND tooling
 |-- src/                 importable watchmyai Python package
 |-- telemetry-gateway/   gateway deployment assets, fixtures, tests, and component documentation
 |-- tests/               project-level consistency and hardening tests

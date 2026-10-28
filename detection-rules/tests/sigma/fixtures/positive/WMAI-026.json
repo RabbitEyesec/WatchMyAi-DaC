@@ -1,0 +1,53 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "registry"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "registry": {
+          "path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Updater"
+        }
+      },
+      "id": "pos-run-key"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "registry"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "registry": {
+          "path": "hkcu\\software\\microsoft\\windows\\currentversion\\runonce\\x"
+        }
+      },
+      "id": "pos-runonce-lowercase"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "registry"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "registry": {
+          "path": "HKU\\S-1-5-21-1\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Evil"
+        }
+      },
+      "id": "pos-hku-run"
+    }
+  ],
+  "rule_id": "WMAI-026"
+}

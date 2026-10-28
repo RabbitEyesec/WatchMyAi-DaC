@@ -1,0 +1,33 @@
+<!--
+  WatchMyAI minimum-necessary Sysmon configuration.
+  Collects only what the WatchMyAI endpoint rules and Sigma candidates use:
+    Event 1  process creation          (process_creation candidates)
+    Event 11 file creation             (WMAI-023, file_event candidates)
+    Event 26 file delete (detected)    (WMAI-024; logs the delete without archiving file content)
+    Event 13 registry value set        (Run / RunOnce persistence only)
+  Event 23 (FileDelete) is intentionally NOT enabled because it archives deleted file contents.
+  Event 2 is creation-time modification only and is not a generic file-change signal.
+  Network (3) and DNS (22) are off until a documented detection needs them.
+  Volume: the file and process groups exclude nothing. Tune with exclusions in a lab first
+  and measure event rate before rolling out beyond a canary policy.
+-->
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <CheckRevocation/>
+  <EventFiltering>
+    <RuleGroup name="WatchMyAI process creation" groupRelation="or">
+      <ProcessCreate onmatch="exclude"/>
+    </RuleGroup>
+    <RuleGroup name="WatchMyAI file creation" groupRelation="or">
+      <FileCreate onmatch="exclude"/>
+    </RuleGroup>
+    <RuleGroup name="WatchMyAI file delete detected" groupRelation="or">
+      <FileDeleteDetected onmatch="exclude"/>
+    </RuleGroup>
+    <RuleGroup name="WatchMyAI persistence registry" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <TargetObject name="Run key" condition="contains">\CurrentVersion\Run</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

@@ -1,0 +1,11 @@
+title: Must not shadow a production rule
+id: 22222222-2222-4222-8222-222222222222
+status: experimental
+logsource:
+  category: file_event
+detection:
+  selection:
+    TargetFilename|endswith: /x
+  condition: selection
+level: low
+x_watchmyai_rule_id: WMAI-023

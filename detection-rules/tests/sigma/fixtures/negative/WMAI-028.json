@@ -1,0 +1,73 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "sc.exe query",
+          "executable": "C:\\Windows\\System32\\sc.exe"
+        }
+      },
+      "id": "neg-sc-query"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "sc.exe config svc start= auto",
+          "executable": "C:\\Windows\\System32\\sc.exe"
+        }
+      },
+      "id": "neg-sc-config"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "powershell Get-Service",
+          "executable": "C:\\Windows\\System32\\powershell.exe"
+        }
+      },
+      "id": "neg-powershell-get-service"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "cmd /c echo create ",
+          "executable": "C:\\Windows\\System32\\cmd.exe"
+        }
+      },
+      "id": "neg-wrong-exe"
+    }
+  ],
+  "rule_id": "WMAI-028"
+}

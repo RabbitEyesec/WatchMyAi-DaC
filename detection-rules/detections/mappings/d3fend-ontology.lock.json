@@ -1,0 +1,10 @@
+{
+  "ontology": "MITRE D3FEND",
+  "ontology_version": "1.6.0",
+  "source_url": "https://d3fend.mitre.org/ontologies/d3fend.json",
+  "snapshot_path": "detection-rules/detections/mappings/snapshot/d3fend-1.6.0.json",
+  "snapshot_status": "NOT_RETRIEVED",
+  "sha256": null,
+  "retrieved_at": null,
+  "licence": "Verify against https://d3fend.mitre.org/resources/ontology/ when retrieving; record the result here."
+}

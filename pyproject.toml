@@ -34,6 +34,11 @@ dependencies = [
 
 [project.optional-dependencies]
 capture = ["psutil>=5.9"]
+# Sigma -> Elastic candidate conversion toolchain (scripts/sigma/). Build-time only.
+sigma = [
+  "pysigma>=1.5,<2",
+  "pysigma-backend-elasticsearch>=2.1,<3",
+]
 validation = [
   "build>=1.0",
   "psutil>=5.9",
@@ -49,6 +54,8 @@ dev = [
   "mypy>=1.9,<1.16",
   "pip-audit>=2.9",
   "psutil>=5.9",
+  "pysigma>=1.5,<2",
+  "pysigma-backend-elasticsearch>=2.1,<3",
   "pytest>=9.0.3,<10",
   "ruff==0.15.21",
   "setuptools>=77",

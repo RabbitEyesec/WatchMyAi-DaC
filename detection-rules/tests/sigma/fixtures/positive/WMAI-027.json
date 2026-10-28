@@ -1,0 +1,73 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "schtasks.exe /create /tn x /tr calc.exe",
+          "executable": "C:\\Windows\\System32\\schtasks.exe"
+        }
+      },
+      "id": "pos-schtasks-create"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "SCHTASKS.EXE /Create /TN X /TR calc.exe",
+          "executable": "C:\\WINDOWS\\SYSTEM32\\SCHTASKS.EXE"
+        }
+      },
+      "id": "pos-schtasks-uppercase"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "powershell -c Register-ScheduledTask -TaskName x",
+          "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        }
+      },
+      "id": "pos-powershell-register"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "pwsh -c register-scheduledtask -TaskName x",
+          "executable": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+        }
+      },
+      "id": "pos-pwsh-register"
+    }
+  ],
+  "rule_id": "WMAI-027"
+}

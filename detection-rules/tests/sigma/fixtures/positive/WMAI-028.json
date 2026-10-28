@@ -1,0 +1,56 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "sc.exe create evil binPath= c:\\x.exe",
+          "executable": "C:\\Windows\\System32\\sc.exe"
+        }
+      },
+      "id": "pos-sc-create"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "SC.EXE CREATE= evil",
+          "executable": "C:\\Windows\\System32\\SC.EXE"
+        }
+      },
+      "id": "pos-sc-create-equals"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "powershell -c New-Service -Name x -BinaryPathName y",
+          "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        }
+      },
+      "id": "pos-new-service"
+    }
+  ],
+  "rule_id": "WMAI-028"
+}

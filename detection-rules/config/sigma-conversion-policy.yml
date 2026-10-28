@@ -1,0 +1,38 @@
+# Conversion policy for the Sigma -> Elastic candidate toolchain (scripts/sigma/).
+# Candidates are staged for human review only. Nothing here enables, imports, or
+# deploys a rule, and the 20-rule production pack is never touched.
+policy_version: 1
+pipeline: detection-rules/config/sigma-ecs-windows.yml
+pipeline_name: watchmyai-sigma-ecs-windows
+field_mapping_status: review_required
+output_format: eql
+query_language: eql
+rule_type: eql
+promotion: prohibited_until_release_contract_change
+attribution: endpoint-only
+sources:
+  - detection-rules/research/deferred-catalog/sigma
+fixtures_dir: detection-rules/tests/sigma/fixtures
+# Sigma statuses that may be converted.
+allowed_statuses: [experimental, test, stable]
+# Modifiers whose semantics are preserved by the EQL backend and reviewed here.
+# Anything else (re, cidr, fieldref, base64*, windash, expand, ...) is rejected.
+supported_modifiers: [contains, startswith, endswith, all]
+# Only these ECS fields may appear in a converted query. An unmapped Sigma field
+# leaves its original name in the query and therefore fails this check.
+allowed_target_fields:
+  - event.category
+  - event.type
+  - file.path
+  - process.command_line
+  - process.executable
+  - process.parent.executable
+  - registry.path
+# Sigma logsource category -> data streams the candidate may query.
+logsources:
+  process_creation:
+    index_patterns: [logs-endpoint.events.process-*, logs-windows.sysmon_operational-*]
+  file_event:
+    index_patterns: [logs-endpoint.events.file-*, logs-windows.sysmon_operational-*]
+  registry_set:
+    index_patterns: [logs-endpoint.events.registry-*, logs-windows.sysmon_operational-*]

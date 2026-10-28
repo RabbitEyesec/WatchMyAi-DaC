@@ -1,0 +1,82 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "registry"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "registry": {
+          "path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunServices\\x"
+        }
+      },
+      "id": "neg-runservices"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "registry"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "registry": {
+          "path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\x"
+        }
+      },
+      "id": "neg-uninstall"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "registry"
+          ],
+          "type": [
+            "deletion"
+          ]
+        },
+        "registry": {
+          "path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Updater"
+        }
+      },
+      "id": "neg-wrong-event-type"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "file"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "file": {
+          "path": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Updater"
+        }
+      },
+      "id": "neg-wrong-category"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "registry"
+          ],
+          "type": [
+            "change"
+          ]
+        }
+      },
+      "id": "neg-missing-field"
+    }
+  ],
+  "rule_id": "WMAI-026"
+}

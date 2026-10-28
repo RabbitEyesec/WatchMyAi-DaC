@@ -1,0 +1,11 @@
+title: Unreviewed logsource
+id: 44444444-4444-4444-8444-444444444444
+status: experimental
+logsource:
+  category: dns_query
+detection:
+  selection:
+    QueryName|endswith: .example
+  condition: selection
+level: low
+x_watchmyai_rule_id: WMAI-902
