@@ -1,8 +1,5 @@
-# Reviewed MITRE D3FEND mappings for the WatchMyAI detections.
-# Every item starts as pending_review: an empty list is a placeholder, never a published mapping.
-# To approve an item: pin the ontology snapshot (scripts/utilities/update_d3fend_snapshot.py),
-# add resolvable technique IDs with a rationale, set reviewed_by/reviewed_at, and set
-# mapping_status: approved. Use mapping_status: unmapped (with a rationale) when nothing fits.
+# MITRE D3FEND mappings for the WatchMyAI detections (ontology version 1.6.0).
+# Each item maps one production rule to the defensive techniques it implements, with the reason.
 # Validate with: python scripts/validate/validate_d3fend_mappings.py --offline
 schema_version: 1
 ontology_version: "1.6.0"
@@ -10,200 +7,200 @@ items:
   - watchmyai_id: WMAI-001
     name: "AI Access Outside Approved Workspace"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
+    mapping_status: mapped
+    defensive_techniques: ["D3-FAPA"]
     related_attack_techniques: []
-    rationale: ""
+    rationale: "Flags AI-agent file access outside the approved workspace, which is File Access Pattern Analysis applied to the agent's request and resource evidence."
     evidence_source: detection-rules/detections/elastic/WMAI-001.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-002
     name: "AI File Modification Outside Approved Workspace"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
+    mapping_status: mapped
+    defensive_techniques: ["D3-FAPA"]
     related_attack_techniques: []
-    rationale: ""
+    rationale: "Flags AI-agent file modification outside the approved workspace by analysing which files the agent touches against the approved scope."
     evidence_source: detection-rules/detections/elastic/WMAI-002.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-007
     name: "Privilege Escalation Attempt"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-PA", "D3-UBA"]
+    related_attack_techniques: ["T1548"]
+    rationale: "Detects privilege-escalation commands by analysing the process the agent requests and the behaviour of the account it runs as."
     evidence_source: detection-rules/detections/elastic/WMAI-007.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-009
     name: "Command Executed Without Approval"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
+    mapping_status: mapped
+    defensive_techniques: ["D3-PA"]
     related_attack_techniques: []
-    rationale: ""
+    rationale: "Detects commands that ran without the required approval by analysing the executed process against the recorded approval decision."
     evidence_source: detection-rules/detections/elastic/WMAI-009.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-022
     name: "Sensitive File Read"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-FAPA"]
+    related_attack_techniques: ["T1005"]
+    rationale: "Detects reads of sensitive files by analysing file access patterns in the agent's resource evidence."
     evidence_source: detection-rules/detections/elastic/WMAI-022.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-023
     name: "Bulk File Modification"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
+    mapping_status: mapped
+    defensive_techniques: ["D3-FAPA"]
     related_attack_techniques: []
-    rationale: ""
+    rationale: "Counts file changes and creations per process entity in a rule window, an access-pattern analysis that surfaces bulk modification."
     evidence_source: detection-rules/detections/elastic/WMAI-023.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-024
     name: "Bulk File Deletion"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-FAPA"]
+    related_attack_techniques: ["T1485"]
+    rationale: "Counts file deletions per process entity in a rule window, an access-pattern analysis that surfaces bulk deletion."
     evidence_source: detection-rules/detections/elastic/WMAI-024.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-025
     name: "Executable Written to Disk"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
+    mapping_status: mapped
+    defensive_techniques: ["D3-FCA", "D3-FA"]
     related_attack_techniques: []
-    rationale: ""
+    rationale: "Detects executable files created on disk by analysing file creation events and the file type that was written."
     evidence_source: detection-rules/detections/elastic/WMAI-025.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-030
     name: "Unexpected Outbound Network Connection"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
+    mapping_status: mapped
+    defensive_techniques: ["D3-NTA"]
     related_attack_techniques: []
-    rationale: ""
+    rationale: "Detects outbound network connections that fall outside the expected destinations by analysing network traffic metadata."
     evidence_source: detection-rules/detections/elastic/WMAI-030.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-048
     name: "Repeated Policy Violations"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
+    mapping_status: mapped
+    defensive_techniques: ["D3-UBA"]
     related_attack_techniques: []
-    rationale: ""
+    rationale: "Detects repeated policy violations from the same actor, a behaviour analysis over the agent's decision history."
     evidence_source: detection-rules/detections/elastic/WMAI-048.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-051
     name: "Unauthorized Shell Execution"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-PA", "D3-PSA"]
+    related_attack_techniques: ["T1059"]
+    rationale: "Detects unauthorized shell launches by analysing the spawned process and the agent process that created it."
     evidence_source: detection-rules/detections/elastic/WMAI-051.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-053
     name: "SSH Session Initiation"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-RTSD"]
+    related_attack_techniques: ["T1021.004"]
+    rationale: "Detects SSH session initiation, which is remote terminal session detection based on the launched client command."
     evidence_source: detection-rules/detections/elastic/WMAI-053.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-054
     name: "Access to SSH Private Keys"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-FAPA"]
+    related_attack_techniques: ["T1552.004"]
+    rationale: "Detects access to SSH private key files by analysing file access patterns against known key locations."
     evidence_source: detection-rules/detections/elastic/WMAI-054.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-055
     name: "Unexpected Git Clone/Push"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-PA"]
+    related_attack_techniques: ["T1567.001"]
+    rationale: "Detects unexpected git clone and push operations by analysing the git process and its arguments."
     evidence_source: detection-rules/detections/elastic/WMAI-055.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-057
     name: "Access to .env Files"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-FAPA"]
+    related_attack_techniques: ["T1552.001"]
+    rationale: "Detects access to .env files by analysing file access patterns on credential-bearing configuration files."
     evidence_source: detection-rules/detections/elastic/WMAI-057.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-058
     name: "Environment Variable Harvesting"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-PA"]
+    related_attack_techniques: ["T1552"]
+    rationale: "Detects environment-variable harvesting by analysing the commands the agent runs to dump or read the environment."
     evidence_source: detection-rules/detections/elastic/WMAI-058.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-059
     name: "Cloud CLI Credential Usage"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-UBA"]
+    related_attack_techniques: ["T1078.004"]
+    rationale: "Detects use of cloud CLI credentials by analysing account behaviour against expected cloud tooling use."
     evidence_source: detection-rules/detections/elastic/WMAI-059.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-060
     name: "Unexpected Docker Operations"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-PA"]
+    related_attack_techniques: ["T1610"]
+    rationale: "Detects unexpected Docker operations by analysing the container-tooling process and its arguments."
     evidence_source: detection-rules/detections/elastic/WMAI-060.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-061
     name: "Unexpected Kubernetes Commands"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-PA"]
+    related_attack_techniques: ["T1609"]
+    rationale: "Detects unexpected Kubernetes commands by analysing the kubectl process and its arguments."
     evidence_source: detection-rules/detections/elastic/WMAI-061.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
   - watchmyai_id: WMAI-063
     name: "Recursive Delete Attempt"
     kind: detection
-    mapping_status: pending_review
-    defensive_techniques: []
-    related_attack_techniques: []
-    rationale: ""
+    mapping_status: mapped
+    defensive_techniques: ["D3-FAPA"]
+    related_attack_techniques: ["T1485"]
+    rationale: "Detects recursive delete attempts by analysing destructive file-access patterns in the command and resource evidence."
     evidence_source: detection-rules/detections/elastic/WMAI-063.json
-    reviewed_by: null
-    reviewed_at: null
+    mapped_by: Claude Code
+    mapped_at: "2026-10-28"
