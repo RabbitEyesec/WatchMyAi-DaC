@@ -1,5 +1,5 @@
 pack_id: watchmyai-cli-detection-pack
-pack_version: 1.0.0
+pack_version: 2.0.0
 telemetry_schema_version: 1.1.0
 rule_count: 20
 selected_rule_ids:
@@ -23,6 +23,6 @@ selected_rule_ids:
 - WMAI-060
 - WMAI-061
 - WMAI-063
-validation_scope: production-validated-v1.0.0
+validation_scope: production-validated-v2.0.0
 authoritative_rules: ../../deployment/rules_schema_1.1.0.ndjson
 deferred_catalog: research/deferred-catalog

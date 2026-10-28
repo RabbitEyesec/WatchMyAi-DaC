@@ -5,7 +5,7 @@ installation, platform boundaries, upgrades, and reinstalls.
 
 ## Supported environment
 
-| Area | v1.0.0 support |
+| Area | v2.0.0 support |
 | --- | --- |
 | Python | 3.11 and 3.12 |
 | Connected deployment host | Ubuntu 24.04 |
@@ -14,7 +14,7 @@ installation, platform boundaries, upgrades, and reinstalls.
 
 The Bash installer rejects non-Ubuntu live installation. `--bootstrap-only` exists for repository
 checks on another host. This does not extend the validated live deployment claim.
-The v1.0.0 live onboarding contract remains Ubuntu 24.04.
+The v2.0.0 live onboarding contract remains Ubuntu 24.04.
 
 ## External prerequisites
 
@@ -78,7 +78,7 @@ contains the reviewed locked dependencies, install a verified wheel without reso
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install --require-hashes -r requirements-release.lock
-.venv/bin/python -m pip install --no-deps dist/watchmyai-1.0.0-py3-none-any.whl
+.venv/bin/python -m pip install --no-deps dist/watchmyai-2.0.0-py3-none-any.whl
 .venv/bin/watchmyai --version
 ```
 

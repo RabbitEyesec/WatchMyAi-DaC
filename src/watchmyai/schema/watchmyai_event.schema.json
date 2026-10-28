@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://watchmyai.dev/schema/watchmyai_event/1.1.0",
   "title": "WatchMyAI Master Telemetry Event 1.1",
-  "description": "ECS-compatible schema validated by the WatchMyAI 1.0.0 Elastic laboratory deployment.",
+  "description": "ECS-compatible schema validated by the WatchMyAI 2.0.0 Elastic laboratory deployment.",
   "type": "object",
   "additionalProperties": false,
   "required": ["@timestamp", "event", "host", "watchmyai"],

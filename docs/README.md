@@ -21,7 +21,7 @@ workflows.
 ## Security engineers
 
 - [Architecture](ARCHITECTURE.md): components, trust boundaries, data flow, and failure behavior.
-- [Detection-rule catalog](DETECTION_RULES.md): exact 20-rule v1.0.0 deployment catalog.
+- [Detection-rule catalog](DETECTION_RULES.md): exact 20-rule v2.0.0 deployment catalog.
 - [Detection-rules component](../detection-rules/README.md): reconciliation, validation, and packaging.
 - [Version 2 integrations](V2_INTEGRATIONS.md): Sigma + pySigma conversion, Windows Sysmon, and MITRE D3FEND mapping.
 

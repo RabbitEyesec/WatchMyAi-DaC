@@ -202,9 +202,9 @@ def test_release_build_does_not_write_generated_metadata_into_source(tmp_path: P
     artifacts = build_release(tmp_path / "release")
     assert {path.name for path in artifacts} == {
         "SHA256SUMS.txt",
-        "WatchMyAI-v1.0.0-source.zip",
-        "watchmyai-1.0.0-py3-none-any.whl",
-        "watchmyai-1.0.0.tar.gz",
+        "WatchMyAI-v2.0.0-source.zip",
+        "watchmyai-2.0.0-py3-none-any.whl",
+        "watchmyai-2.0.0.tar.gz",
         "watchmyai-package-manifest.json",
         "watchmyai-rules.ndjson",
     }
@@ -212,8 +212,8 @@ def test_release_build_does_not_write_generated_metadata_into_source(tmp_path: P
     with zipfile.ZipFile(wheel) as archive:
         names = set(archive.namelist())
     assert {
-        "watchmyai-1.0.0.data/data/share/watchmyai/elastic/component_template.json",
-        "watchmyai-1.0.0.data/data/share/watchmyai/elastic/load-assets.sh",
+        "watchmyai-2.0.0.data/data/share/watchmyai/elastic/component_template.json",
+        "watchmyai-2.0.0.data/data/share/watchmyai/elastic/load-assets.sh",
     } <= names
     after = {path: _tree_state(path) for path in generated}
     assert after == before
@@ -259,7 +259,7 @@ def test_exact_supported_and_excluded_release_sets() -> None:
     assert manifest["selected_rule_ids"] == list(SUPPORTED_RULES)
     assert {item["rule_id"] for item in excluded["rules"]} == set(EXCLUDED_RULES)
     assert all(item["status"] == "excluded" for item in excluded["rules"])
-    assert all(item["reason"] == "not validated in v1.0.0" for item in excluded["rules"])
+    assert all(item["reason"] == "not validated in v2.0.0" for item in excluded["rules"])
     assert all(item["rule_name"] == EXCLUDED_RULES[item["rule_id"]] for item in excluded["rules"])
     assert all(item["future_telemetry_work_required"] is True for item in excluded["rules"])
     deferred = {path.stem for path in (RULES / "research/deferred-catalog/metadata").glob("WMAI-*.yml")}

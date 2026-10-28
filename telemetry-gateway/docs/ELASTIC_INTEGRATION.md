@@ -6,7 +6,7 @@ template, ingest pipeline, composable data-stream template, and data stream,
 then imports the exact 20-rule pack.
 
 The loader also attempts to import an optional data view and investigation searches. Their failure
-does not block telemetry or rule installation, and v1.0.0 has no required dashboard.
+does not block telemetry or rule installation, and v2.0.0 has no required dashboard.
 
 The generated gateway YAML references an owner-only environment file, which in turn references the
 owner-only API-key file. Credentials are not stored in gateway YAML or passed as command options.

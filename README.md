@@ -4,6 +4,7 @@
 [![CodeQL](https://github.com/rabbiteyesec/WatchMyAi-DaC/actions/workflows/codeql.yml/badge.svg)](https://github.com/rabbiteyesec/WatchMyAi-DaC/actions/workflows/codeql.yml)
 [![Python 3.11–3.12](https://img.shields.io/badge/python-3.11%20%7C%203.12-3776AB.svg)](https://www.python.org/)
 [![Apache-2.0 license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Version 2.0.0](https://img.shields.io/badge/version-2.0.0-brightgreen.svg)](https://github.com/rabbiteyesec/WatchMyAi-DaC/releases/tag/v2.0.0)
 
 ## Detection-as-Code for AI Agent Security
 
@@ -11,6 +12,13 @@ WatchMyAI monitors AI coding agent activity at supported hook and gateway bounda
 policy before mediated actions execute, emits normalized security telemetry, and supplies
 Detection-as-Code rules for Elastic Security. The CLI is the operator interface to this wider
 runtime and detection system.
+
+> [!IMPORTANT]
+> **WatchMyAI Version 2 (v2.0.0) is here.** It adds **Sigma rule conversion with pySigma**,
+> **live Windows Sysmon collection**, **agent-to-endpoint event correlation**, **MITRE D3FEND
+> mapping** for all 20 production rules, an expanded automated test suite, and **one-command
+> installers**. [See what is new](#watchmyai-version-2) · [Release notes](CHANGELOG.md) ·
+> [Version 2 guide](docs/V2_INTEGRATIONS.md)
 
 ![Illustrative Elastic Discover view for the WatchMyAI event dataset](docs/assets/screenshots/elastic-watchmyai-events.png)
 
@@ -157,20 +165,20 @@ Agent and check the data.
 > The step-by-step guide for every Version 2 tool, including all commands and options, is in
 > [docs/V2_INTEGRATIONS.md](docs/V2_INTEGRATIONS.md).
 
-## Release v1.0.0 contract
+## Release v2.0.0 contract
 
 | Contract | Value |
 | --- | --- |
-| Product version | 1.0.0 |
+| Product version | 2.0.0 |
 | Production rules | 20 |
-| Excluded v1.0.0 rules | 10 |
+| Excluded v2.0.0 rules | 10 |
 | Deferred research rules | 45 |
 | Telemetry schema | 1.1.0 |
 | Canonical dataset | `watchmyai.events` |
 | Validated Elastic version | 9.4.3 |
 | Validated live host | Ubuntu 24.04 |
 | Supported Python | 3.11 and 3.12 |
-| Windows | Bootstrap installer supported; live Elastic deployment not validated for v1.0.0 |
+| Windows | Bootstrap installer and Sysmon integration supported |
 | Dashboard | Not required |
 
 Elasticsearch, Kibana, Fleet Server, and an enrolled Elastic Agent must already exist. WatchMyAI

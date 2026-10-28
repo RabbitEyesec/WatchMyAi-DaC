@@ -15,7 +15,7 @@ product.
 - SQLite WAL per-session SHA-256 chains over the final normalized/redacted event.
 - Ed25519 threshold signed policy distribution with pinned roots, monotonic metadata, expiry/clock controls, immutable two-slot activation, root rotation, and explicit rollback.
 - JSONL, HTTP, and Elasticsearch exporters; validated schema 1.1.0 mappings, pipeline, data stream,
-  ILM, and optional Kibana investigation searches. No dashboard is required by v1.0.0.
+  ILM, and optional Kibana investigation searches. No dashboard is required by v2.0.0.
 
 ## Onboarding boundary
 

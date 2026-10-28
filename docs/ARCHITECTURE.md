@@ -42,7 +42,7 @@ The root [`VERSION`](../VERSION), [`pyproject.toml`](../pyproject.toml), and
 
 ## Validated deployment topology
 
-The v1.0.0 connected path is validated on an Ubuntu 24.04 host using Python 3.11 or 3.12 and
+The v2.0.0 connected path is validated on an Ubuntu 24.04 host using Python 3.11 or 3.12 and
 Elasticsearch, Kibana, Fleet Server, and Elastic Agent 9.4.3. The external Elastic services and an
 enrolled Agent must exist before setup.
 
@@ -201,7 +201,7 @@ source control. Validation actions are constrained to the generated disposable w
 | Policy unavailable or invalid | A pre-tool hook returns a deny response. Signed mode does not fall back to an unsigned policy. |
 | Gateway cannot initialize or record evidence | The pre-tool integration fails closed. Secondary lifecycle evidence reports an error without becoming an enforcement claim. |
 | Elastic delivery unavailable after local evidence is recorded | Export retries are bounded, then affected events are written to the local dead-letter file. The already-evaluated policy decision is not rewritten; connected verification fails until delivery recovers. |
-| Hooks absent or bypassed | That path is not mediated by WatchMyAI. Setup installs selected hooks, and `watchmyai doctor` reports current status. The v1.0.0 Ubuntu connected verification path does not gate readiness on hook-file presence. |
+| Hooks absent or bypassed | That path is not mediated by WatchMyAI. Setup installs selected hooks, and `watchmyai doctor` reports current status. The v2.0.0 Ubuntu connected verification path does not gate readiness on hook-file presence. |
 | Credentials invalid or insufficient | Setup or verification fails with a connectivity, authentication, or privilege error. Credentials are not printed. |
 | Fleet policy selection ambiguous | Setup refuses to guess and requires an explicit `FLEET_AGENT_POLICY_ID`. |
 | Elastic Agent stopped or unhealthy | Fleet verification fails, and native threshold rules cannot be accepted as validated. |
@@ -212,11 +212,11 @@ received an event. Operators must monitor it and rerun connected verification af
 
 ## Versioned contracts and limits
 
-- Runtime and package: 1.0.0.
+- Runtime and package: 2.0.0.
 - Organization policy schema: 1.2.
 - Telemetry schema: 1.1.0.
 - Canonical dataset: `watchmyai.events`.
-- Detection scope: exactly 20 production rules, 10 excluded v1.0.0 rules, and 45 deferred research
+- Detection scope: exactly 20 production rules, 10 excluded v2.0.0 rules, and 45 deferred research
   definitions.
 
 WatchMyAI is not a kernel sandbox. A deny proves that the mediated request was not released through

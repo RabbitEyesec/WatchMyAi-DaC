@@ -189,7 +189,7 @@ def build(output: Path, *, root: Path = ROOT) -> tuple[int, int, str]:
         size = temporary.stat().st_size
         if size > MAX_SOURCE_ARCHIVE_BYTES:
             raise RuntimeError(
-                f"source archive is {size} bytes; v1.0.0 sanity limit is {MAX_SOURCE_ARCHIVE_BYTES} bytes"
+                f"source archive is {size} bytes; v2.0.0 sanity limit is {MAX_SOURCE_ARCHIVE_BYTES} bytes"
             )
         temporary.replace(output)
     except Exception:
