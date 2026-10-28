@@ -67,7 +67,14 @@ def test_eql_rejects_unsupported_syntax(text: str) -> None:
 
 # --- Sigma conversion --------------------------------------------------------------------
 
-sigma_available = importlib.util.find_spec("sigma") is not None
+try:
+    # Import the real backend: a bare find_spec("sigma") also matches the scripts/sigma/ namespace
+    # directory when scripts/ is on sys.path, which would run these tests without pySigma.
+    import sigma.backends.elasticsearch  # noqa: F401
+
+    sigma_available = True
+except ImportError:
+    sigma_available = False
 needs_sigma = pytest.mark.skipif(
     not sigma_available, reason="install the Version 2 tools: pip install '.[sigma]'"
 )
