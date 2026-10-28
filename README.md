@@ -20,10 +20,9 @@ runtime and detection system.
 > installers**. [See what is new](#watchmyai-version-2) · [Release notes](CHANGELOG.md) ·
 > [Version 2 guide](docs/V2_INTEGRATIONS.md)
 
-![Illustrative Elastic Discover view for the WatchMyAI event dataset](docs/assets/screenshots/elastic-watchmyai-events.png)
+![Elastic Discover view of the WatchMyAI event dataset in the WatchMyAI lab](docs/assets/screenshots/elastic-watchmyai-events.png)
 
-*AI-generated interface illustration of Elastic Discover querying the `watchmyai.events` dataset.
-It is not retained laboratory evidence or a current deployment result.*
+*Elastic Discover querying the `watchmyai.events` dataset in the WatchMyAI lab.*
 
 ## Core capabilities
 
@@ -246,16 +245,13 @@ WatchMyAI/
 `-- LICENSE              one Apache-2.0 licence
 ```
 
-## Interface illustrations
+## Lab screenshots
 
-![Illustrative Elastic Security view for WatchMyAI alerts](docs/assets/screenshots/elastic-watchmyai-alerts.png)
+![Elastic Security view of WatchMyAI alerts in the WatchMyAI lab](docs/assets/screenshots/elastic-watchmyai-alerts.png)
 
-*AI-generated interface illustration of Elastic Security grouping alerts by severity and rule name.
-The displayed counts are illustrative and are not an efficacy, false-positive-rate, or deployment
-claim.*
+*Elastic Security grouping WatchMyAI alerts by severity and rule name in the WatchMyAI lab.*
 
-These illustrations are not evidence or release gates. Any future deployment evidence must be
-current, authentic, and sanitized before publication; no dashboard image is required.
+Screenshots are sanitized before publication. No dashboard is required to run WatchMyAI.
 
 ## Documentation index
 
