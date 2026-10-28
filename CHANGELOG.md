@@ -1,12 +1,13 @@
 # Changelog
 
-## WatchMyAI Version 2: detection integrations
+## v2.0.0 - WatchMyAI Version 2: detection integrations - 2026-10-28
 
 - Added the Sigma + pySigma toolchain: `scripts/sigma/convert_candidates.py`, `validate_candidates.py`, `compare_semantics.py`, an EQL fixture evaluator, the `sigma-ecs-windows` pipeline, the conversion policy and per-rule positive/negative/unsupported fixtures. Output is staged under `dist/sigma-candidates` as disabled candidates.
 - Added Windows Sysmon integration: minimum-necessary Sysmon configuration, signature-checked `install-sysmon.ps1`, `generate-sysmon-load.ps1`, and `verify_sysmon_ingest.py` for ECS field and `WMAI-023`/`WMAI-024` threshold checks.
 - Added MITRE D3FEND mapping: completed mappings for all 20 production rules, ontology lock file, `update_d3fend_snapshot.py` and `validate_d3fend_mappings.py`.
 - Added agent-to-endpoint correlation (`correlate_agent_endpoint.py`) with confirmed / strong / probable / endpoint-only levels, Sysmon and correlation sample fixtures, and `tests/test_v2_integrations.py` (24 checks).
 - Added `scripts/run_v2_integrations.py` and wired it into the CI repository gate; added the `sigma` optional dependency and regenerated `requirements-dev.lock`.
+- Product version is now 2.0.0 across the package, rule manifest, release records, and documentation.
 - Added `docs/V2_INTEGRATIONS.md`. The gateway, signed policy handling, schema 1.1.0 and the 20-rule pack are unchanged.
 
 ## v1.0.0 release reconciliation - 2026-07-22

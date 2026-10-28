@@ -1,4 +1,4 @@
-# WatchMyAI detection rules 1.0.0
+# WatchMyAI detection rules 2.0.0
 
 This internal component validates, tests, documents, and packages WatchMyAI's 20 production rules
 for Elastic 9.4.3. It is not a separately published product. Use the root
@@ -46,7 +46,7 @@ After an approved change to the authoritative NDJSON, regenerate derived content
 Packaging rejects an enabled, duplicate, excluded, missing, non-authoritative, or incomplete release.
 Generated artifacts are written to the ignored root `dist/` directory. The rule package consists of
 `watchmyai-rules.ndjson`, `watchmyai-package-manifest.json`, and checksums. The complete project
-source archive is built separately as `WatchMyAI-v1.0.0-source.zip` by the root archive builder.
+source archive is built separately as `WatchMyAI-v2.0.0-source.zip` by the root archive builder.
 
 ## Import
 

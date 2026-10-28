@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the complete deterministic WatchMyAI v1.0.0 release artifact set."""
+"""Build the complete deterministic WatchMyAI v2.0.0 release artifact set."""
 
 from __future__ import annotations
 
