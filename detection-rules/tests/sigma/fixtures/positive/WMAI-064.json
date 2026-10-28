@@ -1,0 +1,85 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "chmod -R 755 /srv/app",
+          "executable": "/bin/chmod",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "pos-chmod-recursive"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "chmod 777 /srv/app",
+          "executable": "/bin/chmod",
+          "parent": {
+            "executable": "/usr/local/bin/gemini"
+          }
+        }
+      },
+      "id": "pos-chmod-777"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "chown -R root /srv",
+          "executable": "/bin/chown",
+          "parent": {
+            "executable": "/opt/aider"
+          }
+        }
+      },
+      "id": "pos-chown-root"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "chmod u+s /tmp/x",
+          "executable": "/bin/chmod",
+          "parent": {
+            "executable": "/usr/local/bin/codex"
+          }
+        }
+      },
+      "id": "pos-chmod-setuid"
+    }
+  ],
+  "rule_id": "WMAI-064"
+}

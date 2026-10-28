@@ -1,0 +1,89 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "schtasks.exe /query",
+          "executable": "C:\\Windows\\System32\\schtasks.exe"
+        }
+      },
+      "id": "neg-schtasks-query"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "notepad /create /x ",
+          "executable": "C:\\Windows\\notepad.exe"
+        }
+      },
+      "id": "neg-other-exe-create"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "powershell Get-ScheduledTask",
+          "executable": "C:\\Windows\\System32\\powershell.exe"
+        }
+      },
+      "id": "neg-powershell-no-register"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "end"
+          ]
+        },
+        "process": {
+          "command_line": "schtasks.exe /create /tn x",
+          "executable": "C:\\Windows\\System32\\schtasks.exe"
+        }
+      },
+      "id": "neg-process-end"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "executable": "C:\\Windows\\System32\\schtasks.exe"
+        }
+      },
+      "id": "neg-missing-cmdline"
+    }
+  ],
+  "rule_id": "WMAI-027"
+}

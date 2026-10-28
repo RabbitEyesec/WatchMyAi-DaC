@@ -1,0 +1,85 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "chmod 644 notes.txt",
+          "executable": "/bin/chmod",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "neg-chmod-benign"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "chmod -R 777 /srv",
+          "executable": "/bin/chmod",
+          "parent": {
+            "executable": "/usr/bin/bash"
+          }
+        }
+      },
+      "id": "neg-non-agent-chmod-R"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "ls -R /srv",
+          "executable": "/bin/ls",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "neg-agent-ls"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "chown alice notes.txt",
+          "executable": "/bin/chown",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "neg-chown-user"
+    }
+  ],
+  "rule_id": "WMAI-064"
+}

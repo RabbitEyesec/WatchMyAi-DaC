@@ -1,0 +1,85 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "grep -r password .",
+          "executable": "/usr/bin/grep",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "pos-claude-grep-password"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "rg API_KEY /srv",
+          "executable": "/usr/bin/rg",
+          "parent": {
+            "executable": "/opt/codex"
+          }
+        }
+      },
+      "id": "pos-codex-rg-token"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "find / -name .env",
+          "executable": "/usr/bin/find",
+          "parent": {
+            "executable": "/usr/local/bin/gemini"
+          }
+        }
+      },
+      "id": "pos-gemini-find-env"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "findstr /s secret *.txt",
+          "executable": "C:\\Windows\\System32\\findstr.exe",
+          "parent": {
+            "executable": "C:\\tools\\claude.exe"
+          }
+        }
+      },
+      "id": "pos-windows-findstr"
+    }
+  ],
+  "rule_id": "WMAI-073"
+}

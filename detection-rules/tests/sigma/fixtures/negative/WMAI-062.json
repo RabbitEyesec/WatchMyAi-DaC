@@ -1,0 +1,82 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "npm install left-pad",
+          "executable": "/usr/bin/npm",
+          "parent": {
+            "executable": "/usr/bin/bash"
+          }
+        }
+      },
+      "id": "neg-non-agent-parent"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "npm run test",
+          "executable": "/usr/bin/npm",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "neg-agent-npm-run"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "ls install ",
+          "executable": "/usr/bin/ls",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "neg-agent-non-manager"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "npm install left-pad",
+          "executable": "/usr/bin/npm"
+        }
+      },
+      "id": "neg-missing-parent"
+    }
+  ],
+  "rule_id": "WMAI-062"
+}

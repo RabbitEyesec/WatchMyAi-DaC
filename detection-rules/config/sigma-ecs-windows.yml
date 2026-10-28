@@ -1,0 +1,39 @@
+# pySigma processing pipeline: Sigma field names -> ECS fields as produced by the
+# Elastic Windows integration (Sysmon Operational) and Elastic Defend.
+#
+# The mapping follows the documented ECS output of the Windows integration and Elastic Defend.
+# To add a Sigma field, add it here and to allowed_target_fields in sigma-conversion-policy.yml.
+name: watchmyai-sigma-ecs-windows
+priority: 20
+transformations:
+  - id: map_fields
+    type: field_name_mapping
+    mapping:
+      Image: process.executable
+      CommandLine: process.command_line
+      ParentImage: process.parent.executable
+      TargetFilename: file.path
+      TargetObject: registry.path
+  - id: scope_process_creation
+    type: add_condition
+    conditions:
+      event.category: process
+      event.type: start
+    rule_conditions:
+      - type: logsource
+        category: process_creation
+  - id: scope_file_event
+    type: add_condition
+    conditions:
+      event.category: file
+    rule_conditions:
+      - type: logsource
+        category: file_event
+  - id: scope_registry_set
+    type: add_condition
+    conditions:
+      event.category: registry
+      event.type: change
+    rule_conditions:
+      - type: logsource
+        category: registry_set

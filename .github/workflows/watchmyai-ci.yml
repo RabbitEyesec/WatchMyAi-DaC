@@ -42,6 +42,7 @@ jobs:
           python scripts/validate/validate_ndjson.py \
             --telemetry-schema fixtures/telemetry/canonical.ndjson
           python scripts/import/import_rules.py --dry-run
+          python scripts/run_v2_integrations.py
           python -m pytest
       - name: Formatting, lint, typing, and security
         run: |

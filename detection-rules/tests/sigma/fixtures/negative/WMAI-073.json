@@ -1,0 +1,65 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "grep -r TODO .",
+          "executable": "/usr/bin/grep",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "neg-agent-grep-todo"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "grep -r password .",
+          "executable": "/usr/bin/grep",
+          "parent": {
+            "executable": "/usr/bin/bash"
+          }
+        }
+      },
+      "id": "neg-non-agent-grep-password"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "ls password-notes",
+          "executable": "/usr/bin/ls",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "neg-agent-ls"
+    }
+  ],
+  "rule_id": "WMAI-073"
+}

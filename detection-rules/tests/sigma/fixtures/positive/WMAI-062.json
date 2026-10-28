@@ -1,0 +1,85 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "npm install left-pad",
+          "executable": "/usr/bin/npm",
+          "parent": {
+            "executable": "/usr/local/bin/claude"
+          }
+        }
+      },
+      "id": "pos-claude-npm-install"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "pip3 add requests",
+          "executable": "/usr/bin/pip3",
+          "parent": {
+            "executable": "/opt/codex"
+          }
+        }
+      },
+      "id": "pos-codex-pip-add"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "npm.cmd i lodash",
+          "executable": "C:\\Program Files\\nodejs\\npm.cmd",
+          "parent": {
+            "executable": "C:\\Users\\a\\AppData\\Roaming\\npm\\codex.exe"
+          }
+        }
+      },
+      "id": "pos-windows-codex-npm-cmd"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "start"
+          ]
+        },
+        "process": {
+          "command_line": "NPM INSTALL x",
+          "executable": "/usr/bin/NPM",
+          "parent": {
+            "executable": "/usr/local/bin/CLAUDE"
+          }
+        }
+      },
+      "id": "pos-uppercase-parent"
+    }
+  ],
+  "rule_id": "WMAI-062"
+}

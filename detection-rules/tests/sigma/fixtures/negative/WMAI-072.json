@@ -1,0 +1,66 @@
+{
+  "events": [
+    {
+      "event": {
+        "event": {
+          "category": [
+            "file"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "file": {
+          "path": "/home/lab/.claude/settings.local.json"
+        }
+      },
+      "id": "neg-settings-local"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "file"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "file": {
+          "path": "/home/lab/project/settings.json"
+        }
+      },
+      "id": "neg-unrelated-settings"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "process"
+          ],
+          "type": [
+            "change"
+          ]
+        },
+        "file": {
+          "path": "/home/lab/.codex/config.toml"
+        }
+      },
+      "id": "neg-wrong-category"
+    },
+    {
+      "event": {
+        "event": {
+          "category": [
+            "file"
+          ],
+          "type": [
+            "change"
+          ]
+        }
+      },
+      "id": "neg-missing-path"
+    }
+  ],
+  "rule_id": "WMAI-072"
+}

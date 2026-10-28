@@ -1,0 +1,11 @@
+title: Regex modifier is not supported
+id: 11111111-1111-4111-8111-111111111111
+status: experimental
+logsource:
+  category: process_creation
+detection:
+  selection:
+    CommandLine|re: 'a.*b'
+  condition: selection
+level: low
+x_watchmyai_rule_id: WMAI-900

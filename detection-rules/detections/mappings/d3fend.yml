@@ -1,0 +1,209 @@
+# Reviewed MITRE D3FEND mappings for the WatchMyAI detections.
+# Every item starts as pending_review: an empty list is a placeholder, never a published mapping.
+# To approve an item: pin the ontology snapshot (scripts/utilities/update_d3fend_snapshot.py),
+# add resolvable technique IDs with a rationale, set reviewed_by/reviewed_at, and set
+# mapping_status: approved. Use mapping_status: unmapped (with a rationale) when nothing fits.
+# Validate with: python scripts/validate/validate_d3fend_mappings.py --offline
+schema_version: 1
+ontology_version: "1.6.0"
+items:
+  - watchmyai_id: WMAI-001
+    name: "AI Access Outside Approved Workspace"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-001.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-002
+    name: "AI File Modification Outside Approved Workspace"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-002.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-007
+    name: "Privilege Escalation Attempt"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-007.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-009
+    name: "Command Executed Without Approval"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-009.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-022
+    name: "Sensitive File Read"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-022.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-023
+    name: "Bulk File Modification"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-023.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-024
+    name: "Bulk File Deletion"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-024.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-025
+    name: "Executable Written to Disk"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-025.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-030
+    name: "Unexpected Outbound Network Connection"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-030.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-048
+    name: "Repeated Policy Violations"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-048.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-051
+    name: "Unauthorized Shell Execution"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-051.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-053
+    name: "SSH Session Initiation"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-053.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-054
+    name: "Access to SSH Private Keys"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-054.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-055
+    name: "Unexpected Git Clone/Push"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-055.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-057
+    name: "Access to .env Files"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-057.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-058
+    name: "Environment Variable Harvesting"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-058.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-059
+    name: "Cloud CLI Credential Usage"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-059.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-060
+    name: "Unexpected Docker Operations"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-060.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-061
+    name: "Unexpected Kubernetes Commands"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-061.json
+    reviewed_by: null
+    reviewed_at: null
+  - watchmyai_id: WMAI-063
+    name: "Recursive Delete Attempt"
+    kind: detection
+    mapping_status: pending_review
+    defensive_techniques: []
+    related_attack_techniques: []
+    rationale: ""
+    evidence_source: detection-rules/detections/elastic/WMAI-063.json
+    reviewed_by: null
+    reviewed_at: null

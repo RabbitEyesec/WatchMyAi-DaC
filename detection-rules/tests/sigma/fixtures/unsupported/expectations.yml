@@ -1,0 +1,5 @@
+regex_modifier.yml: UNSUPPORTED_MODIFIER
+production_id.yml: PRODUCTION_RULE_ID_FORBIDDEN
+unmapped_field.yml: UNMAPPED_FIELD
+unknown_logsource.yml: UNSUPPORTED_LOGSOURCE
+aggregation.yml: UNSUPPORTED_CONDITION
